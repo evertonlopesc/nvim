@@ -113,7 +113,6 @@ return require('packer').startup(function()
   use 'rafamadriz/neon'
   use 'andersevenrud/nordic.nvim'
   use 'ellisonleao/gruvbox.nvim'
-  use 'tanvirtin/monokai.nvim'
 
   -- Statusbar
   use {
@@ -148,6 +147,7 @@ return require('packer').startup(function()
     end
   }
 
+  -- Terminal
   use {
     "akinsho/toggleterm.nvim",
     config = function()
