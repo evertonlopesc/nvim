@@ -53,27 +53,11 @@ set.smartcase = true
 
 -- Style
 set.termguicolors = true
-set.background = "light"
+set.background = "dark"
 
-cmd('colorscheme solarized')
--- cmd('colorscheme solarized-high')
--- cmd('colorscheme solarized-flat')
--- cmd('colorscheme solarized-low')
--- cmd[[colorscheme neon]]
--- cmd[[colorscheme gruvbox]]
--- cmd[[colorscheme tokyonight]]
--- cmd[[colorscheme monokai]]
-
--- g.solarized_visibility = 'low'
-
---[[ g.neon_style = "default"
-g.neon_italic_keyword = true
-g.neon_italic_function = true
-g.neon_transparent = true ]]
-
---[[ g.nord_underline_option = 'none'
+g.nord_underline_option = 'none'
 g.nord_italic = true
 g.nord_italic_comments = false
 g.nord_minimal_mode = false
 g.nord_alternate_backgrounds = false
-cmd('colorscheme nordic') ]]
+cmd('colorscheme nordic')
