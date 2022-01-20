@@ -39,11 +39,13 @@ return require('packer').startup(function()
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim'} },
   }
 
   -- Syntax highlight
-  use { 'nvim-treesitter/nvim-treesitter', run = TSUpdate,
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
     config = function()
       require('config.treesitter')
     end
