@@ -25,7 +25,7 @@ return require('packer').startup(function()
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
       config = function ()
-          require'alpha'.setup(require'alpha.themes.dashboard'.opts)
+        require'alpha'.setup(require'alpha.themes.dashboard'.opts)
       end
   }
 
@@ -115,6 +115,11 @@ return require('packer').startup(function()
   use 'rafamadriz/neon'
   use 'andersevenrud/nordic.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use {
+      "mcchrish/zenbones.nvim",
+      requires = "rktjmp/lush.nvim"
+  }
+  use 'rmehri01/onenord.nvim'
 
   -- Statusbar
   use {

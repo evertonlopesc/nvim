@@ -53,11 +53,12 @@ set.smartcase = true
 
 -- Style
 set.termguicolors = true
-set.background = "dark"
+set.background = "light"
 
-g.nord_underline_option = 'none'
-g.nord_italic = true
-g.nord_italic_comments = false
-g.nord_minimal_mode = false
-g.nord_alternate_backgrounds = false
-cmd('colorscheme nordic')
+-- g.nord_underline_option = 'none'
+-- g.nord_italic = true
+-- g.nord_italic_comments = false
+-- g.nord_minimal_mode = false
+-- g.nord_alternate_backgrounds = false
+-- cmd('colorscheme nordic')
+cmd('colorscheme tokyobones')
