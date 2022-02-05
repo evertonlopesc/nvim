@@ -19,7 +19,7 @@ set.sidescrolloff = 5
 set.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-set.completeopt = "menu,menuone,noinsert"
+set.completeopt = "menu,menuone,noselect"
 
 -- Avoid showing message extra message when using completion
 set.shortmess = "c"
