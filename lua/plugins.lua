@@ -174,14 +174,6 @@ return require('packer').startup(function()
     end
   }
 
-  -- Notify
-  use {
-    'rcarriga/nvim-notify',
-    config = function ()
-      require('config.notify')
-    end
-  }
-
   -- Commentary
   use {
       'numToStr/Comment.nvim',
