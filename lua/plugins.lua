@@ -83,9 +83,9 @@ return require('packer').startup(function()
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-path",
-      "hrsh7th/cmp-vsnip",
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function()
       require("config.cmp")

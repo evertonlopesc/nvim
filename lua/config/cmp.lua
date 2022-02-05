@@ -1,5 +1,6 @@
 local cmp = require'cmp'
 local lspkind = require('lspkind')
+require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup {
   formatting = {
@@ -42,4 +43,3 @@ cmp.setup {
     { name = 'luasnip' },
   })
 }
-
