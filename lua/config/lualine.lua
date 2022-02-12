@@ -121,6 +121,12 @@ ins_left {
 }
 
 ins_left {
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.yellow, gui = 'bold' },
+}
+
+ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
   color = { fg = colors.yellow, gui = 'bold' },
