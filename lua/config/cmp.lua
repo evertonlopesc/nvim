@@ -1,3 +1,8 @@
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -8,7 +13,6 @@ cmp.setup {
       with_text = true,
       maxwidth = 50,
       menu = {
-        buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
         luasnip = "[LuaSnip]",
         nvim_lua = "[Lua]",
@@ -16,11 +20,14 @@ cmp.setup {
     }
   },
 
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'vsnip' },
+    { name = 'path' },
+    { name = 'nvim_lua' },
+    { name = 'buffer' },
+  }),
 
   mapping = {
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -34,12 +41,13 @@ cmp.setup {
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
 
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-    { name = 'buffer' },
-    { name = 'path' },
-    { name = 'nvim_lua' },
-    { name = 'luasnip' },
-  })
+  snippet = {
+    expand = function(args)
+        local luasnip = require("luasnip")
+        if not luasnip then
+            return
+        end
+        luasnip.lsp_expand(args.body)
+    end,
+  },
 }
