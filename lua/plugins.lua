@@ -94,14 +94,11 @@ return require('packer').startup(function()
   use "onsails/lspkind-nvim"
 
   -- GIT
-  use 'tpope/vim-fugitive'
   use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
     config = function()
-      require("config.gitsigns")
+      require("config.neogit")
     end
   }
 
