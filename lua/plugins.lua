@@ -99,7 +99,10 @@ return require('packer').startup(function()
   -- GIT
   use {
     'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
+    requires = { 
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim' 
+    },
     config = function()
       require("config.neogit")
     end
