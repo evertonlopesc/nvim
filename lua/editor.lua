@@ -53,12 +53,7 @@ set.smartcase = true
 
 -- Style
 set.termguicolors = true
-set.background = "light"
+set.background = "dark"
 
--- g.nord_underline_option = 'none'
--- g.nord_italic = true
--- g.nord_italic_comments = false
--- g.nord_minimal_mode = false
--- g.nord_alternate_backgrounds = false
--- cmd('colorscheme nordic')
-cmd('colorscheme tokyobones')
+g.one_nvim_transparent_bg = true
+cmd('colorscheme one-nvim')

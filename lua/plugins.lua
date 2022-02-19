@@ -110,6 +110,7 @@ return require('packer').startup(function()
   use 'sainnhe/gruvbox-material'
   use 'ayu-theme/ayu-vim'
   use 'rafamadriz/neon'
+  use 'Th3Whit3Wolf/one-nvim'
   use 'andersevenrud/nordic.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use {
