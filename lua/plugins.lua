@@ -107,12 +107,6 @@ return require('packer').startup(function()
 
   -- Colorscheme / Themes
   use 'folke/tokyonight.nvim'
-  use 'ishan9299/nvim-solarized-lua'
-  use 'drewtempelmeyer/palenight.vim'
-  use 'gosukiwi/vim-atom-dark'
-  use 'sainnhe/gruvbox-material'
-  use 'ayu-theme/ayu-vim'
-  use 'rafamadriz/neon'
   use 'Th3Whit3Wolf/one-nvim'
   use 'andersevenrud/nordic.nvim'
   use 'ellisonleao/gruvbox.nvim'
@@ -120,7 +114,6 @@ return require('packer').startup(function()
       "mcchrish/zenbones.nvim",
       requires = "rktjmp/lush.nvim"
   }
-  use 'rmehri01/onenord.nvim'
 
   -- Statusbar
   use {
