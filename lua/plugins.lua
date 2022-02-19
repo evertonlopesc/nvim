@@ -143,11 +143,11 @@ return require('packer').startup(function()
     config = function() require("config.nvim_tree") end
   }
 
-  -- Ident
+  -- Indent
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('config.ident')
+      require('config.indent')
     end
   }
 
