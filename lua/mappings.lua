@@ -85,6 +85,7 @@ local keymap = {
   X = {'<Cmd>qa<CR>', 'quit all'},
   q = {'<Cmd>BufferLinePick<CR>', 'buffer pick'},
   Q = {'<Cmd>wa<CR><Cmd>qa<CR>', 'save quit all'},
+  o = {'<Cmd>Octo actions<CR>', 'Github'},
   p = {
     name = '+packer',
     s = {'<cmd>PackerSync<CR>', 'packer sync'},
