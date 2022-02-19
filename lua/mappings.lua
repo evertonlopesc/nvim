@@ -1,4 +1,3 @@
-
 local function set_keymap(mode, opts, keymaps)
     for _, keymap in ipairs(keymaps) do
         vim.api.nvim_set_keymap(mode, keymap[1], keymap[2], opts)
@@ -35,7 +34,6 @@ set_keymap('n', {noremap=true, silent=true}, {
   {']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
   {'[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 })
-
 
 -- normal wit expr {{{2
 set_keymap('n', {noremap=true, expr=true, silent=true}, {
