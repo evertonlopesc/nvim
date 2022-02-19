@@ -8,16 +8,16 @@ local lualine = require('lualine')
 -- stylua: ignore
 local colors = {
   bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
+  fg       = '#BBC2CF',
+  yellow   = '#FFB86C',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
+  green    = '#98BE65',
   orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  violet   = '#A9A1E1',
+  magenta  = '#C678DD',
+  blue     = '#51AFEF',
+  red      = '#EC5F67',
 }
 
 local conditions = {
@@ -161,27 +161,6 @@ ins_left {
   end,
 }
 
-ins_left {
-  -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  icon = ' LSP:',
-  color = { fg = '#ECBE7B', gui = 'bold' },
-}
-
 ins_right {
   'branch',
   icon = '',
@@ -198,6 +177,27 @@ ins_right {
     removed = { fg = colors.red },
   },
   cond = conditions.hide_in_width,
+}
+
+ins_right {
+  -- Lsp server name .
+  function()
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
+      return msg
+    end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end,
+  icon = 'lsp:',
+  color = { fg = '#BBC2CF', gui = 'bold' },
 }
 
 -- Add components to right sections
