@@ -14,8 +14,8 @@ neogit.setup {
   },
   kind = "tab",
   signs = {
-    section = { ">", "v" },
-    item = { ">", "v" },
+    section = { "", "" },
+    item = { "", "" },
     hunk = { "", "" },
   },
 }
