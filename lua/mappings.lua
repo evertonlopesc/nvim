@@ -165,11 +165,6 @@ local keymap = {
 local visual_keymap = {
   K = {':move \'<-2<CR>gv-gv', 'move line up'},
   J = {':move \'>+1<CR>gv-gv', 'move line down'},
-  c = {
-    name = '+kommentary',
-    i = {"<Plug>kommentary_visual_increase", 'visual increase'},
-    d = {"<Plug>kommentary_visual_decrease", 'visual decrease'},
-  },
   h = {
     name = '+gitsings',
     r = {'<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>', 'visual reset hunk'},
