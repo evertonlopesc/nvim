@@ -56,18 +56,18 @@ set_keymap('x', {noremap=true, silent=true}, {
 
 -- insert {{{1
 set_keymap('i', {noremap=true, silent=true}, {
-    -- alternative esc
-    {'jk', '<Esc>'},
+  -- alternative esc
+  {'jk', '<Esc>'},
 
-    -- navigate display lines
-    {'<Down>', '<Esc>gja'},
-    {'<Up>', '<Esc>gka'},
+  -- navigate display lines
+  {'<Down>', '<Esc>gja'},
+  {'<Up>', '<Esc>gka'},
 })
 
 -- terminal {{{1
 set_keymap('t', {noremap=true, silent=true}, {
-    -- escape in terminal
-    {'<Esc>', [[<C-\><C-n>]]},
+  -- escape in terminal
+  {'<Esc>', [[<C-\><C-n>]]},
 })
 
 -- leader {{{1
@@ -162,8 +162,8 @@ local keymap = {
 }
 
 local visual_keymap = {
-    K = {':move \'<-2<CR>gv-gv', 'move line up'},
-    J = {':move \'>+1<CR>gv-gv', 'move line down'},
+  K = {':move \'<-2<CR>gv-gv', 'move line up'},
+  J = {':move \'>+1<CR>gv-gv', 'move line down'},
   c = {
     name = '+kommentary',
     i = {"<Plug>kommentary_visual_increase", 'visual increase'},
