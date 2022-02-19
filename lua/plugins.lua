@@ -169,19 +169,15 @@ return require('packer').startup(function()
   }
 
   -- Commentary
-  use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
-  }
+  use 'b3nj5m1n/kommentary'
+
   -- Which-key
   use {
-      'AckslD/nvim-whichkey-setup.lua',
-      requires = {'liuchengxu/vim-which-key'},
-      config = function ()
-        require('config.key')
-      end
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key'},
+    config = function ()
+      require('config.key')
+    end
   }
 
   if packer_bootstrap then
