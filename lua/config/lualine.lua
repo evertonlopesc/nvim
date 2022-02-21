@@ -196,7 +196,7 @@ ins_right {
     end
     return msg
   end,
-  icon = 'lsp:',
+  icon = '歷LSP:',
   color = { fg = '#BBC2CF', gui = 'bold' },
 }
 

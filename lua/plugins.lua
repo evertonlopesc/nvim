@@ -107,6 +107,16 @@ return require('packer').startup(function()
       require("config.neogit")
     end
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+    -- tag = 'release' -- To use the latest release
+  }
 
   -- Colorscheme / Themes
   use 'folke/tokyonight.nvim'
