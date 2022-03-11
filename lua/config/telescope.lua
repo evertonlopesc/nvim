@@ -18,9 +18,9 @@ require("telescope").setup {
       "--trim" -- add this value
     }
   },
-  pickers = {
+  --[[ pickers = {
     find_files = {
       find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
     },
-  }
+  } ]]
 }
