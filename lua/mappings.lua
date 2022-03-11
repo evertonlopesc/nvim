@@ -78,6 +78,7 @@ local wk = require('whichkey_setup')
 
 local keymap = {
   -- general
+  a = {'<Cmd>Alpha<CR>', 'startup'},
   w = {'<Cmd>w<CR>', 'save file'},
   W = {'<Cmd>wa<CR>', 'save all'},
   d = {'<Cmd>bdelete<CR>', 'delete buffer'},
