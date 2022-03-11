@@ -200,7 +200,7 @@ return require('packer').startup(function()
   }
 
   -- Octo Github
-  --[[ use {
+  use {
     'pwntester/octo.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
@@ -210,7 +210,7 @@ return require('packer').startup(function()
     config = function ()
       require"octo".setup()
     end
-  } ]]
+  }
 
   if packer_bootstrap then
     require('packer').sync()
