@@ -55,5 +55,5 @@ set.smartcase = true
 set.termguicolors = true
 set.background = "dark"
 
-g.one_nvim_transparent_bg = true
-cmd('colorscheme one-nvim')
+-- g.one_nvim_transparent_bg = true
+-- cmd('colorscheme one-nvim')
