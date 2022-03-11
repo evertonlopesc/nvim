@@ -127,6 +127,12 @@ return require('packer').startup(function()
       "mcchrish/zenbones.nvim",
       requires = "rktjmp/lush.nvim"
   }
+  use {
+    'rmehri01/onenord.nvim',
+    config = function ()
+      require('.config.onenord')
+    end
+  }
 
   -- Statusbar
   use {
