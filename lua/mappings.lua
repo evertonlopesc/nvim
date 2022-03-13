@@ -57,7 +57,7 @@ set_keymap('x', {noremap=true, silent=true}, {
 -- insert {{{1
 set_keymap('i', {noremap=true, silent=true}, {
   -- alternative esc
-  {'jk', '<Esc>'},
+  {'kk', '<Esc>'},
 
   -- navigate display lines
   {'<Down>', '<Esc>gja'},
