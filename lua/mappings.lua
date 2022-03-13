@@ -79,25 +79,10 @@ local wk = require('whichkey_setup')
 local keymap = {
   -- general
   a = {'<Cmd>Alpha<CR>', 'startup'},
-  w = {'<Cmd>w<CR>', 'save file'},
-  W = {'<Cmd>wa<CR>', 'save all'},
   d = {'<Cmd>bdelete<CR>', 'delete buffer'},
-  x = {'<Cmd>q<CR>', 'quit file'},
-  X = {'<Cmd>qa<CR>', 'quit all'},
-  q = {'<Cmd>BufferLinePick<CR>', 'buffer pick'},
-  Q = {'<Cmd>wa<CR><Cmd>qa<CR>', 'save quit all'},
-  o = {'<Cmd>Octo actions<CR>', 'Github'},
-  p = {
-    name = '+packer',
-    s = {'<cmd>PackerSync<CR>', 'packer sync'},
-    i = {'<cmd>PackerInstall<CR>', 'packer install'},
-    u = {'<cmd>PackerUpdate<CR>', 'packer update'},
-  },
-  ["<Space>"] = {'<cmd>set hlsearch!<CR>', 'no highlight'},
-  z = {
-    name = '+fuzzy',
-    b = {"<cmd>lua require('fzf-lua').builtin()<CR>", 'fzf builtin'},
-    f = {"<cmd>lua require('fzf-lua').files()<CR>", 'fzf files'},
+  e = {
+    name = '+emmet',
+    m = {":Emmet ", 'html tag'},
   },
   f = {
     name = '+telescope',
@@ -114,14 +99,21 @@ local keymap = {
     w = {"<cmd>lua require('telescope.builtin').file_browser()<cr>", 'browser'},
     n = {":NvimTreeToggle<CR>", 'NvimTreeToggle open'},
   },
-  n = {
-    name = '+notepad',
-    o = {"<cmd>e note.md<CR>", 'open notepad'},
-    c = {"<cmd>!rm -rf note.md<CR>", 'delete notepad'},
   g = {
     name = '+neogit',
     i = {"<cmd>Neogit<CR>", 'git'}
   },
+  h = {
+    name = '+gitsigns',
+    b = {'<cmd>lua require"gitsigns".blame_line(true)<CR>', 'blame line'},
+    i = {':<C-U>lua require"gitsigns.actions".select_hunk()<CR>', 'select hunk'},
+    p = {'<cmd>lua require"gitsigns".preview_hunk()<CR>', 'preview hunk'},
+    r = {'<cmd>lua require"gitsigns".reset_hunk()<CR>', 'reset hunk'},
+    R = {'<cmd>lua require"gitsigns".reset_buffer()<CR>', 'reset buffer'},
+    s = {'<cmd>lua require"gitsigns".stage_hunk()<CR>', 'stage hunk'},
+    S = {'<cmd>lua require"gitsigns".stage_buffer()<CR>', 'stage buffer'},
+    u = {'<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'undo stage hunk'},
+    U = {'<cmd>lua require"gitsigns".reset_buffer_index()<CR>', 'reset buffer index'},
   },
   l = {
     name = '+lsp',
@@ -137,46 +129,54 @@ local keymap = {
     i = {'<cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation'},
     l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'list workscace folders'},
     L = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'set loclist'},
+    n = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'goto next'},
+    p = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'goto prev'},
     r = {'<cmd>lua vim.lsp.buf.rename()<CR>', 'rename'},
     R = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'remove workspace folder'},
     s = {'<cmd>lua vim.lsp.buf.signature_help()<CR>', 'segnature help'},
     S = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'show line diagnostics'},
     T = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition'},
-    ['[f'] = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'goto prev'},
-    [']f'] = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'goto next'},
     t = {"<cmd>Trouble<CR>", 'trouble lsp'},
   },
-  e = {
-    name = '+emmet',
-    m = {":Emmet ", 'html tag'},
+  n = {
+    name = '+notepad',
+    c = {"<cmd>!rm -rf note.md<CR>", 'delete notepad'},
+    o = {"<cmd>e note.md<CR>", 'open notepad'},
   },
-  h = {
-    name = '+gitsigns',
-    b = {'<cmd>lua require"gitsigns".blame_line(true)<CR>', 'blame line'},
-    p = {'<cmd>lua require"gitsigns".preview_hunk()<CR>', 'preview hunk'},
-    r = {'<cmd>lua require"gitsigns".reset_hunk()<CR>', 'reset hunk'},
-    R = {'<cmd>lua require"gitsigns".reset_buffer()<CR>', 'reset buffer'},
-    s = {'<cmd>lua require"gitsigns".stage_hunk()<CR>', 'stage hunk'},
-    S = {'<cmd>lua require"gitsigns".stage_buffer()<CR>', 'stage buffer'},
-    u = {'<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'undo stage hunk'},
-    U = {'<cmd>lua require"gitsigns".reset_buffer_index()<CR>', 'reset buffer index'},
-    ['ih'] = {':<C-U>lua require"gitsigns.actions".select_hunk()<CR>', 'select hunk'},
+  o = {'<Cmd>Octo actions<CR>', 'octo github'},
+  p = {
+    name = '+packer',
+    s = {'<cmd>PackerSync<CR>', 'packer sync'},
+    i = {'<cmd>PackerInstall<CR>', 'packer install'},
+    u = {'<cmd>PackerUpdate<CR>', 'packer update'},
   },
+  q = {'<Cmd>BufferLinePick<CR>', 'buffer pick'},
+  Q = {'<Cmd>wa<CR><Cmd>qa<CR>', 'save quit all'},
   t = {
     name = '+terminal',
     t = {'<cmd>ToggleTerm<CR>', 'terminal open'},
-  }
+  },
+  w = {'<Cmd>w<CR>', 'save file'},
+  W = {'<Cmd>wa<CR>', 'save all'},
+  x = {'<Cmd>q<CR>', 'quit file'},
+  X = {'<Cmd>qa<CR>', 'quit all'},
+  ["<Space>"] = {'<cmd>set hlsearch!<CR>', 'no highlight'},
+  z = {
+    name = '+fuzzy',
+    b = {"<cmd>lua require('fzf-lua').builtin()<CR>", 'fzf builtin'},
+    f = {"<cmd>lua require('fzf-lua').files()<CR>", 'fzf files'},
+  },
 }
 
 local visual_keymap = {
-  K = {':move \'<-2<CR>gv-gv', 'move line up'},
-  J = {':move \'>+1<CR>gv-gv', 'move line down'},
   h = {
     name = '+gitsings',
     r = {'<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>', 'visual reset hunk'},
     s = {'<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>', 'visual stage hunk'},
     ['ih'] = {':<C-U>lua require"gitsigns.actions".select_hunk()<CR>', 'visual select hunk'},
-  }
+  },
+  K = {':move \'<-2<CR>gv-gv', 'move line up'},
+  J = {':move \'>+1<CR>gv-gv', 'move line down'},
 }
 
 local local_keymap = {
