@@ -5,7 +5,7 @@ end
 
 local cmp = require'cmp'
 local lspkind = require('lspkind')
-require("luasnip/loaders/from_vscode").lazy_load()
+require('luasnip/loaders/from_vscode').lazy_load()
 
 cmp.setup {
   formatting = {
@@ -42,7 +42,7 @@ cmp.setup {
 
   snippet = {
     expand = function(args)
-        local luasnip = require("luasnip")
+        local luasnip = require('luasnip')
         if not luasnip then
             return
         end
