@@ -114,11 +114,14 @@ local keymap = {
     w = {"<cmd>lua require('telescope.builtin').file_browser()<cr>", 'browser'},
     n = {":NvimTreeToggle<CR>", 'NvimTreeToggle open'},
   },
-  ['gi'] = {"<cmd>Neogit<CR>", 'git'},
   n = {
     name = '+notepad',
     o = {"<cmd>e note.md<CR>", 'open notepad'},
     c = {"<cmd>!rm -rf note.md<CR>", 'delete notepad'},
+  g = {
+    name = '+neogit',
+    i = {"<cmd>Neogit<CR>", 'git'}
+  },
   },
   l = {
     name = '+lsp',
