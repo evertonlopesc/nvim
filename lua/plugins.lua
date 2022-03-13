@@ -41,7 +41,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
     config = function ()
-      require("config.telescope")
+      require('config.telescope')
     end
   }
 
@@ -64,36 +64,36 @@ return require('packer').startup(function()
 
   -- LSP
   use {
-    "neovim/nvim-lspconfig",
-    requires = {{"williamboman/nvim-lsp-installer"}},
+    'neovim/nvim-lspconfig',
+    requires = {{'williamboman/nvim-lsp-installer'}},
     config = function()
-      require("config.lsp")
+      require('config.lsp')
     end,
   }
   use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require("trouble").setup {}
+      require('trouble').setup {}
     end
   }
 
   -- Completion
   use {
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
     requires = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets",
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
-      require("config.cmp")
+      require('config.cmp')
     end,
   }
-  use "onsails/lspkind-nvim"
+  use 'onsails/lspkind-nvim'
 
   -- GIT
   use {
@@ -103,7 +103,7 @@ return require('packer').startup(function()
       'sindrets/diffview.nvim' 
     },
     config = function()
-      require("config.neogit")
+      require('config.neogit')
     end
   }
   use {
@@ -123,8 +123,8 @@ return require('packer').startup(function()
   use 'andersevenrud/nordic.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use {
-      "mcchrish/zenbones.nvim",
-      requires = "rktjmp/lush.nvim"
+      'mcchrish/zenbones.nvim',
+      requires = 'rktjmp/lush.nvim'
   }
   use {
     'rmehri01/onenord.nvim',
@@ -138,7 +138,7 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config= function()
-      require("config.lualine")
+      require('config.lualine')
     end
   }
 
@@ -147,7 +147,7 @@ return require('packer').startup(function()
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function ()
-      require("bufferline").setup{}
+      require('bufferline').setup{}
     end
   }
 
@@ -155,7 +155,7 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require("config.nvim_tree") end
+    config = function() require('config.nvim_tree') end
   }
 
   -- Indent
@@ -168,9 +168,9 @@ return require('packer').startup(function()
 
   -- Terminal
   use {
-    "akinsho/toggleterm.nvim",
+    'akinsho/toggleterm.nvim',
     config = function()
-      require("toggleterm").setup{
+      require('toggleterm').setup{
         direction = 'float',
       }
     end
@@ -207,7 +207,7 @@ return require('packer').startup(function()
       'kyazdani42/nvim-web-devicons',
     },
     config = function ()
-      require"octo".setup()
+      require'octo'.setup()
     end
   }
 
