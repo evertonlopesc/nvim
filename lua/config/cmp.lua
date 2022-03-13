@@ -13,9 +13,10 @@ cmp.setup {
       with_text = true,
       maxwidth = 50,
       menu = {
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
+        nvim_lsp = '[LSP]',
+        luasnip = '[LuaSnip]',
+        nvim_lua = '[Lua]',
+        path = '[PATH]',
       }
     }
   },
