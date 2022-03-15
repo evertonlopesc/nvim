@@ -88,20 +88,22 @@ ins_left {
 }
 
 ins_left {
-  -- mode component
   function()
+    return ''
+  end,
+  color = function()
     -- auto change color according to neovims mode
     local mode_color = {
       n = colors.red,
       i = colors.green,
       v = colors.blue,
-      [''] = colors.blue,
+      [''] = colors.blue,
       V = colors.blue,
       c = colors.magenta,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
-      [''] = colors.orange,
+      [''] = colors.orange,
       ic = colors.yellow,
       R = colors.violet,
       Rv = colors.violet,
@@ -113,17 +115,10 @@ ins_left {
       ['!'] = colors.red,
       t = colors.red,
     }
-    vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-    return ''
+    return { fg = mode_color[vim.fn.mode()] }
   end,
   color = 'LualineMode',
   padding = { right = 1 },
-}
-
-ins_left {
-  'filetype',
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.yellow, gui = 'bold' },
 }
 
 ins_left {
@@ -133,14 +128,22 @@ ins_left {
 }
 
 ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
 }
 
-ins_left { 'location' }
-
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left {
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
+}
 
 ins_left {
   'diagnostics',
@@ -162,21 +165,9 @@ ins_left {
 }
 
 ins_right {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-  cond = conditions.hide_in_width,
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.yellow, bg = colors.bg, gui = 'bold' },
 }
 
 ins_right {
@@ -196,7 +187,6 @@ ins_right {
     end
     return msg
   end,
-  icon = '歷LSP:',
   color = { fg = '#BBC2CF', gui = 'bold' },
 }
 
@@ -214,6 +204,10 @@ ins_right {
   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
   color = { fg = colors.yellow, gui = 'bold' },
 }
+
+ins_right { 'location' }
+
+ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_right {
   function()
