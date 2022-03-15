@@ -29,8 +29,8 @@ set_keymap('n', {noremap=true, silent=true}, {
   {'<C-l>', "<C-w>l"},
 
   -- Buffers
-  {'<c-n>', ':BufferLineCycleNext<CR>'},
-  {'<c-p>', ':BufferLineCyclePrev<CR>'},
+  {'<F10>', ':BufferLineCycleNext<CR>'},
+  {'<F9>', ':BufferLineCyclePrev<CR>'},
   {']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
   {'[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
 })
