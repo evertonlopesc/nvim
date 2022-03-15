@@ -33,6 +33,15 @@ set_keymap('n', {noremap=true, silent=true}, {
   {'<F9>', ':BufferLineCyclePrev<CR>'},
   {']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
   {'[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+  {' 1', '<Cmd>BufferLineGoToBuffer 1<CR>'},
+  {' 2', '<Cmd>BufferLineGoToBuffer 2<CR>'},
+  {' 3', '<Cmd>BufferLineGoToBuffer 3<CR>'},
+  {' 4', '<Cmd>BufferLineGoToBuffer 4<CR>'},
+  {' 5', '<Cmd>BufferLineGoToBuffer 5<CR>'},
+  {' 6', '<Cmd>BufferLineGoToBuffer 6<CR>'},
+  {' 7', '<Cmd>BufferLineGoToBuffer 7<CR>'},
+  {' 8', '<Cmd>BufferLineGoToBuffer 8<CR>'},
+  {' 9', '<Cmd>BufferLineGoToBuffer 9<CR>'},
 })
 
 -- normal wit expr {{{2
