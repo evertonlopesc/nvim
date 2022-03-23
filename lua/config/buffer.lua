@@ -49,8 +49,8 @@ require('bufferline').setup {
     separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = false,
     always_show_bufferline = true,
-    --[[ sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
+    sort_by = 'id', function(buffer_a, buffer_b)
       return buffer_a.modified > buffer_b.modified
-    end ]]
+    end,
   }
 }
