@@ -88,6 +88,7 @@ return require('packer').startup(function()
       'saadparwaiz1/cmp_luasnip',
       'L3MON4D3/LuaSnip',
       'rafamadriz/friendly-snippets',
+      'hrsh7th/cmp-buffer',
     },
     config = function()
       require('config.cmp')

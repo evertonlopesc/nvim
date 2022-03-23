@@ -17,6 +17,7 @@ cmp.setup {
         luasnip = '[LuaSnip]',
         nvim_lua = '[Lua]',
         path = '[PATH]',
+        buffer = '[BUFFER]',
       }
     }
   },
@@ -26,6 +27,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'nvim_lua' },
+    { name = 'buffer' },
   }),
 
   mapping = {
