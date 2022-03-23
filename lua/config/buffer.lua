@@ -52,5 +52,59 @@ require('bufferline').setup {
     sort_by = 'id', function(buffer_a, buffer_b)
       return buffer_a.modified > buffer_b.modified
     end,
+    groups = {
+      options = {
+        toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+      },
+      items = {
+        {
+          name = "T", -- Mandatory
+          highlight = {gui = "underline", guisp = "green"}, -- Optional
+          priority = 2, -- determines where it will appear relative to other groups (Optional)
+          icon = "", -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.name:match('%_test') or buf.name:match('%_spec')
+          end,
+        },
+        {
+          name = "B", -- Mandatory
+          highlight = {gui = "underline", guisp = "red"}, -- Optional
+          priority = 3, -- determines where it will appear relative to other groups (Optional)
+          -- icon = "", -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.name:match('%.rb') or buf.name:match('%.lua')
+          end,
+        },
+        {
+          name = "F", -- Mandatory
+          highlight = {gui = "underline", guisp = "yellow"}, -- Optional
+          priority = 4, -- determines where it will appear relative to other groups (Optional)
+          -- icon = "", -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.name:match('%.html') or buf.name:match('%.js') or buf.name:match('%.css') or buf.name:match('%.vue')
+          end,
+        },
+        {
+          name = "D", -- Mandatory
+          highlight = {gui = "underline", guisp = "gray"}, -- Optional
+          priority = 5, -- determines where it will appear relative to other groups (Optional)
+          -- icon = "", -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.name:match('%.md') or buf.name:match('%.txt')
+          end,
+        },
+        {
+          name = "Docs",
+          highlight = {gui = "undercurl", guisp = "green"},
+          auto_close = false,  -- whether or not close this group if it doesn't contain the current buffer
+          matcher = function(buf)
+            return buf.name:match('%.md') or buf.name:match('%.txt')
+          end,
+          separator = { -- Optional
+            style = require('bufferline.groups').separator.tab
+          },
+        }
+      }
+    }
   }
 }
