@@ -19,7 +19,7 @@ require('bufferline').setup {
       end
     end,
     max_name_length = 18,
-    max_prefix_length = 15,
+    max_prefix_length = 18,
     tab_size = 18,
     diagnostics = false, -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
