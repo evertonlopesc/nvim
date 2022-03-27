@@ -119,14 +119,6 @@ return require('packer').startup(function()
   }
 
   -- Colorscheme / Themes
-  use 'folke/tokyonight.nvim'
-  use 'Th3Whit3Wolf/one-nvim'
-  use 'andersevenrud/nordic.nvim'
-  use 'ellisonleao/gruvbox.nvim'
-  use {
-      'mcchrish/zenbones.nvim',
-      requires = 'rktjmp/lush.nvim'
-  }
   use {
     'rmehri01/onenord.nvim',
     config = function ()
