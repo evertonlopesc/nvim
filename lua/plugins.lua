@@ -115,16 +115,17 @@ return require('packer').startup(function()
     config = function()
       require('gitsigns').setup()
     end
-    -- tag = 'release' -- To use the latest release
   }
 
   -- Colorscheme / Themes
+  use { "ellisonleao/gruvbox.nvim" }
   use {
     'rmehri01/onenord.nvim',
-    config = function ()
+    --[[ config = function ()
       require('.config.onenord')
-    end
+    end ]]
   }
+  use { 'https://gitlab.com/yorickpeterse/vim-paper.git' }
 
   -- Statusbar
   use {

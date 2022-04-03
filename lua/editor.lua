@@ -53,4 +53,6 @@ set.smartcase = true
 
 -- Style
 set.termguicolors = true
-set.background = "dark"
+set.background = "light"
+-- cmd([[colorscheme gruvbox]])
+cmd([[colorscheme paper]])
