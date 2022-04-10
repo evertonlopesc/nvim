@@ -63,14 +63,20 @@ return require('packer').startup(function()
   }
   use {
     'rmehri01/onenord.nvim',
-    config = function ()
+    --[[ config = function ()
       require('.config.onenord')
-    end
+    end ]]
   }
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require('config.indent')
+    end
+  }
+  use {
+    "EdenEast/nightfox.nvim", tag = "v1.0.0",
+    config = function ()
+      require('config.fox')
     end
   }
 
