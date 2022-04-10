@@ -19,6 +19,7 @@ set.sidescrolloff = 5
 set.timeoutlen = 300
 set.wildmode = { 'longest', 'list', 'full' }
 set.wildmenu = true
+set.backspace = { "indent", "eol", "start" }
 
 -- wig == wildignore
 set.wig = {
