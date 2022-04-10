@@ -17,7 +17,15 @@ set.previewheight = 12
 set.scrolloff = 5
 set.sidescrolloff = 5
 set.timeoutlen = 300
+set.wildmode = { 'longest', 'list', 'full' }
+set.wildmenu = true
 
+-- wig == wildignore
+set.wig = {
+  '**/node_module/*',
+  '**/coverage/*',
+  '**/.git/*'
+}
 -- Set completeopt to have a better completion experience
 set.completeopt = "menu,menuone,noselect"
 
@@ -53,6 +61,3 @@ set.smartcase = true
 
 -- Style
 set.termguicolors = true
-set.background = "light"
--- cmd([[colorscheme gruvbox]])
-cmd([[colorscheme paper]])
