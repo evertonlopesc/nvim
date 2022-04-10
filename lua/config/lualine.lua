@@ -67,13 +67,15 @@ require('lualine').setup {
           unnamed = '[No Name]', -- Text to show for unnamed buffers.
         },
       },
+    },
+    lualine_c = { 
       'diff',
       'diagnostics'
     },
-    lualine_c = { },
 
     -- RIGHT
     lualine_x = {
+      'branch',
       'filetype',
       'encoding',
       'fileformat',
@@ -82,7 +84,7 @@ require('lualine').setup {
       'progress',
       'location'
     },
-    lualine_z = {'branch'}
+    lualine_z = {''}
   },
   inactive_sections = {
     lualine_a = {},
