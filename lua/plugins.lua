@@ -1,7 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -20,7 +16,8 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Startup
+
+  -- BOOTSTRAP
   use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
@@ -28,15 +25,78 @@ return require('packer').startup(function()
         require'alpha'.setup(require'alpha.themes.startify'.config)
       end
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config= function()
+      require('config.lualine')
+    end
+  }
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function ()
+      require('config.buffer')
+    end
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require('config.nvim_tree') end
+  }
+  use {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('toggleterm').setup{
+        direction = 'float',
+      }
+    end
+  }
 
-  -- Searching Files/Tags
+  -- EDITOR
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('config.treesitter')
+    end
+  }
+  use {
+    'rmehri01/onenord.nvim',
+    config = function ()
+      require('.config.onenord')
+    end
+  }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('config.indent')
+    end
+  }
+
+  -- CONFIGURATION
+  use 'b3nj5m1n/kommentary'
+  use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key'},
+    config = function ()
+      require('config.key')
+    end
+  }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function ()
+      require'colorizer'.setup()
+    end
+  }
+
+  -- SEARCH
   use { 'ibhagwan/fzf-lua',
     requires = {
       'vijaymarupudi/nvim-fzf',
       'kyazdani42/nvim-web-devicons'
     }
   }
-
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
@@ -45,24 +105,7 @@ return require('packer').startup(function()
     end
   }
 
-  -- Syntax highlight
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-      require('config.treesitter')
-    end
-  }
-
-  -- Colorize
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function ()
-      require'colorizer'.setup()
-    end
-  }
-
-  -- LSP
+  -- LANGUAGE
   use {
     'neovim/nvim-lspconfig',
     requires = {{'williamboman/nvim-lsp-installer'}},
@@ -77,8 +120,6 @@ return require('packer').startup(function()
       require('config.trouble')
     end
   }
-
-  -- Completion
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -95,8 +136,22 @@ return require('packer').startup(function()
     end,
   }
   use 'onsails/lspkind-nvim'
+  use {
+    'mhartington/formatter.nvim',
+    config = function ()
+      require('config.format')
+    end
+  }
+  use 'jiangmiao/auto-pairs'
+  use 'vim-ruby/vim-ruby'
+  use {
+    'mattn/emmet-vim',
+    config = function ()
+      require('config.emmet')
+    end
+  }
 
-  -- GIT
+  -- VERSIONAMENT
   use {
     'TimUntersberger/neogit',
     requires = { 
@@ -116,83 +171,6 @@ return require('packer').startup(function()
       require('gitsigns').setup()
     end
   }
-
-  -- Colorscheme / Themes
-  use { "ellisonleao/gruvbox.nvim" }
-  use {
-    'rmehri01/onenord.nvim',
-    --[[ config = function ()
-      require('.config.onenord')
-    end ]]
-  }
-  use { 'https://gitlab.com/yorickpeterse/vim-paper.git' }
-
-  -- Statusbar
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config= function()
-      require('config.lualine')
-    end
-  }
-
-  -- Buffer
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function ()
-      require('config.buffer')
-    end
-  }
-
-  -- Folders
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('config.nvim_tree') end
-  }
-
-  -- Indent
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('config.indent')
-    end
-  }
-
-  -- Terminal
-  use {
-    'akinsho/toggleterm.nvim',
-    config = function()
-      require('toggleterm').setup{
-        direction = 'float',
-      }
-    end
-  }
-
-  -- Developments
-  use 'jiangmiao/auto-pairs'
-  use 'vim-ruby/vim-ruby'
-  use {
-    'mattn/emmet-vim',
-    config = function ()
-      require('config.emmet')
-    end
-  }
-
-  -- Commentary
-  use 'b3nj5m1n/kommentary'
-
-  -- Which-key
-  use {
-    'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key'},
-    config = function ()
-      require('config.key')
-    end
-  }
-
-  -- Octo Github
   use {
     'pwntester/octo.nvim',
     requires = {
