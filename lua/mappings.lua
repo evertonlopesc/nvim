@@ -90,7 +90,7 @@ local wk = require('whichkey_setup')
 
 local keymap = {
   -- general
-  a = {'<Cmd>Alpha<CR>', 'startup'},
+  a = {'<Cmd>Dashboard<CR>', 'startup'},
   b = { ':Format<CR>', 'Format' },
   d = {'<Cmd>bdelete<CR>', 'delete buffer'},
   e = {
