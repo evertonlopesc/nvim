@@ -31,6 +31,11 @@ return require('packer').startup(function()
 
   use 'onsails/lspkind-nvim'
 
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function () require('config.lsp') end
+  }
+
   -- Completion & Snippet
   use {
     'hrsh7th/nvim-cmp',

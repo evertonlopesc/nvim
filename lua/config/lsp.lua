@@ -1,14 +1,24 @@
+-- LSP CONFIG
 local lspconfig = require 'lspconfig'
 local lsp_installer = require 'nvim-lsp-installer'
 
-local function common_on_attach(bufnr)
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+local on_attach = function(client, bufnr)
+  local function common_on_attach(bufnr)
+    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  end
+
+  require "lsp_signature".on_attach({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+      border = "rounded"
+    }
+  }, bufnr)
 end
 
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    -- on_attach = common_on_attach,
+    on_attach = on_attach,
     handlers = {
       ['textDocument/publishDiagnostics'] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = false}
@@ -50,10 +60,12 @@ local servers = {
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    capabilities = capabilities,
+    on_attach = on_attach,
+    capabilities = capabilities
   }
 end
 
+-- TROUBLE CONFIG
 require('trouble').setup {
   position = "bottom", -- position of the list can be: bottom, top, left, right
   height = 10, -- height of the trouble list when position is top or bottom
