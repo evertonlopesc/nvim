@@ -11,7 +11,7 @@ set_keymap('n', {noremap=true, silent=true}, {
   {'\\', ''},
 
   -- Resource
-  {'<F5>', ":luafile %<CR>"},
+  {'<F5>', ":source %<CR>"},
 
   -- TrimWhiteSpace
   {'<F2>', ":%s/\\s*$//<CR>"},
@@ -140,6 +140,7 @@ local keymap = {
     f = {'<cmd>lua vim.lsp.buf.formatting()<CR>', 'formattiong'},
     k = {'<cmd>lua vim.lsp.buf.hover()<CR>', 'hover'},
     i = {'<cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation'},
+    I = {'<cmd>LspInstallInfo<CR>', 'Lsp info'},
     l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'list workscace folders'},
     L = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'set loclist'},
     n = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'goto next'},
