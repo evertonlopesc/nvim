@@ -32,9 +32,9 @@ set_keymap('n', { noremap=true, silent=true }, {
   { '<C-l>', "<C-w>l" },
 
   -- Buffers
-  { '<F6>', ':BufferLineGroupToggle T<CR>' },
-  { '<F7>', ':BufferLineGroupToggle B<CR>' },
-  { '<F8>', ':BufferLineGroupToggle F<CR>' },
+  { '<F6>', ':BufferLineGroupToggle t<CR>' },
+  { '<F7>', ':BufferLineGroupToggle b<CR>' },
+  { '<F8>', ':BufferLineGroupToggle f<CR>' },
   { '<F10>', ':BufferLineCycleNext<CR>' },
   { '<F9>', ':BufferLineCyclePrev<CR>' },
   { ']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'" },
@@ -127,7 +127,13 @@ local keymap = {
     S = { '<cmd>lua require"gitsigns".stage_buffer()<CR>', 'stage buffer' },
     u = { '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'undo stage hunk' },
     U = { '<cmd>lua require"gitsigns".reset_buffer_index()<CR>', 'reset buffer index' },
-   },
+  },
+  h = {
+    name = '+hop',
+    l = { '<cmd>HopLine<CR>' },
+    p = { '<cmd>HopPattern<CR>' },
+    w = { '<cmd>HopWord<CR>' }
+  },
   l = {
     name = '+lsp',
     a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'code action' },
@@ -140,7 +146,6 @@ local keymap = {
     f = { '<cmd>lua vim.lsp.buf.formatting()<CR>', 'formattiong' },
     k = { '<cmd>lua vim.lsp.buf.hover()<CR>', 'hover' },
     i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation' },
-    I = { '<cmd>LspInstallInfo<CR>', 'Lsp info' },
     l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'list workscace folders' },
     L = { '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'set loclist' },
     n = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'goto next' },
