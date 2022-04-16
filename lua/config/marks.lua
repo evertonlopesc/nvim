@@ -1,5 +1,5 @@
 require'marks'.setup {
-  default_mappings = true,
+  default_mappings = false,
   builtin_marks = { ".", "<", ">", "^" },
   cyclic = true,
   force_write_shada = false,
@@ -10,7 +10,13 @@ require'marks'.setup {
     sign = "⚑",
     virt_text = "hello world"
   },
-  mappings = {}
+  mappings = {
+    set_next = 'mx',
+    prev = 'mp',
+    next = 'mn',
+    delete_line = 'md',
+    delete_buf = 'mdb'
+  }
 }
 
 --[[
