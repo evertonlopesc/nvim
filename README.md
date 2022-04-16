@@ -1,73 +1,76 @@
+# Neovim v0.7.0
+![neovim_startup](https://user-images.githubusercontent.com/16230069/163686576-0f9ca977-037a-489a-b039-3172802cd719.png)
+
+
   ## Plugin Manager
   use 'wbthomason/packer.nvim'
 
   ## LSP
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'folke/trouble.nvim'
-  use 'onsails/lspkind-nvim'
-  use 'ray-x/lsp_signature.nvim'
+  - use 'neovim/nvim-lspconfig'
+  - use 'williamboman/nvim-lsp-installer'
+  - use 'folke/trouble.nvim'
+  - use 'onsails/lspkind-nvim'
+  - use 'ray-x/lsp_signature.nvim'
 
   ## Completion & Snippet
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-path'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
-  use 'hrsh7th/cmp-buffer'
+  - use 'hrsh7th/nvim-cmp'
+  - use 'hrsh7th/cmp-nvim-lsp'
+  - use 'hrsh7th/cmp-nvim-lua'
+  - use 'hrsh7th/cmp-path'
+  - use 'saadparwaiz1/cmp_luasnip'
+  - use 'L3MON4D3/LuaSnip'
+  - use 'rafamadriz/friendly-snippets'
+  - use 'hrsh7th/cmp-buffer'
 
   ## Syntax
-  use 'nvim-treesitter/nvim-treesitter'
+  - use 'nvim-treesitter/nvim-treesitter'
 
   ## Terminal integration
-  use 'akinsho/toggleterm.nvim'
+  - use 'akinsho/toggleterm.nvim'
 
   ## Marks
-  use 'chentau/marks.nvim'
+  - use 'chentau/marks.nvim'
 
   ## Fuzzy Finder
-  use 'ibhagwan/fzf-lua'
-  use 'nvim-telescope/telescope.nvim'
+  - use 'ibhagwan/fzf-lua'
+  - use 'nvim-telescope/telescope.nvim'
 
   ## Color
-  use 'norcalli/nvim-colorizer.lua'
+  - use 'norcalli/nvim-colorizer.lua'
 
   ## Colorscheme
-  use "EdenEast/nightfox.nvim", tag = "v1.0.0"
+  - use "EdenEast/nightfox.nvim", tag = "v1.0.0"
 
   ## Tabline
-  use 'akinsho/bufferline.nvim'
+  - use 'akinsho/bufferline.nvim'
 
   ## Statusline
-  use 'tamton-aquib/staline.nvim'
+  - use 'tamton-aquib/staline.nvim'
 
   ## Startup
-  use 'glepnir/dashboard-nvim'
+  - use 'glepnir/dashboard-nvim'
 
   ## Indent
-  use 'lukas-reineke/indent-blankline.nvim'
+  - use 'lukas-reineke/indent-blankline.nvim'
 
   ## File explorer
-  use 'kyazdani42/nvim-tree.lua'
+  - use 'kyazdani42/nvim-tree.lua'
 
   ## Git
-  use 'kdheepak/lazygit.nvim'
-
-  use 'lewis6991/gitsigns.nvim'
+  - use 'kdheepak/lazygit.nvim'
+  - use 'lewis6991/gitsigns.nvim'
 
   ## Motion
-  use 'phaazon/hop.nvim'
+  - use 'phaazon/hop.nvim'
 
   ## GitHub
-  use 'pwntester/octo.nvim'
+  - use 'pwntester/octo.nvim'
 
   ## Editing support
-  use 'jiangmiao/auto-pairs'
+  - use 'jiangmiao/auto-pairs'
 
   ## Formatting
-  use 'mhartington/formatter.nvim'
+  - use 'mhartington/formatter.nvim'
 
   ## Keybinding
-  use 'AckslD/nvim-whichkey-setup.lua'
+  - use 'AckslD/nvim-whichkey-setup.lua'
