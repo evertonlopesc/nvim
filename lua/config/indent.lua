@@ -11,5 +11,6 @@ require("indent_blankline").setup {
     'terminal',
     'dashboard',
     'checkhealt',
+    'packer'
   }
 }
