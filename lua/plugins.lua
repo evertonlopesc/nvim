@@ -59,7 +59,8 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     opt = true,
-    config = function() require('config.syntax') end
+    config = function() require('config.syntax') end,
+    require = { { 'p00f/nvim-ts-rainbow' } }
   }
 
   -- Terminal integration
