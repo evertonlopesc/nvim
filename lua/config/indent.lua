@@ -1,23 +1,15 @@
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
+local opt = vim.opt
+opt.list = true
+opt.listchars:append("space:⋅")
+opt.listchars:append("eol:↴")
 
 require("indent_blankline").setup {
-  space_char_blankline = " ",
-  show_current_context = true,
   show_current_context_start = true,
-    filetype_exclude = {
+  show_end_of_line = true,
+  filetype_exclude = {
     'help',
     'terminal',
     'dashboard',
-    'alpha',
-    'packer',
-    'lspinfo',
-    'TelescopePrompt',
-    'TelescopeResults',
     'checkhealt',
-    'packer',
-    'lspinfo',
-    'LspInstallInfo'
   }
 }
