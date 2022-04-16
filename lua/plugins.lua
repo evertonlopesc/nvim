@@ -1,11 +1,13 @@
+local cmd = vim.cmd
 local fn = vim.fn
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-vim.cmd('packadd packer.nvim')
-vim.cmd([[
+cmd('packadd packer.nvim')
+cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
@@ -48,7 +50,7 @@ return require('packer').startup(function()
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-buffer',
     },
-    config = function() require 'config.completion' end,
+    config = function() require 'config.completion' end
   }
 
   -- Markdown
@@ -197,7 +199,14 @@ return require('packer').startup(function()
   -- No have
 
   -- Motion
-  -- No have
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- Code Runner
   -- No have
