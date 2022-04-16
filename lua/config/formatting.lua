@@ -10,5 +10,68 @@ require('formatter').setup({
        }
       end
     },
+    javascript = {
+      -- prettier
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote'},
+          stdin = true
+        }
+      end
+    },
+    rust = {
+      -- Rustfmt
+      function()
+        return {
+          exe = "rustfmt",
+          args = {"--emit=stdout", "--edition=2021"},
+          stdin = true
+        }
+      end
+    },
+    json = {
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--double-quote"},
+          stdin = true
+        }
+      end
+    },
+    lua = {
+        -- luafmt
+        function()
+          return {
+            exe = "luafmt",
+            args = {"--indent-count", 2, "--stdin"},
+            stdin = true
+          }
+        end
+    },
+    --[[ lua = {
+      function()
+        return {
+          exe = "stylua",
+          args = {
+            "--config-path "
+              .. os.getenv("XDG_CONFIG_HOME")
+              .. "/stylua/stylua.toml",
+            "-",
+          },
+          stdin = true,
+        }
+      end,
+    }, ]]
+    python = {
+      -- Configuration for psf/black
+      function()
+        return {
+          exe = "black", -- this should be available on your $PATH
+          args = { '-' },
+          stdin = true,
+        }
+      end
+    }
   }
 })
