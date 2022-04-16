@@ -173,6 +173,8 @@ return require('packer').startup(function()
   -- No have
 
   -- Git
+  use 'kdheepak/lazygit.nvim'
+
   use {
     'lewis6991/gitsigns.nvim',
     requires = {

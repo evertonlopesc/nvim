@@ -117,7 +117,7 @@ local keymap = {
   },
   g = {
     name = '+neogit',
-    i = {"<cmd>Neogit<CR>", 'git'}
+    i = {"<cmd>LazyGit<CR>", 'git'}
   },
   h = {
     name = '+gitsigns',
