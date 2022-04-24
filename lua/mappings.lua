@@ -13,9 +13,6 @@ set_keymap('n', { noremap=true, silent=true }, {
   -- Resource
   { '<F5>', ":source %<CR>" },
 
-  -- Quickly
-  { '<C-t>', ":MarksListBuf<CR>" },
-
   -- TrimWhiteSpace
   { '<F2>', ":%s/\\s*$//<CR>" },
 

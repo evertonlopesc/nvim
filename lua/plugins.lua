@@ -74,12 +74,6 @@ return require('packer').startup(function()
   -- Register
   -- No have
 
-  -- Marks
-  use {
-    'chentau/marks.nvim',
-    config = function () require('config.marks') end
-  }
-
   -- Fuzzy Finder
   use { 'ibhagwan/fzf-lua',
     requires = {
