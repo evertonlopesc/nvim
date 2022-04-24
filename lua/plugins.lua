@@ -182,6 +182,8 @@ startup(function()
     config = function () require('config.formatting') end
   }
 
+  use 'mattn/emmet-vim'
+
   -- Keybinding
   use {
     'AckslD/nvim-whichkey-setup.lua',
