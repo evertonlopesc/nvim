@@ -1,5 +1,7 @@
 local cmd = vim.cmd
 local fn = vim.fn
+local startup = require 'packer'.startup
+local use = require 'packer'.use
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -14,7 +16,7 @@ cmd([[
   augroup end
 ]])
 
-return require('packer').startup(function()
+startup(function()
   -- Plugin Manager
   use 'wbthomason/packer.nvim'
 
@@ -58,9 +60,6 @@ return require('packer').startup(function()
     config = function() require 'config.completion' end
   }
 
-  -- Markdown
-  -- No have
-
   -- Syntax
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -76,9 +75,6 @@ return require('packer').startup(function()
     config = function() require('toggleterm').setup{ direction = 'float', } end
   }
 
-  -- Register
-  -- No have
-
   -- Fuzzy Finder
   use { 'ibhagwan/fzf-lua',
     requires = {
@@ -93,41 +89,17 @@ return require('packer').startup(function()
     config = function () require('config.fuzzy_finder') end
   }
 
-  -- Note Taking
-  -- No have
-
   -- Color
   use {
     'norcalli/nvim-colorizer.lua',
     config = function () require'colorizer'.setup() end
   }
 
-  -- Colorscheme Creation
-  -- No have
-
   -- Colorscheme
   use {
     "EdenEast/nightfox.nvim", tag = "v1.0.0",
     config = function () require('config.colorscheme') end
   }
-
-  -- Utility
-  -- No have
-
-  -- Icon
-  -- No have
-
-  -- Debugging
-  -- No have
-
-  -- Spellcheck
-  -- No have
-
-  -- Neovim Lua Development
-  -- No have
-
-  -- Fennel
-  -- No have
 
   -- Tabline
   use {
@@ -143,12 +115,6 @@ return require('packer').startup(function()
     config = function () require('config.statusline') end
   }
 
-  -- Statusline component
-  -- No have
-
-  -- Cursorline
-  -- No have
-
   -- Startup
   use {
     'glepnir/dashboard-nvim',
@@ -161,18 +127,12 @@ return require('packer').startup(function()
     config = function() require('config.indent') end
   }
 
-  -- Game
-  -- No have
-
   -- File explorer
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require('config.file_explorer') end
   }
-
-  -- Dependency management
-  -- No have
 
   -- Git
   use 'kdheepak/lazygit.nvim'
@@ -185,17 +145,7 @@ return require('packer').startup(function()
     config = function() require('config.git') end
   }
 
-  -- Programming languages support
-  -- No have
-
   -- Comment
-  use 'b3nj5m1n/kommentary'
-
-  -- Collaborative Editing
-  -- No have
-
-  -- Quickfix
-  -- No have
   use {
     'b3nj5m1n/kommentary',
     config = function () require ('kommentary.config').use_extended_mappings() end
@@ -211,9 +161,6 @@ return require('packer').startup(function()
     end
   }
 
-  -- Code Runner
-  -- No have
-
   -- GitHub
   use {
     'pwntester/octo.nvim',
@@ -226,24 +173,6 @@ return require('packer').startup(function()
     config = function () require'octo'.setup() end
   }
 
-  -- Search
-  -- No have
-
-  -- Scrollbar
-  -- No have
-
-  -- Scrolling
-  -- No have
-
-  -- Mouse
-  -- No have
-
-  -- Project
-  -- No have
-
-  -- Browser integration
-  -- No have
-
   -- Editing support
   use 'jiangmiao/auto-pairs'
 
@@ -253,30 +182,6 @@ return require('packer').startup(function()
     config = function () require('config.formatting') end
   }
 
-  -- Web development
-  -- No have
-
-  -- Media
-  -- No have
-
-  -- Discord Rich Presence
-  -- No have
-
-  -- Command Line
-  -- No have
-
-  -- Session
-  -- No have
-
-  -- Test
-  -- No have
-
-  -- Competitive Programming
-  -- No have
-
-  -- Preconfigured Configuration
-  -- No have
-
   -- Keybinding
   use {
     'AckslD/nvim-whichkey-setup.lua',
@@ -284,31 +189,9 @@ return require('packer').startup(function()
     config = function () require('config.keybinding') end
   }
 
-  -- Tmux
-  -- No have
-
-  -- Remote Development
-  -- No have
-
-  -- Split and Window
-  -- No have
-
-  -- External
-  -- No have
-
-  -- Version Manager
-  -- No have
-
-  -- Boilerplate
-  -- No have
-
-  -- Vim
-  -- No have
-
-  -- Resource
-  -- No have
-
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+
+return startup

@@ -1,9 +1,12 @@
 -- LSP CONFIG
 local lspconfig = require 'lspconfig'
 local lsp_installer = require 'nvim-lsp-installer'
+local lsp_vim = vim.lsp
+local cmd = vim.cmd
 
 require 'luasnip'.filetype_extend("ruby", {"rails"})
 
+local on_attach = function(client, bufnr)
   require "lsp_signature".on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
@@ -16,14 +19,14 @@ lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = on_attach,
     handlers = {
-      ['textDocument/publishDiagnostics'] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = false}
+      ['textDocument/publishDiagnostics'] = lsp_vim.with(
+        lsp_vim.diagnostic.on_publish_diagnostics, {virtual_text = false}
       ),
     },
   }
 
   server:setup(opts)
-  vim.cmd('do User LspAttachBuffers')
+  cmd('do User LspAttachBuffers')
 end)
 
 lsp_installer.settings {
@@ -37,7 +40,7 @@ lsp_installer.settings {
 }
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = lsp_vim.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp

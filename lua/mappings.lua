@@ -112,7 +112,7 @@ local keymap = {
     n = { ":NvimTreeToggle<CR>", 'NvimTreeToggle open' },
    },
   F = {  ':Format<CR>', 'Format'  },
-  g = {
+  h = {
     name = '+git',
     b = { '<cmd>lua require"gitsigns".blame_line()<CR>', 'blame line' },
     g = { '<cmd>LazyGit<CR>', 'git' },
@@ -125,11 +125,11 @@ local keymap = {
     u = { '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'undo stage hunk' },
     U = { '<cmd>lua require"gitsigns".reset_buffer_index()<CR>', 'reset buffer index' },
   },
-  h = {
+  m = {
     name = '+hop',
     l = { '<cmd>HopLine<CR>' },
-    p = { '<cmd>HopPattern<CR>' },
-    w = { '<cmd>HopWord<CR>' }
+    m = { '<cmd>HopWord<CR>' },
+    p = { '<cmd>HopPattern<CR>' }
   },
   l = {
     name = '+lsp',
