@@ -196,6 +196,10 @@ return require('packer').startup(function()
 
   -- Quickfix
   -- No have
+  use {
+    'b3nj5m1n/kommentary',
+    config = function () require ('kommentary.config').use_extended_mappings() end
+  }
 
   -- Motion
   use {
