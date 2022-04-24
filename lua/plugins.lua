@@ -38,6 +38,11 @@ return require('packer').startup(function()
     config = function () require('config.lsp') end
   }
 
+  use {
+    'j-hui/fidget.nvim',
+    config = function () require"fidget".setup{} end
+  }
+
   -- Completion & Snippet
   use {
     'hrsh7th/nvim-cmp',
