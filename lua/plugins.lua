@@ -101,6 +101,12 @@ startup(function()
     config = function () require('config.colorscheme') end
   }
 
+  -- Utility
+  use {
+    'rcarriga/nvim-notify',
+    config = function () require 'config.utility' end
+  }
+
   -- Tabline
   use {
     'akinsho/bufferline.nvim',
