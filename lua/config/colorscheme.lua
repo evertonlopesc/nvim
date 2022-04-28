@@ -9,9 +9,9 @@ require('nightfox').setup({
     styles = {              -- Style to be applied to different syntax groups
       comments = "italic",
       keywords = "bold",
-      types = "italic, bold"
+      types = "italic, bold",
+      functions = "bold",
       --[[ comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
-      functions = "NONE",
       keywords = "NONE",
       numbers = "NONE",
       strings = "NONE",
@@ -24,10 +24,26 @@ require('nightfox').setup({
       search = false,
     },
     modules = {             -- List of various plugins and additional options
-      -- ...
+      cmp = true,
+      gitsigns = true,
+      hop = true,
+      lsp_trouble = true,
+      native_lsp = true,
+      nvimtree = true,
+      telescope = true,
+      treesitter = true,
+      tsrainbow = true,
+      whichkey = true
     },
+    palettes = {
+      all = {
+        red = { base = "#994D62", bright = "#C7647F", dim = "#804052" },
+      },
+      dayfox = {
+        red = { base = "#994D62", bright = "#C7647F", dim = "#804052" },
+      },
+    }
   }
 })
 
--- setup must be called before loading
-vim.cmd("colorscheme dayfox")
+require("nightfox").load('dayfox')
