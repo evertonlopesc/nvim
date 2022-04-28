@@ -4,6 +4,8 @@ local lsp_installer = require 'nvim-lsp-installer'
 local lsp_vim = vim.lsp
 local cmd = vim.cmd
 
+vim.notify = require("notify")
+
 require 'luasnip'.filetype_extend("ruby", {"rails"})
 
 local on_attach = function(client, bufnr)
@@ -41,21 +43,9 @@ lsp_installer.settings {
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = lsp_vim.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require 'cmp_nvim_lsp'.update_capabilities(capabilities)
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {
-  'solargraph',
-  'tailwindcss',
-  'tsserver',
-  'vuels',
-  'html',
-  'cssls',
-  'jsonls',
-  'zk',
-  'rust_analyzer',
-  'emmet_ls'
-}
+local servers = require 'nvim-lsp-installer.servers'
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
