@@ -84,7 +84,7 @@ require('bufferline').setup {
           priority = 3, -- determines where it will appear relative to other groups (optional)
           -- icon = "", -- optional
           matcher = function(buf) -- mandatory
-            return buf.name:match('%.html') or buf.name:match('%.js') or buf.name:match('%.css') or buf.name:match('%.vue')
+            return buf.name:match('%.html') or buf.name:match('%.js') or buf.name:match('%.css') or buf.name:match('%.vue') or buf.name:match('%.erb')
           end,
         },
         {
