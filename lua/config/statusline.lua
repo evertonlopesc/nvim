@@ -9,8 +9,8 @@ require('staline').setup {
 		line_column     = "[%l/%L] :%c 並%p%% ", -- `:h stl` to see all flags.
 
 		fg              = "#000000",  -- Foreground text color.
-		bg              = "#282828",     -- Default background is transparent.
-		inactive_color  = "#303030",
+		bg              = "#7a7a7a",     -- Default background is transparent.
+		inactive_color  = "#001542",
 		inactive_bgcolor = "none",
 		true_colors     = false,       -- true lsp colors.
 		font_active     = "none",     -- "bold", "italic", "bold,italic", etc
