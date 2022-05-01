@@ -1,16 +1,17 @@
--- LSP CONFIG
-local lspconfig = require 'lspconfig'
+-- LSP CONFIG/LSP-INSTALLER
+
 local lsp_installer = require 'nvim-lsp-installer'
 local lsp_vim = vim.lsp
 local cmd = vim.cmd
 
-vim.notify = require("notify")
-
 require 'luasnip'.filetype_extend("ruby", {"rails"})
+
+local capabilities = lsp_vim.protocol.make_client_capabilities()
+capabilities = require 'cmp_nvim_lsp'.update_capabilities(capabilities)
 
 local on_attach = function(client, bufnr)
   require "lsp_signature".on_attach({
-    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    bind = true,
     handler_opts = {
       border = "rounded"
     }
@@ -20,6 +21,7 @@ end
 lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = on_attach,
+    capabilities = capabilities,
     handlers = {
       ['textDocument/publishDiagnostics'] = lsp_vim.with(
         lsp_vim.diagnostic.on_publish_diagnostics, {virtual_text = false}
@@ -40,19 +42,6 @@ lsp_installer.settings {
     }
   }
 }
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = lsp_vim.protocol.make_client_capabilities()
-capabilities = require 'cmp_nvim_lsp'.update_capabilities(capabilities)
-
-local servers = require 'nvim-lsp-installer.servers'
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
-end
 
 -- TROUBLE CONFIG
 require('trouble').setup {
