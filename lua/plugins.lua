@@ -42,7 +42,7 @@ startup(function()
 
   use {
     'j-hui/fidget.nvim',
-    config = function () require"fidget".setup{} end
+    config = function () require'fidget'.setup{} end
   }
 
   -- Completion & Snippet
