@@ -40,11 +40,6 @@ startup(function()
     config = function () require('config.lsp') end
   }
 
-  use {
-    'j-hui/fidget.nvim',
-    config = function () require'fidget'.setup{} end
-  }
-
   -- Completion & Snippet
   use {
     'hrsh7th/nvim-cmp',
@@ -72,7 +67,7 @@ startup(function()
   -- Terminal integration
   use {
     'akinsho/toggleterm.nvim',
-    config = function() require('toggleterm').setup{ direction = 'float', } end
+    config = function() require('toggleterm').setup{ direction = 'float' } end
   }
 
   -- Fuzzy Finder
