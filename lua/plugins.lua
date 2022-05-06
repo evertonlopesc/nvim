@@ -23,21 +23,13 @@ startup(function()
   -- LSP
   use {
     'neovim/nvim-lspconfig',
-    requires = {{'williamboman/nvim-lsp-installer'}},
+    requires = {
+      'williamboman/nvim-lsp-installer',
+      { 'folke/trouble.nvim', 'kyazdani42/nvim-web-devicons' },
+      'onsails/lspkind-nvim',
+      'ray-x/lsp_signature.nvim'
+    },
     config = function() require('config.lsp') end
-  }
-
-  use {
-    'folke/trouble.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('config.lsp') end
-  }
-
-  use 'onsails/lspkind-nvim'
-
-  use {
-    'ray-x/lsp_signature.nvim',
-    config = function () require('config.lsp') end
   }
 
   -- Completion & Snippet
