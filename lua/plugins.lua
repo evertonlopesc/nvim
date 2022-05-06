@@ -51,7 +51,6 @@ startup(function()
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    opt = true,
     config = function() require('config.syntax') end,
     require = { { 'p00f/nvim-ts-rainbow' } }
   }
@@ -104,7 +103,7 @@ startup(function()
   -- Statusline
   use {
     'tamton-aquib/staline.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = {'kyazdani42/nvim-web-devicons',},
     config = function () require('config.statusline') end
   }
 
@@ -157,7 +156,6 @@ startup(function()
   -- GitHub
   use {
     'pwntester/octo.nvim',
-    opt = true,
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
