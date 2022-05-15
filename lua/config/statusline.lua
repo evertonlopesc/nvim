@@ -37,7 +37,7 @@ require('staline').setup {
 		NvimTree = { 'NvimTree', ' ' },
 		packer = { 'Packer',' ' },        -- etc
     Telescope = { 'Telescope', '' },
-    Dashboard = { 'Deshboard', '' }
+    Dashboard = { 'Dashboard', '' },
 	},
 	lsp_symbols = {
 		Error=" ",

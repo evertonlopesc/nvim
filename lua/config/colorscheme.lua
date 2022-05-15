@@ -46,4 +46,4 @@ require('nightfox').setup({
   }
 })
 
-require("nightfox").load('dayfox')
+require("nightfox").load('nightfox')
