@@ -12,6 +12,7 @@ set.number = true
 set.relativenumber = true
 set.hidden = true
 set.laststatus = 3
+set.showtabline = 2
 set.mouse = "a"
 set.previewheight = 12
 set.scrolloff = 5
