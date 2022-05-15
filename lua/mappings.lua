@@ -36,6 +36,8 @@ set_keymap('n', { noremap=true, silent=true }, {
   { '<F9>', ':BufferLineCyclePrev<CR>' },
   { ']c', "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'" },
   { '[c', "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'" },
+  { ',d', ':b#<bar>bd#<CR>' },
+  { ',ca', 'ggVGy' },
   { ',1', '<Cmd>BufferLineGoToBuffer 1<CR>' },
   { ',2', '<Cmd>BufferLineGoToBuffer 2<CR>' },
   { ',3', '<Cmd>BufferLineGoToBuffer 3<CR>' },
