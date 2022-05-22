@@ -167,12 +167,6 @@ startup(function()
   -- Editing support
   use 'jiangmiao/auto-pairs'
 
-  -- Formatting
-  use {
-    'mhartington/formatter.nvim',
-    config = function () require('config.formatting') end
-  }
-
   use 'mattn/emmet-vim'
 
   -- Keybinding

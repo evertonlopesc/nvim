@@ -113,7 +113,6 @@ local keymap = {
     w = { "<cmd>lua require('telescope.builtin').file_browser()<cr>", 'browser' },
     n = { ":NvimTreeToggle<CR>", 'NvimTreeToggle open' },
    },
-  F = {  ':Format<CR>', 'Format'  },
   h = {
     name = '+git',
     b = { '<cmd>lua require"gitsigns".blame_line()<CR>', 'blame line' },
