@@ -75,7 +75,7 @@ require('bufferline').setup {
           priority = 1, -- determines where it will appear relative to other groups (optional)
           -- icon = "", -- optional
           matcher = function(buf) -- mandatory
-            return buf.name:match('%_test') or buf.name:match('%_spec')
+            return buf.name:match('%_test') or buf.name:match('%_spec.rb') or buf.name:match('%_spec')
           end,
         },
         {
