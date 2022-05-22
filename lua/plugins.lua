@@ -27,7 +27,8 @@ startup(function()
       'williamboman/nvim-lsp-installer',
       { 'folke/trouble.nvim', 'kyazdani42/nvim-web-devicons' },
       'onsails/lspkind-nvim',
-      'ray-x/lsp_signature.nvim'
+      'ray-x/lsp_signature.nvim',
+      'RRethy/vim-illuminate'
     },
     config = function() require('config.lsp') end
   }
