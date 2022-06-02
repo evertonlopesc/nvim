@@ -1,48 +1,75 @@
-require('staline').setup {
-	defaults = {
-		left_separator  = "",
-		right_separator = "",
-		cool_symbol     = " ",       -- Change this to override defult OS icon.
-		full_path       = false,
-		mod_symbol      = "  ",
-		lsp_client_symbol = " ",
-		line_column     = "[%l/%L] :%c 並%p%% ", -- `:h stl` to see all flags.
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = auto,
+    component_separators = { left = '|', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    -- LEFT
+    lualine_a = { 'mode', },
+    lualine_b = {
+      {
+        function()
+          return "%f% "
+        end,
+        icon = ' ',
+        file_status = true,
+        path = 0,
+        shorting_target = 40,
+        symbols = {
+          modified = '[+]',      -- Text to show when the file is modified.
+          readonly = ' ',      -- Text to show when the file is non-modifiable or readonly.
+          unnamed = '[No Name]', -- Text to show for unnamed buffers.
+        },
+      },
+      {
+        -- Lsp server name .
+        function()
+          local msg = 'No Active Lsp'
+          local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+          local clients = vim.lsp.get_active_clients()
+          if next(clients) == nil then
+            return msg
+          end
+          for _, client in ipairs(clients) do
+            local filetypes = client.config.filetypes
+            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+              return client.name
+            end
+          end
+          return msg
+        end,
+      },
+    },
+    lualine_c = {
+      'diff',
+      'diagnostics',
+    },
 
-		fg              = "#000000",  -- Foreground text color.
-		bg              = "#7a7a7a",     -- Default background is transparent.
-		inactive_color  = "#001542",
-		inactive_bgcolor = "none",
-		true_colors     = false,       -- true lsp colors.
-		font_active     = "none",     -- "bold", "italic", "bold,italic", etc
-		branch_symbol   = " ",
-	},
-	mode_colors = {
-		n = "#FFB86C",
-		i = "#986fec",
-		c = "#E27D60",
-		v = "#4799EB",   -- etc..
-	},
-	mode_icons = {
-		n = " ",
-		i = " ",
-		c = " ",
-		v = " ",   -- etc..
-	},
-	sections = {
-		left = { '- ', '-mode', 'left_sep_double', ' ', 'branch' },
-		mid  = { '%f%"' },
-		right = { 'lsp_name', ' ','lsp',' ','cool_symbol','right_sep_double', '-line_column' },
-	},
-	special_table = {
-		NvimTree = { 'NvimTree', ' ' },
-		packer = { 'Packer',' ' },        -- etc
-    Telescope = { 'Telescope', '' },
-    Dashboard = { 'Dashboard', '' },
-	},
-	lsp_symbols = {
-		Error=" ",
-		Info=" ",
-		Warn=" ",
-		Hint="",
-	},
+    -- RIGHT
+    lualine_x = {
+      'branch',
+      'filetype',
+      'encoding',
+      'fileformat',
+    },
+    lualine_y = {
+      'progress',
+      'location'
+    },
+    lualine_z = {''}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
 }
