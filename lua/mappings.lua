@@ -1,17 +1,18 @@
 vim.g.mapleader = ' '
+local opts = { noremap = true, silent = true }
 
 -- vim.keymap.set('', '', "", {})
 -- Reload file lua
 vim.keymap.set('n', '<leader>rr', ":source % <CR>", {})
 
 -- TrailingWhiteSpace
-vim.keymap.set('n', '<F2>', ":%s/\\s*$//<CR>", {})
+vim.keymap.set('n', '<F2>', ":%s/\\s*$//<CR>", opts)
 
 -- Resizes
-vim.keymap.set('n', '<Down>', ":resize -5<CR>")
-vim.keymap.set('n', '<Up>', ":resize +5<CR>")
-vim.keymap.set('n', '<Left>', ":vertical resize -5<CR>")
-vim.keymap.set('n', '<Right>', ":vertical resize +5<CR>")
+vim.keymap.set('n', '<Down>', ":resize -5<CR>", opts)
+vim.keymap.set('n', '<Up>', ":resize +5<CR>", opts)
+vim.keymap.set('n', '<Left>', ":vertical resize -5<CR>", opts)
+vim.keymap.set('n', '<Right>', ":vertical resize +5<CR>", opts)
 
 -- move between split
 vim.keymap.set('n', '<C-h>', "<C-w>h", {})
@@ -52,6 +53,7 @@ vim.keymap.set('n', ',7', ':BufferLineGoToBuffer 7<CR>')
 vim.keymap.set('n', ',8', ':BufferLineGoToBuffer 8<CR>')
 vim.keymap.set('n', ',9', ':BufferLineGoToBuffer 9<CR>')
 
+-- moving in wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
@@ -79,7 +81,10 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 -- open dashboard
 vim.keymap.set('n', '<leader>a', ':Dashboard<CR>', {})
 
+-- open emmet
 vim.keymap.set('n', '<leader>y', ":Emmet ", {})
+
+-- files explores
 vim.keymap.set('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<cr>", {})
 vim.keymap.set('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>", {})
 vim.keymap.set('n', '<leader>fo', ":lua require('telescope.builtin').oldfiles()<cr>", {})
@@ -89,17 +94,20 @@ vim.keymap.set('n', '<leader>fm', ":lua require('fzf-lua').builtin()<CR>", {})
 vim.keymap.set('n', '<leader>fz', ":lua require('fzf-lua').files()<CR>", {})
 vim.keymap.set('n', '<leader>mm', ':HopWord<CR>')
 
+-- lsp
 vim.keymap.set('n', '<leader>lc', ':LspInstallInfo<CR>', {})
+vim.keymap.set('n', '<leader>lt', ":Trouble<CR>", {})
 
+-- git
 vim.keymap.set('n', '<leader>gb', ':lua require"gitsigns".blame_line()<CR>', {})
 vim.keymap.set('n', '<leader>gl', ':LazyGit<CR>', {})
 vim.keymap.set('n', '<leader>go', ':Octo actions<CR>', {})
 
-vim.keymap.set('n', '<leader>lt', ":Trouble<CR>", {})
-
+-- notes
 vim.keymap.set('n', '<leader>nd', ":!rm -rf note.md<CR>", {})
 vim.keymap.set('n', '<leader>no', ":e note.md<CR>", {})
 
+-- packer
 vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>', {})
 vim.keymap.set('n', '<leader>pi', ':PackerInstall<CR>', {})
 vim.keymap.set('n', '<leader>pu', ':PackerUpdate<CR>', {})
