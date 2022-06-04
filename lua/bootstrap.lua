@@ -1,6 +1,4 @@
 local set = vim.opt -- Enable options set global, window and buffer settings.
-local cmd = vim.cmd
-local g = vim.g
 
 -- General
 set.synmaxcol = 1000
