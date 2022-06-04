@@ -170,13 +170,6 @@ startup(function()
 
   use 'mattn/emmet-vim'
 
-  -- Keybinding
-  use {
-    'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key'},
-    config = function () require('config.keybinding') end
-  }
-
   if packer_bootstrap then
     require('packer').sync()
   end
