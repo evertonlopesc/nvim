@@ -28,8 +28,7 @@ startup(function()
       'onsails/lspkind-nvim',
       'ray-x/lsp_signature.nvim',
       'RRethy/vim-illuminate'
-    },
-    config = function() require('config.lsp') end
+    }
   }
 
   -- Completion & Snippet
