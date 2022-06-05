@@ -1,11 +1,10 @@
 local cmd = vim.cmd
-local fn = vim.fn
 local startup = require 'packer'.startup
 local use = require 'packer'.use
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 cmd('packadd packer.nvim')
@@ -44,15 +43,13 @@ startup(function()
       'L3MON4D3/LuaSnip',
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-buffer',
-    },
-    config = function() require 'config.completion' end
+    }
   }
 
   -- Syntax
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function() require('config.syntax') end,
     require = { { 'p00f/nvim-ts-rainbow' } }
   }
 
@@ -72,8 +69,7 @@ startup(function()
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function () require('config.fuzzy_finder') end
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 
   -- Color
@@ -85,46 +81,33 @@ startup(function()
   -- Colorscheme
   use {
     "EdenEast/nightfox.nvim", tag = "v1.0.0",
-    config = function () require('config.colorscheme') end
+    config = function () require("nightfox").load('dayfox') end
   }
 
   -- Utility
-  use {
-    'rcarriga/nvim-notify',
-    config = function () require 'config.utility' end
-  }
+  use 'rcarriga/nvim-notify'
 
   -- Tabline
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function () require('config.tabline') end
+    tag = "v2.*"
   }
 
   -- Statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function () require('config.statusline') end
-  }
+  use 'nvim-lualine/lualine.nvim'
 
   -- Startup
-  use {
-    'glepnir/dashboard-nvim',
-    config = function () require('config.startup') end
-  }
+  use  'glepnir/dashboard-nvim'
 
   -- Indent
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function() require('config.indent') end
-  }
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- File explorer
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('config.file_explorer') end
+    config = function () require('nvim-tree').setup() end
   }
 
   -- Git
@@ -135,7 +118,7 @@ startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    config = function() require('config.git') end
+    config = function() require('gitsigns').setup() end
   }
 
   -- Comment
