@@ -95,7 +95,7 @@ vim.keymap.set('n', '<leader>fz', ":lua require('fzf-lua').files()<CR>", {})
 vim.keymap.set('n', '<C-n>', ":NvimTreeToggle<CR>", {})
 
 -- word search
-vim.keymap.set('n', '<leader>mm', ':HopWord<CR>')
+vim.keymap.set('n', '<leader>m', ':HopWord<CR>')
 
 -- lsp
 vim.keymap.set('n', '<leader>lc', ':LspInstallInfo<CR>', {})
