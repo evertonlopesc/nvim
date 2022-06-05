@@ -90,9 +90,11 @@ vim.keymap.set('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()
 vim.keymap.set('n', '<leader>fo', ":lua require('telescope.builtin').oldfiles()<cr>", {})
 vim.keymap.set('n', '<leader>fk', ":lua require('telescope.builtin').keymaps()<cr>", {})
 vim.keymap.set('n', '<leader>ft', ":Telescope <CR>", {})
-vim.keymap.set('n', '<leader>fn', ":NvimTreeToggle<CR>", {})
 vim.keymap.set('n', '<leader>fm', ":lua require('fzf-lua').builtin()<CR>", {})
 vim.keymap.set('n', '<leader>fz', ":lua require('fzf-lua').files()<CR>", {})
+vim.keymap.set('n', '<C-n>', ":NvimTreeToggle<CR>", {})
+
+-- word search
 vim.keymap.set('n', '<leader>mm', ':HopWord<CR>')
 
 -- lsp
