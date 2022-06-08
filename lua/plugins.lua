@@ -2,9 +2,15 @@ local cmd = vim.cmd
 local startup = require 'packer'.startup
 local use = require 'packer'.use
 
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = vim.fn.system({
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim', install_path
+  })
 end
 
 cmd('packadd packer.nvim')
@@ -55,7 +61,7 @@ startup(function()
   -- Terminal integration
   use {
     'akinsho/toggleterm.nvim',
-    config = function() require('toggleterm').setup{ direction = 'float' } end
+    config = function() require('toggleterm').setup { direction = 'float' } end
   }
 
   -- Fuzzy Finder
@@ -74,13 +80,13 @@ startup(function()
   -- Color
   use {
     'norcalli/nvim-colorizer.lua',
-    config = function () require'colorizer'.setup() end
+    config = function() require 'colorizer'.setup() end
   }
 
   -- Colorscheme
   use {
     "EdenEast/nightfox.nvim", tag = "v1.0.0",
-    config = function () require("nightfox").load('dayfox') end
+    config = function() require("nightfox").load('nightfox') end
   }
 
   -- Utility
@@ -97,7 +103,7 @@ startup(function()
   use 'nvim-lualine/lualine.nvim'
 
   -- Startup
-  use  'glepnir/dashboard-nvim'
+  use 'glepnir/dashboard-nvim'
 
   -- Indent
   use 'lukas-reineke/indent-blankline.nvim'
@@ -106,7 +112,7 @@ startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function () require('nvim-tree').setup() end
+    config = function() require('nvim-tree').setup() end
   }
 
   -- Git
@@ -123,7 +129,7 @@ startup(function()
   -- Comment
   use {
     'b3nj5m1n/kommentary',
-    config = function () require ('kommentary.config').use_extended_mappings() end
+    config = function() require('kommentary.config').use_extended_mappings() end
   }
 
   -- Motion
@@ -132,7 +138,7 @@ startup(function()
     branch = 'v1', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
 
@@ -144,7 +150,7 @@ startup(function()
       'nvim-telescope/telescope.nvim',
       'kyazdani42/nvim-web-devicons',
     },
-    config = function () require'octo'.setup() end
+    config = function() require 'octo'.setup() end
   }
 
   -- Editing support
