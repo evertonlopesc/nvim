@@ -1,76 +1,40 @@
 # Neovim v0.7.0
 ![neovim_startup](https://user-images.githubusercontent.com/16230069/163686576-0f9ca977-037a-489a-b039-3172802cd719.png)
 
+## Main plugins
 
-  ## Plugin Manager
-  use 'wbthomason/packer.nvim'
+### Plugin Manager
+use 'wbthomason/packer.nvim'
 
-  ## LSP
-  - use 'neovim/nvim-lspconfig'
-  - use 'williamboman/nvim-lsp-installer'
-  - use 'folke/trouble.nvim'
-  - use 'onsails/lspkind-nvim'
-  - use 'ray-x/lsp_signature.nvim'
+### LSP
+- use 'neovim/nvim-lspconfig'
+- use 'williamboman/nvim-lsp-installer'
 
-  ## Completion & Snippet
-  - use 'hrsh7th/nvim-cmp'
-  - use 'hrsh7th/cmp-nvim-lsp'
-  - use 'hrsh7th/cmp-nvim-lua'
-  - use 'hrsh7th/cmp-path'
-  - use 'saadparwaiz1/cmp_luasnip'
-  - use 'L3MON4D3/LuaSnip'
-  - use 'rafamadriz/friendly-snippets'
-  - use 'hrsh7th/cmp-buffer'
+### Completion & Snippet
+- use 'hrsh7th/nvim-cmp'
+- use 'L3MON4D3/LuaSnip'
 
-  ## Syntax
-  - use 'nvim-treesitter/nvim-treesitter'
+### Syntax
+- use 'nvim-treesitter/nvim-treesitter'
 
-  ## Terminal integration
-  - use 'akinsho/toggleterm.nvim'
+### Fuzzy Finder
+- use 'ibhagwan/fzf-lua'
+- use 'nvim-telescope/telescope.nvim'
 
-  ## Marks
-  - use 'chentau/marks.nvim'
+### Colorscheme
+- use "EdenEast/nightfox.nvim", tag = "v1.0.0"
 
-  ## Fuzzy Finder
-  - use 'ibhagwan/fzf-lua'
-  - use 'nvim-telescope/telescope.nvim'
+### Tabline
+- use 'akinsho/bufferline.nvim'
 
-  ## Color
-  - use 'norcalli/nvim-colorizer.lua'
+### Statusline
+- use 'nvim-lualine/lualine.nvim'
 
-  ## Colorscheme
-  - use "EdenEast/nightfox.nvim", tag = "v1.0.0"
+### Startup
+- use 'glepnir/dashboard-nvim'
 
-  ## Tabline
-  - use 'akinsho/bufferline.nvim'
+### File explorer
+- use 'kyazdani42/nvim-tree.lua'
 
-  ## Statusline
-  - use 'tamton-aquib/staline.nvim'
-
-  ## Startup
-  - use 'glepnir/dashboard-nvim'
-
-  ## Indent
-  - use 'lukas-reineke/indent-blankline.nvim'
-
-  ## File explorer
-  - use 'kyazdani42/nvim-tree.lua'
-
-  ## Git
-  - use 'kdheepak/lazygit.nvim'
-  - use 'lewis6991/gitsigns.nvim'
-
-  ## Motion
-  - use 'phaazon/hop.nvim'
-
-  ## GitHub
-  - use 'pwntester/octo.nvim'
-
-  ## Editing support
-  - use 'jiangmiao/auto-pairs'
-
-  ## Formatting
-  - use 'mhartington/formatter.nvim'
-
-  ## Keybinding
-  - use 'AckslD/nvim-whichkey-setup.lua'
+### Git
+- use 'lewis6991/gitsigns.nvim'
