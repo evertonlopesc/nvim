@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 
 -- vim.keymap.set('', '', "", {})
 -- Reload file lua
-vim.keymap.set('n', '<leader>rr', ":source % <CR>", {})
+vim.keymap.set('n', '<leader>rr', ":source ~/.config/nvim/init.lua <CR>", {})
 
 -- TrailingWhiteSpace
 vim.keymap.set('n', '<F2>', ":%s/\\s*$//<CR>", opts)
