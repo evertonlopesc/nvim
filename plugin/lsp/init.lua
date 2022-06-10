@@ -41,21 +41,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<leader>le', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting, bufopts)
-
-  vim.api.nvim_create_autocmd("CursorHold", {
-    buffer = bufnr,
-    callback = function ()
-      local opts = {
-        focusable = false,
-        close_events = { "BuffLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-        border = 'rounded',
-        source = 'always',
-        prefix = ' ',
-        scope = 'cursor',
-      }
-      vim.diagnostic.open_float(nil, opts)
-    end
-  })
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -68,6 +53,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     return vim.b[bufnr].show_signs == true
   end,
   update_in_insert = false,
+})
+
+local on_references = vim.lsp.handlers["textDocument/references"]
+vim.lsp.handlers["textDocument/references"] = vim.lsp.with(
+  on_references, {
+  -- Use location list instead of quickfix list
+  loclist = true,
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
@@ -165,5 +157,8 @@ lspconfig.tsserver.setup {
   capabilities = capabilities
 }
 lspconfig.vuels.setup {}
-lspconfig.zk.setup {}
+lspconfig.zk.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 lspconfig.rust_analyzer.setup {}
