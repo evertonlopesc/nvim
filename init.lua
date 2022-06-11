@@ -1,12 +1,10 @@
-require ("plugins")
-require ("mappings")
-
 -- Options summary
 vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.cursorline = true
 vim.opt.encoding = "UTF-8"
+vim.opt.expandtab = true
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.history = 5000
