@@ -9,22 +9,19 @@ require("nvim-lsp-installer").setup({
   }
 })
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local lspconfig = require('lspconfig')
+local lsp_protocal = vim.lsp.protocol.make_client_capabilities()
+local lsp_handlers = vim.lsp.handlers
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>lp', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>lsl', vim.diagnostic.setloclist, opts)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
@@ -43,11 +40,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting, bufopts)
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+lsp_handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
   virtual_text = {
-    spacing = 4,
+    spacing = 2,
   },
   signs = function(namespace, bufnr)
     return vim.b[bufnr].show_signs == true
@@ -55,15 +52,15 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   update_in_insert = false,
 })
 
-local on_references = vim.lsp.handlers["textDocument/references"]
-vim.lsp.handlers["textDocument/references"] = vim.lsp.with(
+local on_references = lsp_handlers["textDocument/references"]
+lsp_handlers["textDocument/references"] = vim.lsp.with(
   on_references, {
   -- Use location list instead of quickfix list
   loclist = true,
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
+lsp_handlers["textDocument/hover"] = vim.lsp.with(
+  lsp_handlers.hover, {
   border = "single"
 })
 
@@ -99,10 +96,7 @@ local function goto_definition(split_cmd)
   return handler
 end
 
-vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
-
-local lspconfig = require('lspconfig')
-local lsp_protocal = vim.lsp.protocol.make_client_capabilities()
+lsp_handlers["textDocument/definition"] = goto_definition('split')
 
 local capabilities = lsp_protocal
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -112,7 +106,7 @@ for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach(),
     capabilities = capabilities,
-    handlers = handlers
+    handlers = lsp_handlers
   }
 end
 
@@ -123,6 +117,7 @@ table.insert(runtime_path, 'lua/?/init.lua')
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  handlers = lsp_handlers,
   settings = {
     Lua = {
       runtime = {
@@ -146,19 +141,50 @@ lspconfig.solargraph.setup {
   init_options = { formatting = true },
   on_attach = on_attach,
   capabilities = capabilities,
+  handlers = lsp_handlers
 }
-lspconfig.html.setup {}
-lspconfig.emmet_ls.setup {}
-lspconfig.cssls.setup {}
-lspconfig.clangd.setup {}
-lspconfig.jsonls.setup {}
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
+lspconfig.emmet_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
+lspconfig.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
 lspconfig.tsserver.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  handlers = lsp_handlers
 }
-lspconfig.vuels.setup {}
+lspconfig.vuels.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
 lspconfig.zk.setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  handlers = lsp_handlers
 }
-lspconfig.rust_analyzer.setup {}
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  handlers = lsp_handlers
+}
