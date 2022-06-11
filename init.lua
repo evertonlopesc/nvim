@@ -25,6 +25,7 @@ vim.opt.spell = true
 vim.opt.spelllang = "en"
 vim.opt.syntax = "enable"
 vim.opt.termguicolors = true
+vim.opt.timeoutlen = 300
 
 vim.opt.wig = {
   '**/node_module/*',
