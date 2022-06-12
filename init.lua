@@ -1,3 +1,5 @@
+require("lua.plugins")
+
 -- Options summary
 vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
