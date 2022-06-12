@@ -138,7 +138,6 @@ lspconfig.sumneko_lua.setup {
 }
 
 lspconfig.solargraph.setup {
-  init_options = { formatting = true },
   on_attach = on_attach,
   capabilities = capabilities,
   handlers = lsp_handlers
