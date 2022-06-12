@@ -177,7 +177,7 @@ lspconfig.vuels.setup {
   capabilities = capabilities,
   handlers = lsp_handlers
 }
-lspconfig.zk.setup {
+lspconfig.prosemd_lsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   handlers = lsp_handlers
