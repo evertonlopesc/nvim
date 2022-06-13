@@ -60,7 +60,8 @@ lsp_handlers["textDocument/references"] = vim.lsp.with(
 })
 
 lsp_handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp_handlers.hover, {
+  lsp_handlers.hover, {
+  -- Use a sharp border with `FloatBorder` highlights
   border = "single"
 })
 
@@ -110,6 +111,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- SETUP
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
