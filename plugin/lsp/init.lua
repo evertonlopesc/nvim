@@ -60,7 +60,7 @@ lsp_handlers["textDocument/references"] = vim.lsp.with(
 })
 
 lsp_handlers["textDocument/hover"] = vim.lsp.with(
-  lsp_handlers.hover, {
+  vim.lsp_handlers.hover, {
   border = "single"
 })
 
