@@ -1,4 +1,5 @@
-require("lua.plugins")
+require("plugins")
+require("lsp_progress_update")
 
 -- Options summary
 vim.opt.autoindent = true
