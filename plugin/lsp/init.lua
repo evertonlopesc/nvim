@@ -38,6 +38,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<leader>le', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>lf', vim.lsp.buf.formatting, bufopts)
+
+  require "lsp_signature".on_attach()
 end
 
 lsp_handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
