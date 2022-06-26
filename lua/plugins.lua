@@ -168,6 +168,15 @@ startup(function()
 
   use 'mattn/emmet-vim'
 
+  use {
+    'vinibispo/ruby.nvim',
+    ft = { 'ruby' }, -- optional
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter'
+    }
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
