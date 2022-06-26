@@ -113,6 +113,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+local lsp_flags = {
+  debounce_text_changes = 150,
+}
+
 -- SETUP
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -144,50 +148,60 @@ lspconfig.sumneko_lua.setup {
 lspconfig.solargraph.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.html.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.emmet_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.jsonls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.vuels.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.prosemd_lsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  handlers = lsp_handlers
+  handlers = lsp_handlers,
+  flags = lsp_flags
 }
