@@ -10,6 +10,7 @@ use 'wbthomason/packer.nvim'
 - use 'neovim/nvim-lspconfig'
 - use 'williamboman/nvim-lsp-installer'
 
+
 ### Completion & Snippet
 - use 'hrsh7th/nvim-cmp'
 - use 'L3MON4D3/LuaSnip'
