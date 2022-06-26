@@ -3,7 +3,7 @@ local db = require("dashboard")
 db.custom_center = {
   {
     icon = ' ',
-    desc = 'New file                     ',
+    desc = 'New file                 ',
     shortcut = 'enter',
     action = 'enew'
   },
