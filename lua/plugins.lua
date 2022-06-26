@@ -86,7 +86,12 @@ startup(function()
   -- Colorscheme
   use {
     "EdenEast/nightfox.nvim", tag = "v1.0.0",
-    config = function() require("nightfox").load('nightfox') end
+    config = function()
+      require("nightfox").setup {
+        transparent = true
+      }
+      require("nightfox").load('nightfox')
+    end
   }
 
   -- Utility
