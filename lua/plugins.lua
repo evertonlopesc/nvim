@@ -116,8 +116,6 @@ startup(function()
   }
 
   -- Git
-  use 'kdheepak/lazygit.nvim'
-
   use {
     'lewis6991/gitsigns.nvim',
     requires = {
