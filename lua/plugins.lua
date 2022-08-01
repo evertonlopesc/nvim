@@ -177,6 +177,16 @@ startup(function()
     }
   }
 
+  use {
+    'ellisonleao/glow.nvim',
+    config = function()
+      require('glow').setup({
+        style = "light",
+        width = 120,
+      })
+    end
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
