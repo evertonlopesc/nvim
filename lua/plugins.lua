@@ -187,6 +187,19 @@ startup(function()
     end
   }
 
+  use {
+    "Massolari/forem.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    },
+    config = function()
+      require 'forem-nvim'.setup {
+        api_key = "5tJYZZL3bcrKsHYmYgSfabUc" -- Your API Key
+      }
+    end
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
