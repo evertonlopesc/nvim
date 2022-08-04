@@ -61,7 +61,7 @@ startup(function()
   -- Terminal integration
   use {
     'akinsho/toggleterm.nvim',
-    config = function() require('toggleterm').setup { direction = 'float' } end
+    tag = 'v2.*',
   }
 
   -- Fuzzy Finder
