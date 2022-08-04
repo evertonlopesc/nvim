@@ -24,7 +24,22 @@ keymap('n', '<C-l>', "<C-w>l", {})
 keymap('n', ',ca', 'ggVGy')
 
 -- open terminal
-keymap('n', '<leader>tt', ':ToggleTerm<CR>', {})
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = 'lazygit', direction = 'tab', hidden = true })
+local w3m = Terminal:new({ cmd = 'w3m https://google.com', direction = 'vertical', hidden = true })
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+function _w3m_toggle()
+  w3m:toggle()
+end
+
+keymap('n', '<c-t>', '<Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
+keymap('t', '<c-t>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
+keymap('n', '<leader>gg', '<Cmd>lua _lazygit_toggle()<CR>')
+keymap('n', '<leader>gw', '<Cmd>lua _w3m_toggle()<CR>')
 
 -- save files
 keymap('n', '<leader>w', ':w<CR>', {})
@@ -84,6 +99,9 @@ keymap('n', '<leader>a', ':Dashboard<CR>', {})
 -- open emmet
 keymap('n', '<leader>y', ":Emmet ", {})
 
+-- open glow
+keymap('n', '<leader>,', ':Glow<CR>', {})
+
 -- files explores
 keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<cr>", {})
 keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>", {})
@@ -92,7 +110,8 @@ keymap('n', '<leader>fk', ":lua require('telescope.builtin').keymaps()<cr>", {})
 keymap('n', '<leader>ft', ":Telescope <CR>", {})
 keymap('n', '<leader>fz', ":lua require('fzf-lua').builtin()<CR>", {})
 keymap('n', '<leader>fm', ":lua require('fzf-lua').files()<CR>", {})
-keymap('n', '<C-n>', ":NvimTreeToggle<CR>", {})
+keymap('n', '<C-n>', ":Neotree<CR>", {})
+keymap('n', '<leader>fb', ":Neotree buffers<CR>", {})
 
 -- word search
 keymap('n', '<leader>m', ':HopWord<CR>')
