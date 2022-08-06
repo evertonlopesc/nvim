@@ -26,13 +26,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
   vim.keymap.set('n', '<leader>ltd', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
@@ -57,7 +51,6 @@ lsp_handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 local on_references = lsp_handlers["textDocument/references"]
 lsp_handlers["textDocument/references"] = vim.lsp.with(
   on_references, {
-  -- Use location list instead of quickfix list
   loclist = true,
 })
 
