@@ -24,22 +24,8 @@ keymap('n', '<C-l>', "<C-w>l", {})
 keymap('n', ',ca', 'ggVGy')
 
 -- open terminal
-local Terminal = require('toggleterm.terminal').Terminal
-local w3m = Terminal:new({ cmd = 'w3m https://google.com', direction = 'vertical', hidden = true })
-local lazygit = Terminal:new({ cmd = 'lazygit', direction = 'tab', hidden = true, })
-
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
-function _w3m_toggle()
-  w3m:toggle()
-end
-
 keymap('n', '<c-t>', '<Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
 keymap('t', '<c-t>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
-keymap('n', '<leader>tt', '<Cmd>lua _lazygit_toggle()<CR>')
-keymap('n', '<leader>tw', '<Cmd>lua _w3m_toggle()<CR>')
 
 -- save files
 keymap('n', '<leader>w', ':w<CR>', {})
