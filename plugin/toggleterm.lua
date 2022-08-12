@@ -8,6 +8,7 @@ require("toggleterm").setup {
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', '<ESC>', opts)
+  vim.keymap.set('t', '\\\\', '<C-\\><C-n>', opts)
   vim.keymap.set('t', '<C-LEFT>', [[<Cmd>wincmd h<CR>]], opts)
   vim.keymap.set('t', '<C-DOWN>', [[<Cmd>wincmd j<CR>]], opts)
   vim.keymap.set('t', '<C-UP>', [[<Cmd>wincmd k<CR>]], opts)
