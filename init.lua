@@ -8,6 +8,8 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.cursorline = true
 vim.opt.encoding = "UTF-8"
 vim.opt.expandtab = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.history = 5000
@@ -29,7 +31,15 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
 
 vim.opt.wig = {
-  '**/node_module/*',
-  '**/coverage/*',
-  '**/.git/*'
+  "**/node_module/*",
+  "**/coverage/*",
+  "**/.git/*"
 }
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter"}, {
+  group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
+  callback = function()
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+  end
+})
