@@ -8,12 +8,7 @@ local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 require('luasnip/loaders/from_vscode').lazy_load()
 
-cmp.setup {
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
 
 cmp.setup {
   formatting = {
