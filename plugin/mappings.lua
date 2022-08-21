@@ -15,17 +15,23 @@ keymap('n', '<Left>', ":vertical resize -5<CR>", opts)
 keymap('n', '<Right>', ":vertical resize +5<CR>", opts)
 
 -- move between split
-keymap('n', '<C-h>', "<C-w>h", {})
-keymap('n', '<C-j>', "<C-w>j", {})
-keymap('n', '<C-k>', "<C-w>k", {})
-keymap('n', '<C-l>', "<C-w>l", {})
+keymap('i', '<A-h>', "<C-\\><C-n><C-w>h", opts)
+keymap('i', '<A-j>', "<C-\\><C-n><C-w>j", opts)
+keymap('i', '<A-k>', "<C-\\><C-n><C-w>k", opts)
+keymap('i', '<A-l>', "<C-\\><C-n><C-w>l", opts)
+keymap('n', '<A-h>', "<C-w>h", {})
+keymap('n', '<A-j>', "<C-w>j", {})
+keymap('n', '<A-k>', "<C-w>k", {})
+keymap('n', '<A-l>', "<C-w>l", {})
 
 -- all select
 keymap('n', ',ca', 'ggVGy')
 
 -- open terminal
-keymap('n', '<c-t>', '<Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
-keymap('t', '<c-t>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
+keymap('t', '<A-h>', "<C-\\><C-n><C-w>h", opts)
+keymap('t', '<A-j>', "<C-\\><C-n><C-w>j", opts)
+keymap('t', '<A-k>', "<C-\\><C-n><C-w>k", opts)
+keymap('t', '<A-l>', "<C-\\><C-n><C-w>l", opts)
 
 -- save files
 keymap('n', '<leader>w', ':w<CR>', {})
