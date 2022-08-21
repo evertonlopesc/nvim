@@ -6,7 +6,7 @@ require("toggleterm").setup {
 }
 
 function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
+  local opts = { buffer = 0 }
   vim.keymap.set('t', '<esc>', '<ESC>', opts)
   vim.keymap.set('t', '\\\\', '<C-\\><C-n>', opts)
   vim.keymap.set('t', '<C-LEFT>', [[<Cmd>wincmd h<CR>]], opts)
@@ -20,12 +20,12 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- open terminal
 local Terminal = require('toggleterm.terminal').Terminal
-local w3m = Terminal:new({ 
+local w3m = Terminal:new({
   cmd = 'w3m https://google.com', direction = 'vertical', hidden = true })
 local lazygit = Terminal:new({
   cmd = 'lazygit',
   direction = 'tab',
-  hidden = true, 
+  hidden = true,
 })
 
 function _lazygit_toggle()
@@ -36,5 +36,7 @@ function _w3m_toggle()
   w3m:toggle()
 end
 
+vim.keymap.set('n', '<c-t>', '<Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
+vim.keymap.set('t', '<c-t>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', {})
 vim.keymap.set('n', '<leader>tt', '<Cmd>lua _lazygit_toggle()<CR>')
 vim.keymap.set('n', '<leader>tw', '<Cmd>lua _w3m_toggle()<CR>')
