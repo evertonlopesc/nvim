@@ -89,9 +89,9 @@ startup(function()
     "EdenEast/nightfox.nvim", tag = "v1.0.0",
     config = function()
       require("nightfox").setup {
-        transparent = true
+        transparent = false
       }
-      require("nightfox").load('dawnfox')
+      require("nightfox").load('dayfox')
     end
   }
 
