@@ -179,6 +179,24 @@ startup(function()
     config = function() require 'octo'.setup() end
   }
 
+  -- Tests
+  use {
+    'nvim-neotest/neotest',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'antoinemadec/FixCursorHold.nvim',
+      'olimorris/neotest-rspec'
+    },
+    --[[ config = function ()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-rspec'),
+        }
+      })
+    end ]]
+  }
+
   -- Editing support
   use 'jiangmiao/auto-pairs'
 
