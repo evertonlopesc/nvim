@@ -86,12 +86,12 @@ startup(function()
 
   -- Colorscheme
   use {
-    "EdenEast/nightfox.nvim", tag = "v1.0.0",
+    'EdenEast/nightfox.nvim', tag = 'v1.0.0',
     config = function()
-      require("nightfox").setup {
+      require('nightfox').setup {
         transparent = false
       }
-      require("nightfox").load('dayfox')
+      require('nightfox').load('dayfox')
     end
   }
 
@@ -102,7 +102,7 @@ startup(function()
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
-    tag = "v2.*"
+    tag = 'v2.*'
   }
 
   -- Statusline
@@ -134,12 +134,12 @@ startup(function()
   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
   use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
     }
   }
 
@@ -188,14 +188,11 @@ startup(function()
       'antoinemadec/FixCursorHold.nvim',
       'olimorris/neotest-rspec'
     },
-    --[[ config = function ()
-      require('neotest').setup({
-        adapters = {
-          require('neotest-rspec'),
-        }
-      })
-    end ]]
   }
+
+  use 'mfussenegger/nvim-dap'
+  use 'suketa/nvim-dap-ruby'
+
 
   -- Editing support
   use 'jiangmiao/auto-pairs'
@@ -215,21 +212,21 @@ startup(function()
     'ellisonleao/glow.nvim',
     config = function()
       require('glow').setup({
-        style = "light",
+        style = 'light',
         width = 120,
       })
     end
   }
 
   use {
-    "Massolari/forem.nvim",
+    'Massolari/forem.nvim',
     requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
     },
     config = function()
       require 'forem-nvim'.setup {
-        api_key = "5tJYZZL3bcrKsHYmYgSfabUc" -- Your API Key
+        api_key = '5tJYZZL3bcrKsHYmYgSfabUc' -- Your API Key
       }
     end
   }
