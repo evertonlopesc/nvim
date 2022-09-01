@@ -1,43 +1,46 @@
 require("plugins")
 require("lsp_progress_update")
 
--- Options summary
-vim.opt.autoindent = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.cursorline = true
-vim.opt.encoding = "UTF-8"
-vim.opt.expandtab = true
-vim.opt.hidden = true
-vim.opt.hlsearch = true
-vim.opt.history = 5000
-vim.opt.ignorecase = true
-vim.opt.incsearch = true
-vim.opt.laststatus = 3
-vim.opt.linebreak = true
-vim.opt.maxmempattern = 5000
-vim.opt.mouse = "a"
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 5
-vim.opt.showtabline = 2
-vim.opt.smartcase = true
-vim.opt.spell = true
-vim.opt.spelllang = "en"
-vim.opt.syntax = "enable"
-vim.opt.termguicolors = true
-vim.opt.timeoutlen = 300
+local opt = vim.opt
 
-vim.opt.wig = {
+-- Options summary
+opt.autoindent = true
+opt.clipboard = "unnamedplus"
+opt.completeopt = "menu,menuone,noselect"
+opt.cursorline = true
+opt.encoding = "UTF-8"
+opt.expandtab = true
+opt.hidden = true
+opt.hlsearch = true
+opt.history = 5000
+opt.ignorecase = true
+opt.incsearch = true
+opt.laststatus = 3
+opt.linebreak = true
+opt.maxmempattern = 5000
+opt.mouse = "a"
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 5
+opt.showtabline = 2
+opt.smartcase = true
+opt.spell = true
+opt.spelllang = "en"
+opt.syntax = "enable"
+opt.termguicolors = true
+opt.timeoutlen = 300
+opt.foldlevelstart = 99
+
+opt.wig = {
   "**/node_module/*",
   "**/coverage/*",
   "**/.git/*"
 }
 
---[[ vim.api.nvim_create_autocmd({"BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter"}, {
+vim.api.nvim_create_autocmd({"BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter"}, {
   group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
   callback = function()
     vim.opt.foldmethod = "expr"
     vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
   end
-}) ]]
+})
