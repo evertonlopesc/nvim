@@ -128,5 +128,7 @@ keymap('n', '<leader>pu', ':PackerUpdate<CR>', {})
 keymap('n', '<leader>pc', ':PackerClean<CR>', {})
 
 -- test
-keymap('n', '<leader>na', ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>, {}")
+keymap('n', '<leader>nf', ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>, {}")
 keymap('n', '<leader>nu', ":lua require('neotest').run.run()<CR>, {}")
+keymap('n', '<leader>na', ":lua require('neotest').run.run(vim.fn.getcwd())<CR>, {}")
+keymap('n', '<leader>ns', ":lua require('neotest').summary.open()<CR>, {}")
