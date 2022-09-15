@@ -37,6 +37,11 @@ startup(function()
     }
   }
 
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
+
   -- Completion & Snippet
   use {
     'hrsh7th/nvim-cmp',
