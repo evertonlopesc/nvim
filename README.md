@@ -1,5 +1,7 @@
 # Neovim v0.7.0
 
+![image](https://user-images.githubusercontent.com/16230069/190534549-9b0e5d11-a15b-4f67-a7f9-e3e1d06f0a76.png)
+
 ## Main plugins
 
 ### Plugin Manager
