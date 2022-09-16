@@ -109,7 +109,7 @@ keymap('n', '<leader>fb', ":Neotree buffers<CR>", {})
 keymap('n', '<leader>m', ':HopWord<CR>')
 
 -- lsp
-keymap('n', '<leader>lc', ':LspInstallInfo<CR>', {})
+keymap('n', '<leader>lc', ':Mason<CR>', {})
 keymap('n', '<leader>lt', ":Trouble<CR>", {})
 
 -- git
