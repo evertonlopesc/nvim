@@ -29,7 +29,9 @@ startup(function()
   use {
     'neovim/nvim-lspconfig',
     requires = {
-      'williamboman/nvim-lsp-installer',
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
       { 'folke/trouble.nvim', 'kyazdani42/nvim-web-devicons' },
       'onsails/lspkind-nvim',
       'ray-x/lsp_signature.nvim',
