@@ -1,12 +1,20 @@
-require("nvim-lsp-installer").setup({
-  automatic_installation = true,
+require('mason').setup({
   ui = {
     icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗"
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
   }
+})
+
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'sumneko_lua',
+    'solargraph',
+    'tsserver'
+  },
+  automatic_installation = true,
 })
 
 local lspconfig = require('lspconfig')
@@ -62,15 +70,6 @@ lsp_handlers["textDocument/hover"] = vim.lsp.with(
 
 local capabilities = lsp_protocal
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-local servers = require 'nvim-lsp-installer.servers'
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach(),
-    capabilities = capabilities,
-    handlers = lsp_handlers
-  }
-end
 
 local lsp_flags = {
   debounce_text_changes = 150,
