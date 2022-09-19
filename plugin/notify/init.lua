@@ -1,4 +1,5 @@
 local stages_util = require("notify.stages.util")
+require("telescope").load_extension("notify")
 vim.notify = require('notify')
 
 require("notify").setup({
