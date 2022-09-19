@@ -4,13 +4,13 @@ local use = require 'packer'.use
 
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  packer_bootstrap = vim.fn.system({
-    'git',
-    'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim', install_path
-  })
+        packer_bootstrap = vim.fn.system({
+                'git',
+                'clone',
+                '--depth',
+                '1',
+                'https://github.com/wbthomason/packer.nvim', install_path
+        })
 end
 
 cmd('packadd packer.nvim')
@@ -22,234 +22,220 @@ cmd([[
 ]])
 
 startup(function()
-  -- Plugin Manager
-  use 'wbthomason/packer.nvim'
+        -- Plugin Manager
+        use 'wbthomason/packer.nvim'
 
-  -- LSP
-  use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      'folke/lua-dev.nvim',
-      'folke/trouble.nvim',
-      'RRethy/vim-illuminate'
-    }
-  }
+        -- LSP
+        use {
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig.nvim",
+                'neovim/nvim-lspconfig',
+                'folke/lua-dev.nvim',
+                'folke/trouble.nvim',
+        }
 
-  use {
-    "jose-elias-alvarez/null-ls.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-  }
+        use 'RRethy/vim-illuminate'
 
-  -- Completion & Snippet
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-      'L3MON4D3/LuaSnip',
-      'rafamadriz/friendly-snippets',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline',
-      'onsails/lspkind-nvim',
-    }
-  }
+        use {
+                "jose-elias-alvarez/null-ls.nvim",
+                requires = { "nvim-lua/plenary.nvim" },
+        }
 
-  -- Syntax
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    require = { { 'p00f/nvim-ts-rainbow' } }
-  }
+        -- Completion & Snippet
+        use {
+                'hrsh7th/nvim-cmp',
+                requires = {
+                        'hrsh7th/cmp-nvim-lsp',
+                        'hrsh7th/cmp-nvim-lua',
+                        'hrsh7th/cmp-path',
+                        'saadparwaiz1/cmp_luasnip',
+                        'L3MON4D3/LuaSnip',
+                        'rafamadriz/friendly-snippets',
+                        'hrsh7th/cmp-buffer',
+                        'hrsh7th/cmp-cmdline',
+                        'onsails/lspkind-nvim',
+                }
+        }
 
-  -- Terminal integration
-  use {
-    'akinsho/toggleterm.nvim',
-    tag = 'v2.*',
-  }
+        -- Syntax
+        use {
+                'nvim-treesitter/nvim-treesitter',
+                run = ':TSUpdate',
+                require = { { 'p00f/nvim-ts-rainbow' } }
+        }
 
-  -- Fuzzy Finder
-  use { 'ibhagwan/fzf-lua',
-    requires = {
-      'vijaymarupudi/nvim-fzf',
-      'kyazdani42/nvim-web-devicons'
-    }
-  }
+        -- Terminal integration
+        use {
+                'akinsho/toggleterm.nvim',
+                tag = 'v2.*',
+        }
 
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
+        -- Fuzzy Finder
+        use { 'ibhagwan/fzf-lua',
+                requires = {
+                        'vijaymarupudi/nvim-fzf',
+                        'kyazdani42/nvim-web-devicons'
+                }
+        }
 
-  -- Color
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function() require 'colorizer'.setup() end
-  }
+        use {
+                'nvim-telescope/telescope.nvim', branch = '0.1.x',
+                requires = { 'nvim-lua/plenary.nvim' }
+        }
 
-  -- Colorscheme
-  use {
-    'EdenEast/nightfox.nvim', tag = 'v1.0.0',
-    config = function()
-      require('nightfox').setup {
-        transparent = false
-      }
-      require('nightfox').load('dayfox')
-    end
-  }
+        -- Color
+        use {
+                'norcalli/nvim-colorizer.lua',
+                config = function() require 'colorizer'.setup() end
+        }
 
-  -- Utility
-  use 'rcarriga/nvim-notify'
+        -- Colorscheme
+        use {
+                'EdenEast/nightfox.nvim', tag = 'v1.0.0',
+                config = function()
+                        require('nightfox').setup {
+                                transparent = false
+                        }
+                        require('nightfox').load('dayfox')
+                end
+        }
 
-  -- Tabline
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    tag = 'v2.*'
-  }
+        -- Utility
+        use 'rcarriga/nvim-notify'
 
-  -- Statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+        -- Tabline
+        use {
+                'akinsho/bufferline.nvim',
+                requires = 'kyazdani42/nvim-web-devicons',
+                tag = 'v2.*'
+        }
 
-  -- Startup
-  use 'glepnir/dashboard-nvim'
+        -- Statusline
+        use {
+                'nvim-lualine/lualine.nvim',
+                requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        }
 
-  -- Indent
-  use 'lukas-reineke/indent-blankline.nvim'
+        -- Startup
+        use 'glepnir/dashboard-nvim'
 
-  -- File explorer
-  --[[ use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('nvim-tree').setup {
-        view = {
-          number = true,
-          relativenumber = true },
-        update_focused_file = { enable = true }
-      }
-    end
-  } ]]
-  -- Unless you are still migrating, remove the deprecated commands from v1.x
-  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+        -- Indent
+        use 'lukas-reineke/indent-blankline.nvim'
 
-  use {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    }
-  }
+        -- File explorer
+        vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-  -- Git
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    config = function() require('gitsigns').setup() end
-  }
+        use {
+                'nvim-neo-tree/neo-tree.nvim',
+                branch = 'v2.x',
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+                        'MunifTanjim/nui.nvim',
+                }
+        }
 
-  -- Comment
-  use {
-    'b3nj5m1n/kommentary',
-    config = function() require('kommentary.config').use_extended_mappings() end
-  }
+        -- Git
+        use {
+                'lewis6991/gitsigns.nvim',
+                requires = {
+                        'nvim-lua/plenary.nvim'
+                },
+                config = function() require('gitsigns').setup() end
+        }
 
-  -- Motion
-  use {
-    'phaazon/hop.nvim',
-    branch = 'v1', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
+        -- Comment
+        use {
+                'b3nj5m1n/kommentary',
+                config = function() require('kommentary.config').use_extended_mappings() end
+        }
 
-  -- GitHub
-  use {
-    'pwntester/octo.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'kyazdani42/nvim-web-devicons',
-    },
-    config = function() require 'octo'.setup() end
-  }
+        -- Motion
+        use {
+                'phaazon/hop.nvim',
+                branch = 'v1', -- optional but strongly recommended
+                config = function()
+                        -- you can configure Hop the way you like here; see :h hop-config
+                        require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+                end
+        }
 
-  -- Tests
-  use {
-    'nvim-neotest/neotest',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-      'antoinemadec/FixCursorHold.nvim',
-      'olimorris/neotest-rspec'
-    },
-  }
+        -- GitHub
+        use {
+                'pwntester/octo.nvim',
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'nvim-telescope/telescope.nvim',
+                        'kyazdani42/nvim-web-devicons',
+                },
+                config = function() require 'octo'.setup() end
+        }
 
-  use 'mfussenegger/nvim-dap'
-  use 'suketa/nvim-dap-ruby'
+        -- Tests
+        use {
+                'nvim-neotest/neotest',
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'nvim-treesitter/nvim-treesitter',
+                        'antoinemadec/FixCursorHold.nvim',
+                        'olimorris/neotest-rspec'
+                },
+        }
+
+        use 'mfussenegger/nvim-dap'
+        use 'suketa/nvim-dap-ruby'
 
 
-  -- Editing support
-  use 'jiangmiao/auto-pairs'
+        -- Editing support
+        use 'jiangmiao/auto-pairs'
 
-  use 'mattn/emmet-vim'
+        use 'mattn/emmet-vim'
 
-  use {
-    'vinibispo/ruby.nvim',
-    ft = { 'ruby' }, -- optional
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter'
-    }
-  }
+        use {
+                'vinibispo/ruby.nvim',
+                ft = { 'ruby' }, -- optional
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'nvim-treesitter/nvim-treesitter'
+                }
+        }
 
-  use {
-    'ellisonleao/glow.nvim',
-    config = function()
-      require('glow').setup({
-        style = 'light',
-        width = 120,
-      })
-    end
-  }
+        use {
+                'ellisonleao/glow.nvim',
+                config = function()
+                        require('glow').setup({
+                                style = 'light',
+                                width = 120,
+                        })
+                end
+        }
 
-  use {
-    'Massolari/forem.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim'
-    },
-    config = function()
-      require 'forem-nvim'.setup {
-        api_key = '5tJYZZL3bcrKsHYmYgSfabUc' -- Your API Key
-      }
-    end
-  }
+        use {
+                'Massolari/forem.nvim',
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'nvim-telescope/telescope.nvim'
+                },
+                config = function()
+                        require 'forem-nvim'.setup {
+                                api_key = '5tJYZZL3bcrKsHYmYgSfabUc' -- Your API Key
+                        }
+                end
+        }
 
-  use {
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  }
+        use {
+                "kylechui/nvim-surround",
+                tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+                config = function()
+                        require("nvim-surround").setup({
+                                -- Configuration here, or leave empty to use defaults
+                        })
+                end
+        }
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+        if packer_bootstrap then
+                require('packer').sync()
+        end
 end)
 
 return startup
