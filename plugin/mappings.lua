@@ -106,10 +106,10 @@ keymap('n', '<C-n>', ":Neotree<CR>", {})
 keymap('n', '<leader>fb', ":Neotree buffers<CR>", {})
 
 -- word search
-keymap('n', '<leader>m', ':HopWord<CR>')
+keymap('n', '<leader>h', ':HopWord<CR>')
 
 -- lsp
-keymap('n', '<leader>lc', ':Mason<CR>', {})
+keymap('n', '<leader>m', ':Mason<CR>', {})
 keymap('n', '<leader>lt', ":Trouble<CR>", {})
 
 -- git
