@@ -31,10 +31,8 @@ startup(function()
     requires = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-      { 'folke/trouble.nvim', 'kyazdani42/nvim-web-devicons' },
-      'onsails/lspkind-nvim',
-      'ray-x/lsp_signature.nvim',
+      'folke/lua-dev.nvim',
+      'folke/trouble.nvim',
       'RRethy/vim-illuminate'
     }
   }
@@ -55,7 +53,8 @@ startup(function()
       'L3MON4D3/LuaSnip',
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-cmdline'
+      'hrsh7th/cmp-cmdline',
+      'onsails/lspkind-nvim',
     }
   }
 
