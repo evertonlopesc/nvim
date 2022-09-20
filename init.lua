@@ -2,6 +2,7 @@ require("plugins")
 require("lsp_progress_update")
 
 local opt = vim.opt
+local api = vim.api
 
 -- Options summary
 opt.autoindent = true
@@ -37,10 +38,10 @@ opt.wig = {
         "**/.git/*"
 }
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
-        group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
+api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
+        group = api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
         callback = function()
-                vim.opt.foldmethod = "expr"
-                vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+                opt.foldmethod = "expr"
+                opt.foldexpr = "nvim_treesitter#foldexpr()"
         end
 })
