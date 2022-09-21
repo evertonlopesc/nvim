@@ -1,10 +1,10 @@
 local mason = require("mason")
 local mason_lspc = require("mason-lspconfig")
 local lspc = require("lspconfig")
-local nls = require("null-ls")
+local nls = require("null-ls").builtins
 
 mason.setup({
-        ui = {
+  ui = {
                 icons = {
                         package_installed = "✓",
                         package_pending = "➜",
@@ -54,17 +54,35 @@ local on_attach = function(client, bufnr)
         keymap('n', '<leader>lf', vlsp.formatting, bufopts)
 end
 
-lspc['sumneko_lua'].setup {
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+local sources = {}
+
+lspc.sumneko_lua.setup {
+        on_attach = on_attach,
+        settings = {
+                lua = {
+                        runtime = {
+                                version = "Lua 5.4",
+                                path = { '~/.config/nvim/init.lua' },
+                        },
+                        format = {
+                                enable = true,
+                                defaultconfig = {
+                                        indent_style = "space",
+                                        indent_size = "2",
+                                }
+                        }
+                }
+        }
+}
+lspc.solargraph.setup {
         on_attach = on_attach,
 }
-lspc['solargraph'].setup {
-        on_attach = on_attach,
-}
-lspc['tsserver'].setup {
+lspc.tsserver.setup {
         on_attach = on_attach,
 }
