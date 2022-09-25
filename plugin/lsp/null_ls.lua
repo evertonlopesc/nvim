@@ -9,6 +9,7 @@ local sources = {
   -- Formatting
   blts.formatting.erb_lint,
   blts.formatting.prettier,
+	blts.formatting.stylua,
 }
 
 nls.setup({
