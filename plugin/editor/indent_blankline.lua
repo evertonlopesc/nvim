@@ -12,5 +12,6 @@ require("indent_blankline").setup({
 		"dashboard",
 		"checkhealt",
 		"packer",
+    "neotree",
 	},
 })

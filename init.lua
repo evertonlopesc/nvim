@@ -1,5 +1,5 @@
 require("plugins")
-require("lsp_progress_update")
+require("lsp.progress_update")
 
 local opt = vim.opt
 

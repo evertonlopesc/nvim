@@ -1,8 +1,11 @@
+local ntf = require("notify")
 local stages_util = require("notify.stages.util")
-require("telescope").load_extension("notify")
-vim.notify = require("notify")
 
-require("notify").setup({
+require("telescope").load_extension("notify")
+
+vim.notify = ntf
+
+ntf.setup({
 	stages = {
 		function(state)
 			local next_height = state.message.height + 2
