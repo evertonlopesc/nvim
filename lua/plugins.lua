@@ -98,12 +98,6 @@ startup(function()
 	use({
 		"EdenEast/nightfox.nvim",
 		tag = "v1.0.0",
-		config = function()
-			require("nightfox").setup({
-				transparent = false,
-			})
-			require("nightfox").load("dayfox")
-		end,
 	})
 
 	-- Utility
