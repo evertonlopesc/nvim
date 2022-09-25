@@ -32,7 +32,6 @@ end
 lspc.sumneko_lua.setup({
 	settings = {
 		lua = {
-			format = { enable = false },
 			runtime = {
 				version = "LuaJIT",
 			},
