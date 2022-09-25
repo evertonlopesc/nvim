@@ -1,23 +1,38 @@
-require("mason").setup()
-
-local mason_lspc = require("mason-lspconfig")
+local msn = require("mason")
+local msn_lspc = require("mason-lspconfig")
 local lspc = require("lspconfig")
-local servers = mason_lspc.get_installed_servers()
+local servers = msn_lspc.get_installed_servers()
 local on_attach = require("lsp.config").config(client, bufnr)
 
-mason_lspc.setup({
+msn.setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
+
+
+msn_lspc.setup({
 	ensure_installed = {
 		"sumneko_lua",
-		"solargraph",
-		"tsserver",
 	},
 
 	automactic_installation = true,
 })
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 lspc.sumneko_lua.setup({
 	settings = {
 		lua = {
+			format = { enable = false },
 			runtime = {
 				version = "LuaJIT",
 			},
