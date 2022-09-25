@@ -1,4 +1,15 @@
-require("nvim-treesitter.configs").setup({
+local ts = require("nvim-treesitter.configs")
+local opt = vim.opt
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
+	group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
+	callback = function()
+		opt.foldmethod = "expr"
+		opt.foldexpr = "nvim_treesitter#foldexpr()"
+	end,
+})
+
+ts.setup({
 	ensure_installed = {
 		"regex",
 		"typescript",
@@ -20,6 +31,7 @@ require("nvim-treesitter.configs").setup({
 		"embedded_template",
 		"javascript",
 	},
+
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -29,6 +41,7 @@ require("nvim-treesitter.configs").setup({
 			node_decremental = "grm",
 		},
 	},
+
 	highlight = { enable = true, disable = {} },
 	indent = { enable = true },
 	rainbow = {
