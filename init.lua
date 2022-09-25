@@ -33,15 +33,15 @@ opt.timeoutlen = 300
 opt.foldlevelstart = 99
 
 opt.wig = {
-  "**/node_module/*",
-  "**/coverage/*",
-  "**/.git/*"
+	"**/node_module/*",
+	"**/coverage/*",
+	"**/.git/*",
 }
 
 api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
-  group = api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
-  callback = function()
-    opt.foldmethod = "expr"
-    opt.foldexpr = "nvim_treesitter#foldexpr()"
-  end
+	group = api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
+	callback = function()
+		opt.foldmethod = "expr"
+		opt.foldexpr = "nvim_treesitter#foldexpr()"
+	end,
 })
