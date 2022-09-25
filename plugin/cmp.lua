@@ -20,21 +20,21 @@ cmp.setup {
       with_text = true,
       maxwidth = 50,
       menu = {
-        nvim_lsp  = '[LSP]',
         luasnip   = '[LuaSnip]',
+        nvim_lsp  = '[LSP]',
+        buffer    = '[BUFFER]',
         nvim_lua  = '[Lua]',
         path      = '[PATH]',
-        buffer    = '[BUFFER]',
       }
     }
   },
 
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
   }),
 
   mapping = {
