@@ -99,6 +99,7 @@ keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<cr>", 
 keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap('n', '<leader>fo', ":lua require('telescope.builtin').oldfiles()<cr>", opts)
 keymap('n', '<leader>fk', ":lua require('telescope.builtin').keymaps()<cr>", opts)
+keymap('n', '<leader>fl', ":lua require('telescope.builtin').lsp_document_symbols()<cr>", opts)
 keymap('n', '<leader>ft', ":Telescope <CR>", opts)
 keymap('n', '<leader>fz', ":lua require('fzf-lua').builtin()<CR>", opts)
 keymap('n', '<leader>fm', ":lua require('fzf-lua').files()<CR>", opts)
