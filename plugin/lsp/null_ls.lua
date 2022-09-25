@@ -1,29 +1,18 @@
-local nls = require("null-ls")
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local diagnostics = nls.builtins.diagnostics
-local formatting = nls.builtins.formatting
-local sources = {}
+local nls = require('null-ls')
+local blts = nls.builtins
+local on_attach = require('lsp.config').config(client, bufnr)
 
-sources = {
-  sources = {
-    diagnostics.erb_lint,
-    formatting.erb_lint,
-  },
+local sources = {
+  -- Diagnostics
+  blts.diagnostics.erb_lint,
+  -- blts.diagnostics.eslint_d,
+
+  -- Formatting
+  blts.formatting.erb_lint,
+  blts.formatting.prettier,
 }
 
 nls.setup({
   sources = sources,
-  -- you can reuse a shared lspconfig on_attach callback here
-  on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.formatting_sync()
-        end,
-      })
-    end
-  end,
+  on_attach = on_attach,
 })
