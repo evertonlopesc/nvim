@@ -3,7 +3,6 @@ require('mason').setup()
 local mason_lspc = require("mason-lspconfig")
 local lspc = require("lspconfig")
 local servers = mason_lspc.get_installed_servers()
-
 local on_attach = require('lsp.config').config(client, bufnr)
 
 mason_lspc.setup({
@@ -15,7 +14,6 @@ mason_lspc.setup({
 
   automactic_installation = true,
 })
-
 
 lspc.sumneko_lua.setup {
   settings = {

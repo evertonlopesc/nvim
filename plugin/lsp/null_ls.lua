@@ -5,7 +5,6 @@ local on_attach = require('lsp.config').config(client, bufnr)
 local sources = {
   -- Diagnostics
   blts.diagnostics.erb_lint,
-  -- blts.diagnostics.eslint_d,
 
   -- Formatting
   blts.formatting.erb_lint,
