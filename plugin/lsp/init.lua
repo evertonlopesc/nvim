@@ -6,15 +6,6 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local servers = mason_lspc.get_installed_servers()
 
-mason.setup({
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
-})
 
 mason_lspc.setup({
   ensure_installed = {
