@@ -1,7 +1,25 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local util = require("vim.lsp.util")
 
 vim.diagnostic.config({ virtual_text = false })
+
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.formatting({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+
+local formatting_callback = function(client, bufnr)
+	vim.keymap.set("n", "<leader>lf", function()
+		lsp_formatting(bufnr)
+	end, { buffer = bufnr })
+end
 
 local M = {}
 
@@ -25,7 +43,9 @@ M.config = function(client, bufnr)
 		keymap("n", "<leader>lr", vlsp.rename, bufopts)
 		keymap("n", "<leader>lc", vlsp.code_action, bufopts)
 		keymap("n", "gr", vlsp.references, bufopts)
-		keymap("n", "<leader>lf", vlsp.formatting, bufopts)
+		-- keymap("n", "<leader>lf", vlsp.formatting, bufopts)
+
+		formatting_callback(client, bufnr)
 	end
 
 	return on_attach
