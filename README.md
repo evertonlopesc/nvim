@@ -46,7 +46,7 @@ use 'wbthomason/packer.nvim'
 ### Startup
 - use 'glepnir/dashboard-nvim'
 
-![image](https://user-images.githubusercontent.com/16230069/190533347-0a9ccaad-25f6-41b4-9376-86a206db7dfe.png)
+![image](https://user-images.githubusercontent.com/16230069/192253688-236648dd-6e09-4791-b8b8-6f5838d2bf4c.png)
 
 ### File explorer
 - use 'kyazdani42/neo-tree.lua'
