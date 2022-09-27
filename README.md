@@ -2,7 +2,7 @@
 
 ## Installation
 
-Download to packer.nvim
+### Download to packer.nvim
 
 > Unix, Linux Installation
 ```sh
@@ -16,7 +16,9 @@ Clone this repository
 ```sh
 git clone https://github.com/evertonlopesc/nvim.git
 ```
-Requirements (I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies)
+### Requirements
+
+_I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies._
 
 - neovim        (version: 0.7.2)
 - lua           (version: 5.4.4)
@@ -27,7 +29,8 @@ Requirements (I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies)
 - lazygit       (version: 0.34)
 - github-cli    (version: 2.14.1)
 
-Next step:
+### Installing plugins
+
 - go to ~/.config/nvim/
 - open the file in lua/plugins.lua and run the command to install all plugins.
 - run `:PackerInstall`
