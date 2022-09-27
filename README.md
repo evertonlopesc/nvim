@@ -1,4 +1,37 @@
-# Neovim v0.7.0
+# Neovim v0.7.2
+
+## Installation
+
+Download to packer.nvim
+
+> Unix, Linux Installation
+```sh
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+If you use Arch Linux, there is also [an AUR package](https://aur.archlinux.org/packages/nvim-packer-git).
+
+Clone this repository
+
+```sh
+git clone https://github.com/evertonlopesc/nvim.git
+```
+Requirements (I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies)
+
+- neovim        (version: 0.7.2)
+- lua           (version: 5.4.4)
+- lua           (version: 2.0.5--2.4.4)
+- ripgrep       (version: 13.0.0)
+- fd            (version: 8.4.0)
+- fzf           (version: 0.30.0)
+- lazygit       (version: 0.34)
+- github-cli    (version: 2.14.1)
+
+Next step:
+- go to ~/.config/nvim/
+- open the file in lua/plugins.lua and run the command to install all plugins.
+- run `:PackerInstall`
+___
 
 ![image](https://user-images.githubusercontent.com/16230069/190534549-9b0e5d11-a15b-4f67-a7f9-e3e1d06f0a76.png)
 
