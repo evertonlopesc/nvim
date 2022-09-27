@@ -14,7 +14,6 @@ msn.setup({
 	},
 })
 
-
 msn_lspc.setup({
 	ensure_installed = {
 		"sumneko_lua",
@@ -40,6 +39,10 @@ lspc.sumneko_lua.setup({
 			},
 		},
 	},
+})
+
+lspc.tailwindcss.setup({
+	filetypes = { "html", "eruby", "vue" },
 })
 
 for _, server in ipairs(servers) do
