@@ -20,7 +20,7 @@ Requirements (I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies)
 
 - neovim        (version: 0.7.2)
 - lua           (version: 5.4.4)
-- lua           (version: 2.0.5--2.4.4)
+- luaJIT        (version: 2.0.5--2.4.4)
 - ripgrep       (version: 13.0.0)
 - fd            (version: 8.4.0)
 - fzf           (version: 0.30.0)
