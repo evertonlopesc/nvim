@@ -14,7 +14,7 @@ If you use Arch Linux, there is also [an AUR package](https://aur.archlinux.org/
 Clone this repository
 
 ```sh
-git clone https://github.com/evertonlopesc/nvim.git
+git clone https://github.com/evertonlopesc/nvim.git ~/.config/
 ```
 ### Requirements
 
