@@ -45,7 +45,7 @@ local function process_sections(sections)
 				comp = { comp }
 				section[id] = comp
 			end
-			comp.separator = left and { right = "" } or { left = "" }
+			comp.separator = left and { right = "" } or { left = "" }
 		end
 	end
 	return sections
@@ -92,7 +92,7 @@ require("lualine").setup({
 	options = {
 		theme = theme,
 		component_separators = "",
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 	},
 	sections = process_sections({
 		lualine_a = { "mode" },
