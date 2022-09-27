@@ -141,7 +141,7 @@ require("lualine").setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = { search_result, { icon = "力", lsp_server_name }, "filetype" },
-		lualine_z = { "%l:%c", "%p%%/%L" },
+		lualine_z = { "encoding", "%l:%c", "%p%%/%L" },
 	}),
 	inactive_sections = {
 		lualine_c = { "%f %y %m" },
