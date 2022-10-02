@@ -1,7 +1,10 @@
-require("plugins")
-require("lsp.progress_update")
+require "plugins"
+require "lsp.progress_update"
 
 local opt = vim.opt
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Options summary
 opt.autoindent = true
@@ -32,7 +35,7 @@ opt.timeoutlen = 300
 opt.foldlevelstart = 99
 
 opt.wig = {
-	"**/node_module/*",
-	"**/coverage/*",
-	"**/.git/*",
+  "**/node_module/*",
+  "**/coverage/*",
+  "**/.git/*",
 }
