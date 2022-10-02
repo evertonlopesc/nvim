@@ -74,7 +74,6 @@ keymap("n", "<leader>,", ":Glow<CR>", opts)
 keymap("n", "<leader>h", ":HopWord<CR>", opts)
 
 -- git
-keymap("n", "<leader>gb", ':lua require"gitsigns".blame_line()<CR>', opts)
 keymap("n", "<leader>go", ":Octo actions<CR>", opts)
 
 -- notes
