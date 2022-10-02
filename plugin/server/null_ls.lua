@@ -7,6 +7,8 @@ local sources = {
   blts.formatting.prettier,
   blts.formatting.markdownlint,
   blts.formatting.stylua,
+
+  blts.code_actions.gitsigns,
 }
 
 nls.setup {
