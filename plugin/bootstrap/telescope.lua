@@ -3,7 +3,6 @@ local actions = require "telescope.actions"
 require("telescope").setup {
   defaults = {
     prompt_prefix = " ",
-    layout_strategy = "vertical",
     selection_caret = " ",
     vimgrep_arguments = {
       "rg",
