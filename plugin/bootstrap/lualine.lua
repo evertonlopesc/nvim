@@ -42,7 +42,7 @@ require("lualine").setup {
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { { icon = "力", lsp_server_name }, "filetype" },
+    lualine_y = { "filetype", { lsp_server_name, icon = "" } },
     lualine_z = { "encoding", "location", "%p%%/%L" },
   },
   inactive_sections = {
