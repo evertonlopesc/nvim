@@ -1,7 +1,7 @@
-local nf = require("nightfox")
+local nf = require "nightfox"
 
-nf.setup({
-	transparent = false,
-})
+nf.setup {
+  transparent = false,
+}
 
-nf.load("dayfox")
+nf.load "dayfox"
