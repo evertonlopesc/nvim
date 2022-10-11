@@ -79,3 +79,6 @@ keymap("n", "<leader>go", ":Octo actions<CR>", opts)
 -- notes
 keymap("n", "<leader>nd", ":!rm -rf note.md<CR>", opts)
 keymap("n", "<leader>no", ":e note.md<CR>", opts)
+
+-- Ruby
+keymap("n", "<leader>ry", ":RubyRun<CR>", opts)
