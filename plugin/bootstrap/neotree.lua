@@ -24,3 +24,4 @@ neo_tree.setup {
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<C-n>", "<cmd> Neotree toggle left <cr>", opts)
 vim.keymap.set("n", "<leader>fb", "<cmd> Neotree toggle show buffers right <cr>", opts)
+vim.keymap.set("n", "<leader>fs", "<cmd> Neotree toggle show git_status right <cr>", opts)
