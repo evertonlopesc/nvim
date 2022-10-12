@@ -99,6 +99,8 @@ startup(function()
     "EdenEast/nightfox.nvim",
     tag = "v1.0.0",
   }
+  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Utility
   use "rcarriga/nvim-notify"
