@@ -35,12 +35,12 @@ startup(function()
     "folke/trouble.nvim",
   }
 
-  use "RRethy/vim-illuminate"
-
   use {
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   }
+
+  use "RRethy/vim-illuminate"
 
   -- Completion & Snippet
   use {
@@ -66,10 +66,7 @@ startup(function()
   }
 
   -- Terminal integration
-  use {
-    "akinsho/toggleterm.nvim",
-    tag = "v2.*",
-  }
+  use { "akinsho/toggleterm.nvim", tag = "v2.*" }
 
   -- Fuzzy Finder
   use {
@@ -95,10 +92,6 @@ startup(function()
   }
 
   -- Colorscheme
-  use {
-    "EdenEast/nightfox.nvim",
-    tag = "v1.0.0",
-  }
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
   use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -208,7 +201,7 @@ startup(function()
     "ellisonleao/glow.nvim",
     config = function()
       require("glow").setup {
-        style = "light",
+        style = "dark",
         width = 120,
       }
     end,
