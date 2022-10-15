@@ -1,6 +1,6 @@
 local neo = require "neotest"
 local rspec = require "neotest-rspec"
-local ldev = require "lua-dev"
+local ldev = require "neodev"
 
 ldev.setup {
   library = { plugins = { "neotest" }, types = true },

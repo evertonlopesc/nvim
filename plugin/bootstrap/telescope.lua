@@ -24,14 +24,10 @@ require("telescope").setup {
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>ft", ":Telescope <CR>", opts)
-vim.keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<cr>", opts)
-vim.keymap.set("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<cr>", opts)
-vim.keymap.set("n", "<leader>fo", ":lua require('telescope.builtin').oldfiles()<cr>", opts)
-vim.keymap.set(
-  "n",
-  "<leader>fl",
-  ":lua require('telescope.builtin').lsp_document_symbols()<cr>",
-  opts
-)
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>", opts)
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
+vim.keymap.set( "n", "<leader>fl", ":Telescope lsp_document_symbols<cr>", opts)
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 
-vim.keymap.set("n", "<leader>fm", ":lua require('fzf-lua').files()<CR>", opts)
+vim.keymap.set("n", "<leader>fm", ":Fzf files<cr>", opts)
