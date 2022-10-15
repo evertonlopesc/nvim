@@ -1,41 +1,42 @@
 require "plugins"
 require "lsp.progress_update"
 
-local opt = vim.opt
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Options summary
-opt.autoindent = true
-opt.clipboard = "unnamedplus"
-opt.completeopt = "menu,menuone,noselect"
-opt.cursorline = true
-opt.encoding = "UTF-8"
-opt.expandtab = true
-opt.hidden = true
-opt.hlsearch = true
-opt.history = 5000
-opt.ignorecase = true
-opt.incsearch = true
-opt.laststatus = 3
-opt.linebreak = true
-opt.maxmempattern = 5000
-opt.mouse = "a"
-opt.number = true
-opt.relativenumber = true
-opt.scrolloff = 5
-opt.showtabline = 2
-opt.smartcase = true
-opt.spell = true
-opt.spelllang = "en"
-opt.syntax = "enable"
-opt.termguicolors = true
-opt.timeoutlen = 300
-opt.foldlevelstart = 99
-
-opt.wig = {
-  "**/node_module/*",
-  "**/coverage/*",
-  "**/.git/*",
-}
+vim.opt.autoindent = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.confirm = true
+vim.opt.cursorline = true
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.encoding = "UTF-8"
+vim.opt.expandtab = true
+vim.opt.foldmethod = "indent"
+vim.opt.foldnestmax = 3
+vim.opt.foldenable = false
+vim.opt.hidden = true
+vim.opt.hlsearch = true
+vim.opt.history = 1000
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+vim.opt.laststatus = 3
+vim.opt.linebreak = true
+vim.opt.maxmempattern = 5000
+vim.opt.mouse = "a"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 5
+vim.opt.sidescrolloff = 5
+vim.opt.shiftwidth = 2
+vim.opt.showtabline = 2
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.syntax = "enable"
+vim.opt.smartcase = true
+vim.opt.startofline = true
+vim.opt.tabstop = 2
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 300
+vim.opt.title = true
+vim.g.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
