@@ -1,5 +1,5 @@
-require "plugins"
-require "lsp.progress_update"
+require("plugins")
+require("lsp.progress_update")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -12,9 +12,7 @@ vim.opt.cursorline = true
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.encoding = "UTF-8"
 vim.opt.expandtab = true
-vim.opt.foldmethod = "indent"
-vim.opt.foldnestmax = 3
-vim.opt.foldenable = false
+vim.opt.foldlevelstart = 99
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.history = 1000
@@ -29,7 +27,6 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
 vim.opt.shiftwidth = 2
-vim.opt.showtabline = 2
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 vim.opt.syntax = "enable"
@@ -39,4 +36,6 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
 vim.opt.title = true
-vim.g.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
+-- vim.opt.winbar = "%f"
+vim.cmd([[set winbar=%=%m\ %f]])
+vim.opt.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }

@@ -37,6 +37,10 @@ db.custom_header = {
   "",
 }
 
+db.hide_statusline = false
+db.hide_tabline = false
+db.hide_winbar = false
+
 db.custom_center = {
   {
     icon = " ",
