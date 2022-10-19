@@ -36,6 +36,5 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
 vim.opt.title = true
--- vim.opt.winbar = "%f"
-vim.cmd([[set winbar=%=%m\ %f]])
+vim.opt.winbar = "%f"
 vim.opt.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
