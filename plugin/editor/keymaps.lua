@@ -42,14 +42,11 @@ keymap("n", "<leader><space>", ":set hlsearch!<CR>", opts)
 
 -- Buffers
 keymap("n", "<leader>d", ":bdelete<CR>", opts)
---[[ keymap("n", "<F10>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<F9>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<leader>bb", ":BufferLinePick<CR>", opts) ]]
-keymap("n", ",b", ":buffers<CR>", opts)
-keymap("n", ",g", ":buff ", opts)
+keymap("n", "<leader>bb", ":buffers<CR>", opts)
+keymap("n", "<leader>bg", ":buff ", opts)
+keymap("n", "<leader>bd", ":b#<bar>bd#<CR>", opts)
 keymap("n", "<C-j>", ":bnext<CR>", opts)
 keymap("n", "<C-k>", ":bprevious<CR>", opts)
-keymap("n", ",d", ":b#<bar>bd#<CR>", opts)
 
 -- moving in wrap
 keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
