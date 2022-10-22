@@ -29,5 +29,6 @@ vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
 vim.keymap.set( "n", "<leader>fl", ":Telescope lsp_document_symbols<cr>", opts)
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", opts)
+vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<cr>", opts)
 
 vim.keymap.set("n", "<leader>fm", ":Fzf files<cr>", opts)
