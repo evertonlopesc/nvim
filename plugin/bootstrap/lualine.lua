@@ -26,15 +26,7 @@ require("lualine").setup {
       {
         "filename",
         icon = " ",
-        file_status = true,
         path = 0,
-      },
-      {
-        icon = "",
-        "%r",
-        cond = function()
-          return vim.bo.readonly
-        end,
       },
       "branch",
       "diff",
