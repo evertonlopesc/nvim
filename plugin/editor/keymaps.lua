@@ -27,7 +27,7 @@ keymap("n", "<A-k>", "<C-w>k", opts)
 keymap("n", "<A-l>", "<C-w>l", opts)
 
 -- all select
-keymap("n", ",ca", "ggVGy", opts)
+keymap("n", "<leader>ca", "ggVGy", opts)
 
 -- save files
 keymap("n", "<leader>w", ":w<CR>", opts)
@@ -75,7 +75,7 @@ keymap("n", "<leader>,", ":Glow<CR>", opts)
 keymap("n", "<leader>h", ":HopWord<CR>", opts)
 
 -- git
-keymap("n", "<leader>go", ":Octo actions<CR>", opts)
+keymap("n", "<leader>o", ":Octo actions<CR>", opts)
 
 -- notes
 keymap("n", "<leader>nd", ":!rm -rf note.md<CR>", opts)
