@@ -1,6 +1,8 @@
 require("plugins")
 require("lsp.progress_update")
 
+vim.cmd "colorscheme catppuccin"
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -22,7 +24,6 @@ vim.opt.laststatus = 3
 vim.opt.linebreak = true
 vim.opt.maxmempattern = 5000
 vim.opt.mouse = "a"
-vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
@@ -35,6 +36,5 @@ vim.opt.startofline = true
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
-vim.opt.title = true
-vim.opt.winbar = "%f"
+vim.opt.winbar = "%f %m%r%h"
 vim.opt.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
