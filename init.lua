@@ -6,6 +6,7 @@ vim.g.maplocalleader = " "
 
 -- Options summary
 vim.opt.autoindent = true
+vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.confirm = true
 vim.opt.cursorline = true
@@ -28,11 +29,14 @@ vim.opt.sidescrolloff = 5
 vim.opt.shiftwidth = 2
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
+vim.opt.swapfile = false
 vim.opt.syntax = "enable"
 vim.opt.smartcase = true
 vim.opt.startofline = true
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 300
+vim.opt.undodir = os.getenv("HOME" .. "/home/everton/.config/.vim/undodir")
+vim.opt.undofile = true
 vim.opt.winbar = "%f %m%r%h"
 vim.opt.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
