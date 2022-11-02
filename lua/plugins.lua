@@ -105,7 +105,7 @@ startup(function()
   })
 
   -- Startup
-  -- use("glepnir/dashboard-nvim")
+  use("glepnir/dashboard-nvim")
 
   -- Indent
   use("lukas-reineke/indent-blankline.nvim")

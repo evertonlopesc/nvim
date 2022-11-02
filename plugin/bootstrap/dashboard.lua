@@ -1,4 +1,4 @@
---[[ local db = require "dashboard"
+local db = require "dashboard"
 
 db.custom_header = {
   "",
@@ -69,4 +69,4 @@ db.custom_center = {
 }
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>a", ":Dashboard<CR>", opts) ]]
+vim.keymap.set("n", "<leader>a", ":Dashboard<CR>", opts)
