@@ -4,19 +4,23 @@ local function keymap(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Reload file lua
 keymap("n", "<leader>rr", ":source % <CR>", opts)
-
--- TrailingWhiteSpace
 keymap("n", "<F2>", ":%s/\\s*$//<CR>", opts)
-
--- Resizes
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+keymap("x", "<", "<gv", opts)
+keymap("x", ">", ">gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("i", "kk", "<Esc>", opts)
 keymap("n", "<Down>", ":resize -5<CR>", opts)
 keymap("n", "<Up>", ":resize +5<CR>", opts)
 keymap("n", "<Left>", ":vertical resize -5<CR>", opts)
 keymap("n", "<Right>", ":vertical resize +5<CR>", opts)
-
--- move between split
+keymap("n", "<C-h>", "<cmd>tabprevious<CR>", opts)
+keymap("n", "<C-l>", "<cmd>tabnext<CR>", opts)
+keymap("n", "<C-k>", "<cmd>bnext<CR>", opts)
+keymap("n", "<C-j>", "<cmd>bprevious<CR>", opts)
 keymap("i", "<A-h>", "<C-\\><C-n><C-w>h", opts)
 keymap("i", "<A-j>", "<C-\\><C-n><C-w>j", opts)
 keymap("i", "<A-k>", "<C-\\><C-n><C-w>k", opts)
@@ -25,61 +29,25 @@ keymap("n", "<A-h>", "<C-w>h", opts)
 keymap("n", "<A-j>", "<C-w>j", opts)
 keymap("n", "<A-k>", "<C-w>k", opts)
 keymap("n", "<A-l>", "<C-w>l", opts)
-
--- all select
-keymap("n", "<leader>ca", "ggVGy", opts)
-
--- save files
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>W", ":wa<CR>", opts)
-
--- close buffer(s)
-keymap("n", "<leader>x", ":q<CR>", opts)
-keymap("n", "<leader>X", ":qa<CR>", opts)
-
--- open/close highlight
 keymap("n", "<leader><space>", ":set hlsearch!<CR>", opts)
-
--- Buffers
-keymap("n", "<leader>d", ":bdelete<CR>", opts)
+keymap("n", "<leader>,", ":Glow<CR>", opts)
+keymap("n", "<leader>ca", "ggVGy", opts)
 keymap("n", "<leader>bb", ":buffers<CR>", opts)
 keymap("n", "<leader>bg", ":buff ", opts)
 keymap("n", "<leader>bd", ":b#<bar>bd#<CR>", opts)
-keymap("n", "<C-j>", ":bnext<CR>", opts)
-keymap("n", "<C-k>", ":bprevious<CR>", opts)
-
--- moving in wrap
-keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
-
--- better indent
-keymap("x", "<", "<gv", opts)
-keymap("x", ">", ">gv", opts)
-
--- move selected line(s)
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-
--- alternative esc
-keymap("i", "kk", "<Esc>", opts)
-
--- open dashboard
-
--- open emmet
-keymap("n", "<leader>y", ":Emmet ", opts)
-
--- open glow
-keymap("n", "<leader>,", ":Glow<CR>", opts)
-
--- word search
+keymap("n", "<leader>d", ":bdelete<CR>", opts)
 keymap("n", "<leader>h", ":HopWord<CR>", opts)
-
--- git
-keymap("n", "<leader>o", ":Octo actions<CR>", opts)
-
--- notes
 keymap("n", "<leader>nd", ":!rm -rf note.md<CR>", opts)
 keymap("n", "<leader>no", ":e note.md<CR>", opts)
-
--- Ruby
+keymap("n", "<leader>o", ":Octo actions<CR>", opts)
 keymap("n", "<leader>ry", ":RubyRun<CR>", opts)
+keymap("n", "<leader>tt", "<cmd>tabnew<CR>", opts)
+keymap("n", "<leader>tc", "<cmd>tabclose<CR>", opts)
+keymap("n", "<leader>td", "<cmd>tabdo<CR>", opts)
+keymap("n", "<leader>tp", "<cmd>tabprevious<CR>", opts)
+keymap("n", "<leader>tn", "<cmd>tabnext<CR>", opts)
+keymap("n", "<leader>x", ":q<CR>", opts)
+keymap("n", "<leader>X", ":qa<CR>", opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>W", ":wa<CR>", opts)
+keymap("n", "<leader>y", ":Emmet ", opts)
