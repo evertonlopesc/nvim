@@ -92,31 +92,8 @@ startup(function()
   })
 
   -- Colorscheme
-  use({
-    "EdenEast/nightfox.nvim",
-    tag = "v1.0.0",
-    config = function()
-      require("nightfox").setup({
-        options = {
-          transparent = true,
-        }
-      })
-    end,
-  })
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
-        transparent_background = true,
-        integrations = {
-          neogit = true,
-          hop = true,
-          dashboard = true,
-        },
-      })
-    end,
-  })
+  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0", })
+  use({ "catppuccin/nvim", as = "catppuccin", })
 
   -- Utility
   use("rcarriga/nvim-notify")

@@ -1,8 +1,6 @@
 require("plugins")
 require("lsp.progress_update")
 
-vim.cmd "colorscheme catppuccin"
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
