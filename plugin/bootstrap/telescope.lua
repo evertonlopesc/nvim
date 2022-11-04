@@ -1,6 +1,7 @@
 local actions = require "telescope.actions"
+local telescope = require("telescope")
 
-require("telescope").setup {
+telescope.setup {
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
@@ -22,13 +23,18 @@ require("telescope").setup {
   },
 }
 
+local builtin = require("telescope.builtin")
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>ft", ":Telescope <CR>", opts)
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
-vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>", opts)
-vim.keymap.set( "n", "<leader>fl", ":Telescope lsp_document_symbols<cr>", opts)
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", opts)
-vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<cr>", opts)
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
+vim.keymap.set( "n", "<leader>fl",builtin.lsp_document_symbols, opts)
+vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
 
 vim.keymap.set("n", "<leader>fm", ":Fzf files<cr>", opts)
+
+telescope.load_extension "file_browser"
+vim.keymap.set("n", "<leader>fw", ":Telescope file_browser<cr>", opts)

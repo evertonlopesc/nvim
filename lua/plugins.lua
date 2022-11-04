@@ -83,6 +83,8 @@ startup(function()
     requires = { "nvim-lua/plenary.nvim" },
   })
 
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+
   -- Color
   use({
     "norcalli/nvim-colorizer.lua",
