@@ -53,7 +53,6 @@ startup(function()
       "L3MON4D3/LuaSnip",
       "rafamadriz/friendly-snippets",
       "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
       "onsails/lspkind-nvim",
     },
   })

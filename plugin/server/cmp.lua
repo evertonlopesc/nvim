@@ -9,12 +9,6 @@ local lspkind = require "lspkind"
 local luasnip = require "luasnip"
 require("luasnip/loaders/from_vscode").lazy_load()
 
---[[ cmp.setup.cmdline(":", {
-  sources = {
-    { name = "cmdline" },
-  },
-}) ]]
-
 cmp.setup {
   formatting = {
     format = lspkind.cmp_format {
