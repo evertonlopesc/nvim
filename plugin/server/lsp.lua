@@ -3,7 +3,6 @@ local msn_lspc = require("mason-lspconfig")
 local lspc = require("lspconfig")
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
-local util = require("vim.lsp.util")
 
 msn.setup({
   ui = {
