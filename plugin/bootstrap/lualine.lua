@@ -28,14 +28,19 @@ require("lualine").setup {
         icon = " ",
         path = 0,
       },
-      "diagnostics",
-      "branch",
       "diff",
+      "diagnostics",
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { { lsp_server_name, icon = "" } },
-    lualine_z = { "location", "%p%%/%L" },
+    lualine_y = {
+      "branch",
+      { lsp_server_name, icon = "" }
+    },
+    lualine_z = {
+      "location",
+      "%p%%/%L"
+    },
   },
   inactive_sections = {
     lualine_c = { "%f %y %m" },
