@@ -26,7 +26,7 @@ require("lualine").setup {
       {
         "filename",
         icon = " ",
-        path = 0,
+        path = 1,
       },
       "diff",
       "diagnostics",
