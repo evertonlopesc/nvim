@@ -14,7 +14,7 @@ msn.setup({
   },
 })
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = false })
 
 keymap("n", "<leader>e", vim.diagnostic.open_float, opts)
 keymap("n", "[d", vim.diagnostic.goto_prev, opts)
