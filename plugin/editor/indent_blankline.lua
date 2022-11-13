@@ -1,17 +1,14 @@
+vim.opt.termguicolors = true
 local opt = vim.opt
-opt.list = true
-opt.listchars:append "space:⋅"
-opt.listchars:append "eol:↴"
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+vim.cmd([[highlight IndentBlanklineIndent1 guifg=#c5c5c5 gui=nocombine]])
 
-require("indent_blankline").setup {
-  show_current_context_start = true,
+require("indent_blankline").setup({
   show_end_of_line = true,
-  filetype_exclude = {
-    "help",
-    "terminal",
-    "dashboard",
-    "checkhealt",
-    "packer",
-    "neotree",
+  space_char_blankline = " ",
+  char_highlight_list = {
+    "IndentBlanklineIndent1",
   },
-}
+})
