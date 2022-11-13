@@ -10,17 +10,22 @@ local luasnip = require "luasnip"
 require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup {
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   formatting = {
+    fields = { "abbr", "kind" },
     format = lspkind.cmp_format {
       with_text = true,
       maxwidth = 50,
-      menu = {
+      --[[ menu = {
         luasnip = "[LuaSnip]",
         nvim_lsp = "[LSP]",
         buffer = "[BUFFER]",
         nvim_lua = "[Lua]",
         path = "[PATH]",
-      },
+      }, ]]
     },
   },
 
