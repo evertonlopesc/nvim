@@ -18,7 +18,26 @@ telescope.setup {
   },
   pickers = {
     find_files = {
+      theme = "dropdown",
       find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+    },
+    live_grep = {
+      theme = "dropdown",
+    },
+    oldfiles = {
+      theme = "dropdown",
+    },
+    lsp_document_symbols = {
+      theme = "dropdown",
+    },
+    buffers = {
+      theme = "dropdown",
+    },
+    keymaps = {
+      theme = "dropdown",
+    },
+    file_browser = {
+      theme = "dropdown",
     },
   },
 }
@@ -30,7 +49,7 @@ vim.keymap.set("n", "<leader>ft", ":Telescope <CR>", opts)
 vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
-vim.keymap.set( "n", "<leader>fl",builtin.lsp_document_symbols, opts)
+vim.keymap.set("n", "<leader>fl", builtin.lsp_document_symbols, opts)
 vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
 
