@@ -29,6 +29,7 @@ ts.setup {
     "yaml",
     "embedded_template",
     "javascript",
+    'vue',
   },
 
   incremental_selection = {
