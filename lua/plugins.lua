@@ -82,7 +82,7 @@ startup(function()
     requires = { "nvim-lua/plenary.nvim" },
   })
 
-  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use({ "nvim-telescope/telescope-file-browser.nvim" })
 
   -- Color
   use({
@@ -93,8 +93,11 @@ startup(function()
   })
 
   -- Colorscheme
-  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0", })
-  use({ "catppuccin/nvim", as = "catppuccin", })
+  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  use({ "chiendo97/intellij.vim" })
+  use({ "ellisonleao/gruvbox.nvim" })
+  use("olimorris/onedarkpro.nvim")
 
   -- Utility
   use("rcarriga/nvim-notify")
