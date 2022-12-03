@@ -69,20 +69,13 @@ startup(function()
 
   -- Fuzzy Finder
   use({
-    "ibhagwan/fzf-lua",
-    requires = {
-      "vijaymarupudi/nvim-fzf",
-      "kyazdani42/nvim-web-devicons",
-    },
-  })
-
-  use({
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    requires = { "nvim-lua/plenary.nvim" },
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+    },
   })
-
-  use({ "nvim-telescope/telescope-file-browser.nvim" })
 
   -- Color
   use({
@@ -95,7 +88,6 @@ startup(function()
   -- Colorscheme
   use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
   use({ "catppuccin/nvim", as = "catppuccin" })
-  use({ "chiendo97/intellij.vim" })
   use({ "ellisonleao/gruvbox.nvim" })
   use("olimorris/onedarkpro.nvim")
 
@@ -150,9 +142,8 @@ startup(function()
   -- Motion
   use({
     "phaazon/hop.nvim",
-    branch = "v1", -- optional but strongly recommended
+    branch = "v2",
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
       require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
     end,
   })
@@ -236,6 +227,7 @@ startup(function()
   end
 end)
 
+-- KEYMAPS
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>", opts)
 vim.keymap.set("n", "<leader>pi", ":PackerInstall<CR>", opts)

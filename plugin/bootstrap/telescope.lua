@@ -53,7 +53,5 @@ vim.keymap.set("n", "<leader>fl", builtin.lsp_document_symbols, opts)
 vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, opts)
 
-vim.keymap.set("n", "<leader>fm", ":Fzf files<cr>", opts)
-
 telescope.load_extension "file_browser"
 vim.keymap.set("n", "<leader>fw", ":Telescope file_browser<cr>", opts)

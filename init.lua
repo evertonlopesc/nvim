@@ -14,6 +14,7 @@ vim.opt.cursorline = true
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
+vim.opt.ffs = "unix,mac,dos"
 vim.opt.fileencoding = "utf-8"
 vim.opt.fileencodings = "utf-8"
 vim.opt.foldlevelstart = 99
@@ -28,7 +29,7 @@ vim.opt.maxmempattern = 5000
 vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.relativenumber = true
--- vim.opt.scrolloff = 5
+vim.opt.scrolloff = 5
 vim.opt.shiftwidth = 2
 vim.opt.sidescrolloff = 5
 vim.opt.signcolumn = "yes"
@@ -45,4 +46,26 @@ vim.opt.timeoutlen = 300
 vim.opt.undodir = os.getenv("HOME" .. "/home/everton/.config/.vim/undodir")
 vim.opt.undofile = true
 vim.opt.winbar = "%t %m%r%h"
-vim.opt.wig = { "**/node_module/*", "**/coverage/*", "**/.git/*", ".pyc", ".swp" }
+vim.opt.wig = {
+  "**/node_module/*",
+  "**/coverage/*",
+  "**/.git/*",
+  ".pyc",
+  ".swp",
+  "*.o",
+  "*.obj",
+  "*~",
+  "*vim/backups",
+  "*sass-cache",
+  "*DS_Store",
+  "vendor/rails/**",
+  "vendor/cache/**",
+  "*.gem",
+  "log/**",
+  "tmp/**",
+  "*.png",
+  "*.jpg",
+  "*.gif",
+  "*.swp",
+  "*.pyc"
+}
