@@ -87,9 +87,6 @@ startup(function()
 
   -- Colorscheme
   use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
-  use({ "catppuccin/nvim", as = "catppuccin" })
-  use({ "ellisonleao/gruvbox.nvim" })
-  use("olimorris/onedarkpro.nvim")
 
   -- Utility
   use("rcarriga/nvim-notify")
