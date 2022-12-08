@@ -45,7 +45,6 @@ vim.opt.textwidth = 80, 120
 vim.opt.timeoutlen = 300
 vim.opt.undodir = os.getenv("HOME" .. "/home/everton/.config/.vim/undodir")
 vim.opt.undofile = true
-vim.opt.winbar = "%t %m%r%h"
 vim.opt.wig = {
   "**/node_module/*",
   "**/coverage/*",
