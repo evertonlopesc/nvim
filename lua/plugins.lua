@@ -87,6 +87,11 @@ startup(function()
 
   -- Colorscheme
   use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+  use("olimorris/onedarkpro.nvim")
+  use({
+    "rose-pine/neovim",
+    as = "rose-pine",
+  })
 
   -- Utility
   use("rcarriga/nvim-notify")
