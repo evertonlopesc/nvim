@@ -77,6 +77,8 @@ startup(function()
     },
   })
 
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
   -- Color
   use({
     "norcalli/nvim-colorizer.lua",
