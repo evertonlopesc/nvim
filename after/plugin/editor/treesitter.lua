@@ -10,39 +10,23 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "Buf
 
 ts.setup {
   ensure_installed = {
-    "regex",
     "typescript",
-    "markdown_inline",
-    "html",
-    "json",
-    "vue",
     "markdown",
     "lua",
-    "dockerfile",
-    "vim",
     "rust",
-    "fish",
     "ruby",
-    "css",
-    "sql",
-    "scss",
-    "yaml",
-    "embedded_template",
     "javascript",
-    'vue',
   },
 
-  incremental_selection = {
+  sync_install = false,
+
+  auto_install = true,
+
+  highlight = {
     enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
+    disable = {},
+    additional_vim_regex_highlighting = false
   },
-
-  highlight = { enable = true, disable = {} },
   indent = { enable = true },
   rainbow = {
     enable = true,

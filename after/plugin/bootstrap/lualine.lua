@@ -25,7 +25,7 @@ require("lualine").setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = { { "filename", icon = " ", path = 1 } },
-    lualine_c = { "%=", { lsp_server_name, icon = "" } },
+    lualine_c = { "%=", { lsp_server_name, icon = "", "diagnostics" } },
     lualine_x = {},
     lualine_y = { "branch" },
     lualine_z = { "location", "%p%%/%L" },
