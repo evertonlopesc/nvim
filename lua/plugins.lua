@@ -103,13 +103,13 @@ startup(function()
   })
 
   -- Startup
-  use("glepnir/dashboard-nvim")
+  -- use("glepnir/dashboard-nvim")
 
   -- Indent
   use("lukas-reineke/indent-blankline.nvim")
 
   -- File explorer
-  use({
+  --[[ use({
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
@@ -117,7 +117,7 @@ startup(function()
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
-  })
+  }) ]]
 
   -- Git
   use({
