@@ -16,6 +16,10 @@ local function lsp_server_name()
   return msg
 end
 
+local function teste()
+  return "testing"
+end
+
 require("lualine").setup({
   options = {
     theme = "onedark",
@@ -24,10 +28,10 @@ require("lualine").setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "filename", icon = " ", path = 1 } },
-    lualine_c = { "%=", { lsp_server_name, icon = "", "diagnostics" } },
+    lualine_b = { "branch", "diff" },
+    lualine_c = { "%=", { lsp_server_name, icon = " " } },
     lualine_x = {},
-    lualine_y = { "branch" },
+    lualine_y = { "searchcount" },
     lualine_z = { "location", "%p%%/%L" },
   },
   inactive_sections = {
@@ -35,12 +39,12 @@ require("lualine").setup({
     lualine_x = {},
   },
   extensions = { "toggleterm", "neo-tree", "quickfix" },
-  tabline = {
-    lualine_a = { "%t %m%r%h" },
-    lualine_b = { "diff" },
+  winbar = {
+    lualine_a = { { "filename", icon = " ", path = 1 }, "%r%h" },
+    lualine_b = { "diagnostic" },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { "tabs" },
+    lualine_z = {},
   },
 })
