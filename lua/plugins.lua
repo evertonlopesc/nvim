@@ -77,7 +77,7 @@ startup(function()
     },
   })
 
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
   -- Color
   use({
