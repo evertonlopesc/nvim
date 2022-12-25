@@ -65,7 +65,18 @@ startup(function()
   })
 
   -- Terminal integration
-  use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "v2.*",
+    config = function()
+      require("toggleterm").setup({
+        direction = "vertical",
+        size = 100,
+        insert_mappings = false,
+        shade_terminals = false,
+      })
+    end,
+  })
 
   -- Fuzzy Finder
   use({
@@ -73,11 +84,8 @@ startup(function()
     branch = "0.1.x",
     requires = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
     },
   })
-
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
   -- Color
   use({
@@ -111,7 +119,7 @@ startup(function()
   use("lukas-reineke/indent-blankline.nvim")
 
   -- File explorer
-  --[[ use({
+  use({
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
@@ -119,7 +127,7 @@ startup(function()
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
-  }) ]]
+  })
 
   -- Git
   use({
@@ -127,13 +135,12 @@ startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
     },
+    config = function ()
+      require "gitsigns".setup {
+        current_line_blame = false,
+      }
+    end
   })
-
-  --[[ use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
-  use({
-    "sindrets/diffview.nvim",
-    requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons" },
-  }) ]]
 
   use({ "tpope/vim-fugitive" })
 
@@ -232,12 +239,5 @@ startup(function()
     require("packer").sync()
   end
 end)
-
--- KEYMAPS
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>", opts)
-vim.keymap.set("n", "<leader>pi", ":PackerInstall<CR>", opts)
-vim.keymap.set("n", "<leader>pu", ":PackerUpdate<CR>", opts)
-vim.keymap.set("n", "<leader>pc", ":PackerClean<CR>", opts)
 
 return startup
