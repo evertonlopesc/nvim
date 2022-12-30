@@ -6,16 +6,12 @@
 
 > Unix, Linux Installation
 
-```sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
+You need install packer: [link to download](https://github.com/wbthomason/packer.nvim#quickstart)
 
-If you use Arch Linux, there is also [an AUR package](https://aur.archlinux.org/packages/nvim-packer-git).
-
-Clone this repository
+Clone this repository from ~/.config/
 
 ```sh
-git clone https://github.com/evertonlopesc/nvim.git ~/.config/
+git clone https://github.com/evertonlopesc/nvim.git
 ```
 
 ### Requirements
@@ -62,21 +58,11 @@ _I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies._
 
 ### Fuzzy Finder
 
-- 'ibhagwan/fzf-lua'
 - 'nvim-telescope/telescope.nvim'
-
-### Colorscheme
-
-- "EdenEast/nightfox.nvim"
-- "catppuccin/nvim"
 
 ### Statusline
 
 - 'nvim-lualine/lualine.nvim'
-
-### Startup
-
-- 'glepnir/dashboard-nvim'
 
 ### File explorer
 
@@ -85,5 +71,3 @@ _I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies._
 ### Git
 
 - 'lewis6991/gitsigns.nvim'
-- 'TimUntersberger/neogit'
-- 'sindrets/diffview.nvim'
