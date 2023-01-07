@@ -5,19 +5,22 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 local border = {
-      {"", "FloatBorder"},
-      {"", "FloatBorder"},
-      {"", "FloatBorder"},
-      {"⏽", "FloatBorder"},
-      {"", "FloatBorder"},
-      {"", "FloatBorder"},
-      {"", "FloatBorder"},
-      {"⏽", "FloatBorder"},
+  { "", "FloatBorder" },
+  { "", "FloatBorder" },
+  { "", "FloatBorder" },
+  { "⏽", "FloatBorder" },
+  { "", "FloatBorder" },
+  { "", "FloatBorder" },
+  { "", "FloatBorder" },
+  { "⏽", "FloatBorder" },
 }
 
-local handlers =  {
-  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+local handlers = {
+  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+  ["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    { border = border }
+  ),
 }
 
 msn.setup({
@@ -98,7 +101,7 @@ for _, server in ipairs(servers) do
   lspc[server].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    handlers = handlers
+    handlers = handlers,
   })
 end
 

@@ -27,13 +27,11 @@ startup(function()
   use("wbthomason/packer.nvim")
 
   -- LSP
-  use({
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "folke/neodev.nvim",
-    "folke/trouble.nvim",
-  })
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
+  use("folke/neodev.nvim")
+  use("folke/trouble.nvim")
 
   use({
     "jose-elias-alvarez/null-ls.nvim",
@@ -113,10 +111,16 @@ startup(function()
   })
 
   -- Startup
-  -- use("glepnir/dashboard-nvim")
+  use({
+    "glepnir/dashboard-nvim",
+    disable = true,
+  })
 
   -- Indent
-  use("lukas-reineke/indent-blankline.nvim")
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    dependencies = "nvim-treesitter",
+  })
 
   -- File explorer
   use({
@@ -135,11 +139,11 @@ startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
     },
-    config = function ()
-      require "gitsigns".setup {
+    config = function()
+      require("gitsigns").setup({
         current_line_blame = false,
-      }
-    end
+      })
+    end,
   })
 
   use({ "tpope/vim-fugitive" })
@@ -229,10 +233,17 @@ startup(function()
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end,
+  })
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   })
 
   if packer_bootstrap then
