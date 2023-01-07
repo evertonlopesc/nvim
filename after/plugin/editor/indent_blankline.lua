@@ -1,14 +1,44 @@
-vim.opt.termguicolors = true
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#c5c5c5 gui=nocombine]])
-
 require("indent_blankline").setup({
-  show_end_of_line = true,
+  char = "⋅",
+  use_treesitter = true,
   space_char_blankline = " ",
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
+  show_first_indent_level = false,
+  show_trailing_blankline_indent = false,
+  show_current_context = true,
+  use_treesitter_scope = false,
+  context_patterns = {
+    "^for",
+    "^func",
+    "^if",
+    "^object",
+    "^table",
+    "^while",
+    "argument_list",
+    "arguments",
+    "block",
+    "catch_clause",
+    "class",
+    "dictionary",
+    "do_block",
+    "element",
+    "else_clause",
+    "except",
+    "for",
+    "function",
+    "if_statement",
+    "import_statement",
+    "method",
+    "object",
+    "operation_type",
+    "return",
+    "table",
+    "try",
+    "try_statement",
+    "tuple",
+    "while",
+    "with",
   },
 })
