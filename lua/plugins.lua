@@ -94,12 +94,9 @@ startup(function()
   })
 
   -- Colorscheme
-  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
-  use("olimorris/onedarkpro.nvim")
-  use({
-    "rose-pine/neovim",
-    as = "rose-pine",
-  })
+  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0", disable = true })
+  use({ "olimorris/onedarkpro.nvim", disable = true })
+  use({ "rose-pine/neovim", as = "rose-pine", })
 
   -- Utility
   use("rcarriga/nvim-notify")
@@ -119,7 +116,7 @@ startup(function()
   -- Indent
   use({
     "lukas-reineke/indent-blankline.nvim",
-    dependencies = "nvim-treesitter",
+    requires = "nvim-treesitter",
   })
 
   -- File explorer
@@ -190,17 +187,17 @@ startup(function()
     },
   })
 
-  use("mfussenegger/nvim-dap")
-  use("suketa/nvim-dap-ruby")
+  use({ "mfussenegger/nvim-dap", disable = true })
+  use({ "suketa/nvim-dap-ruby", disable = true })
 
   -- Editing support
   use("jiangmiao/auto-pairs")
-
   use("mattn/emmet-vim")
 
   use({
     "vinibispo/ruby.nvim",
-    ft = { "ruby" }, -- optional
+    disable = true,
+    ft = { "ruby" },
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -225,14 +222,14 @@ startup(function()
     },
     config = function()
       require("forem-nvim").setup({
-        api_key = "5tJYZZL3bcrKsHYmYgSfabUc", -- Your API Key
+        api_key = "5tJYZZL3bcrKsHYmYgSfabUc",
       })
     end,
   })
 
   use({
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    tag = "*",
     config = function()
       require("nvim-surround").setup({})
     end,
