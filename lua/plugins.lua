@@ -146,7 +146,8 @@ startup(function()
     end,
   })
 
-  use({ "tpope/vim-fugitive" })
+  use({ "tpope/vim-fugitive", disable = true })
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Comment
   use({
