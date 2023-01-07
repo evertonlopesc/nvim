@@ -31,7 +31,7 @@ require("lualine").setup({
     lualine_b = { "branch", "diff" },
     lualine_c = { "%=", { lsp_server_name, icon = " " } },
     lualine_x = {},
-    lualine_y = { "searchcount" },
+    lualine_y = { "encoding" },
     lualine_z = { "location", "%p%%/%L" },
   },
   inactive_sections = {
