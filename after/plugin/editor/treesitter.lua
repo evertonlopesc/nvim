@@ -18,6 +18,11 @@ ts.setup {
     "javascript",
   },
 
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
+
   sync_install = false,
 
   auto_install = true,
