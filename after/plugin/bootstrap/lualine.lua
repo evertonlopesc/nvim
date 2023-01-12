@@ -16,23 +16,26 @@ local function lsp_server_name()
   return msg
 end
 
-local function teste()
-  return "testing"
-end
+local p = require("rose-pine.palette")
 
 require("lualine").setup({
   options = {
     theme = "onedark",
     component_separators = "",
-    section_separators = { left = "", right = "" },
+    icons_enabled = false,
+    section_separators = " ",
+    always_divide_middle = true,
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", "diff" },
-    lualine_c = { "%=", { lsp_server_name, icon = " " } },
+    lualine_b = {
+      "branch",
+      "diff",
+    },
+    lualine_c = { "%=", { lsp_server_name, color = { fg = p.gold, gui = "italic" } } },
     lualine_x = {},
-    lualine_y = { "encoding" },
-    lualine_z = { "location", "%p%%/%L" },
+    lualine_y = { "searchcount", "filetype", "encoding", "location", "%p%%/%L" },
+    lualine_z = {},
   },
   inactive_sections = {
     lualine_c = { "%f %y %m" },
@@ -40,7 +43,7 @@ require("lualine").setup({
   },
   extensions = { "toggleterm", "neo-tree", "quickfix" },
   winbar = {
-    lualine_a = { { "filename", icon = " ", path = 1 }, "%r%h" },
+    lualine_a = { { "filename", path = 1, color = { gui = "italic" } }, "%r%h" },
     lualine_b = { "diagnostic" },
     lualine_c = {},
     lualine_x = {},
