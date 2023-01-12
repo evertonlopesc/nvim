@@ -1,4 +1,4 @@
-local nls = require "null-ls"
+local nls = require('null-ls')
 local blts = nls.builtins
 
 local sources = {
@@ -11,6 +11,6 @@ local sources = {
   blts.code_actions.gitsigns,
 }
 
-nls.setup {
+nls.setup({
   sources = sources,
-}
+})

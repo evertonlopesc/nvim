@@ -1,3 +1,3 @@
-local nmap = require("./../config/map").nmap
+local nmap = require('./../config/map').nmap
 
-nmap("<C-n>", "<cmd> Neotree toggle left <cr>")
+nmap('<C-n>', '<cmd> Neotree toggle left <cr>')

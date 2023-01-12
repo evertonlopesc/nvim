@@ -1,5 +1,5 @@
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
-    vim.cmd(":%s/\\s\\+$//e")
-  end
+    vim.cmd(':%s/\\s\\+$//e')
+  end,
 })
