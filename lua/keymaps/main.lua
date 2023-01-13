@@ -3,7 +3,7 @@ local xmap = require('./../config/map').xmap
 local imap = require('./../config/map').imap
 
 nmap('<leader>rr', ':source % <CR>')
-nmap('<F2>', ':%s/\\s*$//<CR>')
+nmap('<leader>S', ':%s/<c-r><c-w>//g<left><left>')
 nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 nmap('<Down>', ':resize -5<CR>')
