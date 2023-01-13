@@ -89,3 +89,5 @@ cmp.setup({
     end,
   },
 })
+
+vim.opt.pumheight = 10
