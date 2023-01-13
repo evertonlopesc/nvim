@@ -64,20 +64,6 @@ startup(function()
     require = { { 'p00f/nvim-ts-rainbow' } },
   })
 
-  -- Terminal integration
-  use({
-    'akinsho/toggleterm.nvim',
-    tag = 'v2.*',
-    config = function()
-      require('toggleterm').setup({
-        direction = 'vertical',
-        size = 100,
-        insert_mappings = false,
-        shade_terminals = false,
-      })
-    end,
-  })
-
   -- Fuzzy Finder
   use({
     'nvim-telescope/telescope.nvim',
