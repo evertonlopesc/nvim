@@ -19,6 +19,7 @@ ts.setup({
     'rust',
     'ruby',
     'javascript',
+    'vim',
   },
 
   context_commentstring = {
