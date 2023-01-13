@@ -44,7 +44,7 @@ require('lualine').setup({
     lualine_c = { '%f %y %m' },
     lualine_x = {},
   },
-  extensions = { 'toggleterm', 'neo-tree', 'quickfix' },
+  extensions = { 'neo-tree', 'quickfix' },
   winbar = {
     lualine_a = { { 'filename', path = 1, color = { gui = 'italic' } }, '%r%h' },
     lualine_b = { 'diagnostic' },
