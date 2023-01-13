@@ -189,16 +189,6 @@ startup(function()
   use('mattn/emmet-vim')
 
   use({
-    'vinibispo/ruby.nvim',
-    disable = true,
-    ft = { 'ruby' },
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-  })
-
-  use({
     'ellisonleao/glow.nvim',
     config = function()
       require('glow').setup({
