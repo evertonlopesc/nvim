@@ -95,8 +95,10 @@ lspc.sumneko_lua.setup({
   },
 })
 
-lspc.tailwindcss.setup({
-  filetypes = { 'html', 'eruby' },
+lspc.solargraph.setup({
+  init_options = {
+    formatting = false,
+  },
 })
 
 local servers = msn_lspc.get_installed_servers()
