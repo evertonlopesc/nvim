@@ -1,8 +1,4 @@
 -- Summary Options
---
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 vim.opt.autoindent = true
 vim.opt.backup = false
 vim.opt.breakindent = true
