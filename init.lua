@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require('plugins')
-require('config.init')
-require('keymaps.init')
+require('config')
+require('keymaps')
