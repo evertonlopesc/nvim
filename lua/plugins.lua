@@ -82,8 +82,6 @@ startup(function()
   })
 
   -- Colorscheme
-  use({ 'EdenEast/nightfox.nvim', tag = 'v1.0.0', disable = true })
-  use({ 'olimorris/onedarkpro.nvim', disable = true })
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   -- Utility
@@ -95,10 +93,6 @@ startup(function()
   })
 
   -- Startup
-  use({
-    'glepnir/dashboard-nvim',
-    disable = true,
-  })
 
   -- Indent
   use({
@@ -130,18 +124,9 @@ startup(function()
     end,
   })
 
-  use({ 'tpope/vim-fugitive', disable = true })
   use({ 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' })
 
   -- Comment
-  use({
-    'b3nj5m1n/kommentary',
-    disable = true,
-    config = function()
-      require('kommentary.config').setup({})
-    end,
-  })
-
   use({
     'numToStr/Comment.nvim',
   })

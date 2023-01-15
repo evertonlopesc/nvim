@@ -4,10 +4,6 @@ local nmap = m.nmap
 local omap = m.omap
 local xmap = m.xmap
 
--- Fugitive
---[[ nmap("<leader>g", "<cmd> vert Git <cr>")
-nmap("<leader>gc", "<cmd> vert Git commit <cr>") ]]
-
 -- Neogit
 local neogit = require('neogit')
 nmap('<leader>g', ':Neogit <CR>')
