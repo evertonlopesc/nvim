@@ -51,6 +51,11 @@ local M = {
       })
     end,
   },
+
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+
 }
 
 return M
