@@ -1,5 +1,4 @@
 require('keymaps.main')
 require('keymaps.telescope')
-require('keymaps.neotree')
 require('keymaps.git')
 require('keymaps.neotest')

@@ -4,11 +4,6 @@ local nmap = m.nmap
 local omap = m.omap
 local xmap = m.xmap
 
--- Neogit
-local neogit = require('neogit')
-nmap('<leader>g', ':Neogit <CR>')
-nmap('<leader>gc', ':Neogit commit <CR>')
-
 -- Gitsigns
 local gitsigns = require('gitsigns')
 
