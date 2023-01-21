@@ -8,11 +8,11 @@ local M = {
         lazy = false,
         opts = {
           ui = {
-              icons = {
-                  package_installed = "✓",
-                  package_pending = "➜",
-                  package_uninstalled = "✗"
-              },
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            },
           },
         },
         config = true,
@@ -38,7 +38,7 @@ local M = {
       local masonlsp = require("mason-lspconfig")
       local lspconfig = require("lspconfig")
 
-      local opts = { noremap=true, silent=true }
+      local opts = { noremap = true, silent = true }
       vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -49,7 +49,7 @@ local M = {
       local on_attach = function(_, bufnr)
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, bufopts)
         vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', '<leader>lk', vim.lsp.buf.hover, bufopts)
@@ -64,35 +64,38 @@ local M = {
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+      local function make_config()
+        return { on_attach = on_attach, capabilities = capabilities }
+      end
+
       masonlsp.setup()
       masonlsp.setup_handlers {
-        function (server_name)
-          lspconfig[server_name].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-          }
+        function(server_name)
+          lspconfig[server_name].setup { make_config() }
         end,
 
-        ["sumneko_lua"] = function ()
-            lspconfig.sumneko_lua.setup {
-              settings = {
-                Lua = {
-                  runtime = {
-                    version = 'LuaJIT',
-                  },
-                  diagnostics = {
-                    globals = { 'vim' },
-                  },
-                  workspace = {
-                    library = vim.api.nvim_get_runtime_file('', true),
-                  },
-                  telemetry = {
-                    enable = false,
-                  },
-                }
-              }
+        ["sumneko_lua"] = function()
+          local config = make_config()
+          config.settings = {
+            Lua = {
+              runtime = {
+                version = 'LuaJIT',
+              },
+              diagnostics = {
+                globals = { 'vim' },
+              },
+              workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+              },
+              telemetry = {
+                enable = false,
+              },
             }
+          }
+
+          lspconfig.sumneko_lua.setup(config)
         end,
+
       }
     end,
   },
