@@ -45,10 +45,6 @@ local M = {
       },
     },
     config = true,
-    init = function ()
-      vim.opt.background = 'dark'
-      vim.cmd.colorscheme('rose-pine')
-    end,
   },
 }
 
