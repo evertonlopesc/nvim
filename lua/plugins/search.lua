@@ -2,11 +2,12 @@ local M = {
   {
     'phaazon/hop.nvim',
     branch = 'v2',
-    lazy = true,
+    lazy = false,
     opts = {
       keys = 'etovxqpdygfblzhckisuran',
     },
     config = true,
+    cmd = 'Hop',
   },
 
   {

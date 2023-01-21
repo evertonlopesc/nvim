@@ -11,7 +11,7 @@ local M = {
   {
     'mattn/emmet-vim',
     keys = {
-      { '<leader>y', ':Emmet ' },
+      { '<leader>y', ':Emmet ', desc = 'Emmet' },
     },
     cmd = 'Emmet',
   },
@@ -36,6 +36,26 @@ local M = {
   },
 
   {
+    "echasnovski/mini.indentscope",
+    version = false, -- wait till new 0.7.0 release to put it back on semver
+    event = "BufReadPre",
+    opts = {
+      -- symbol = "▏",
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    config = function(_, opts)
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+      require("mini.indentscope").setup(opts)
+    end,
+  },
+
+  {
     'lukas-reineke/indent-blankline.nvim',
     lazy = false,
     dependencies = 'nvim-treesitter',
@@ -45,7 +65,7 @@ local M = {
       space_char_blankline = ' ',
       show_first_indent_level = false,
       show_trailing_blankline_indent = false,
-      show_current_context = true,
+      show_current_context = false,
       use_treesitter_scope = false,
       context_patterns = {
         '^for',
@@ -81,7 +101,7 @@ local M = {
       },
     },
     config = true,
-    init = function ()
+    init = function()
       vim.opt.list = true
       vim.opt.listchars:append('eol:↴')
     end,

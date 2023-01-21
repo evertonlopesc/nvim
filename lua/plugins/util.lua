@@ -8,7 +8,7 @@ local M = {
     config = true,
     cmd = 'Glow',
     keys = {
-      { '<leader>,', ':Glow<CR>' },
+      { '<leader>,', ':Glow<CR>', desc = 'Glow' },
     },
     ft = 'markdown',
   },
@@ -42,10 +42,10 @@ local M = {
     },
     config = true,
     keys = {
-      { '<leader>nf', ":Neotest run.run(vim.fn.expand('%'))<CR>" },
-      { '<leader>nu', ':Neotest run.run()<CR>' },
-      { '<leader>na', ':Neotest run.run(vim.fn.getcwd())<CR>' },
-      { '<leader>ns', ':Neotest summary.open()<CR>' },
+      { '<leader>nf', ":Neotest run.run(vim.fn.expand('%'))<CR>", desc = 'Run test file' },
+      { '<leader>nu', ':Neotest run.run()<CR>', desc = 'Run test cursor' },
+      { '<leader>na', ':Neotest run.run(vim.fn.getcwd())<CR>', desc = 'Test' },
+      { '<leader>ns', ':Neotest summary.open()<CR>', desc = 'Test summary' },
     },
     cmd = 'Neotest',
   },

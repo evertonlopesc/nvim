@@ -17,7 +17,7 @@ local M = {
       { '<leader>gr', ':Gitsigns reset_hunk<cr>' },
       { '<leader>gp', ':Gitsigns preview_hunk<cr>' },
       { '<leader>gb', ':Gitsigns blame_line<cr>' },
-      { 'x, o', '<leader>gh', ':Gitsigns select_hunk<cr>' },
+      -- { 'x, o', '<leader>gh', ':Gitsigns select_hunk<cr>' },
     },
     cmd = 'Gitsigns',
   },
@@ -28,8 +28,8 @@ local M = {
       'nvim-lua/plenary.nvim',
     },
     keys = {
-      { '<leader>g', ':Neogit<CR>' },
-      { '<leader>gc', ':Neogit commit<CR>' },
+      { '<leader>g', ':Neogit<CR>', desc = 'Git' },
+      { '<leader>gc', ':Neogit commit<CR>', desc = 'Commit' },
     },
     config = true,
     cmd = 'Neogit',
@@ -44,7 +44,7 @@ local M = {
     },
     config = true,
     keys = {
-      { '<leader>o', ':Octo actions<CR>' },
+      { '<leader>o', ':Octo actions<CR>', desc = 'Github CLI' },
     },
     cmd = 'Octo',
   },

@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
@@ -19,6 +20,8 @@ require('lazy').setup({
   performance = {
     cache = {
       enabled = true,
+      path = vim.fn.stdpath("cache") .. "/lazy/cache",
+      disable_events = { "UIEnter", "BufReadPre" },
     },
     rtp = {
       disabled_plugins = {
