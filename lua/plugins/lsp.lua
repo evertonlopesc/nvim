@@ -1,37 +1,38 @@
 local M = {
   {
-    "williamboman/mason.nvim",
-    lazy = false,
-    opts = {
-      ui = {
-          icons = {
-              package_installed = "✓",
-              package_pending = "➜",
-              package_uninstalled = "✗"
-          },
-      },
-    },
-    config = true,
-    keys = {
-      { '<leader>m', ':Mason<cr>', desc = 'Mason' }
-    },
-    cmd = 'Mason',
-  },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      ensure_installed = {
-        "sumneko_lua", "solargraph", 'tsserver',
-      },
-    },
-    config = true,
-  },
-
-  {
     "neovim/nvim-lspconfig",
     lazy = false,
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        lazy = false,
+        opts = {
+          ui = {
+              icons = {
+                  package_installed = "✓",
+                  package_pending = "➜",
+                  package_uninstalled = "✗"
+              },
+          },
+        },
+        config = true,
+        keys = {
+          { '<leader>m', ':Mason<cr>', desc = 'Mason' }
+        },
+        cmd = 'Mason',
+      },
+
+      {
+        "williamboman/mason-lspconfig.nvim",
+        lazy = false,
+        opts = {
+          ensure_installed = {
+            "sumneko_lua", "solargraph", 'tsserver',
+          },
+        },
+        config = true,
+      },
+    },
     config = function()
       require("mason").setup()
       local masonlsp = require("mason-lspconfig")
