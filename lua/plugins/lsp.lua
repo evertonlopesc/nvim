@@ -1,3 +1,5 @@
+local vim = vim
+
 local M = {
   {
     'williamboman/mason.nvim',
@@ -10,6 +12,11 @@ local M = {
         },
       },
     },
+    config = true,
+    keys = {
+      { '<leader>m', ':Mason<CR>' },
+    },
+    cmd = 'Mason',
   },
 
   {
@@ -24,6 +31,7 @@ local M = {
 
   {
     'neovim/nvim-lspconfig',
+    lazy = false,
     opts = {
       servers = {
         sumneko_lua = {
@@ -57,13 +65,13 @@ local M = {
       local keymap = vim.keymap.set
 
       local border = {
-        { '', 'FloatBorder' },
+        { '1', 'FloatBorder' },
         { '', 'FloatBorder' },
-        { '', 'FloatBorder' },
+        { '2', 'FloatBorder' },
         { '⏽', 'FloatBorder' },
-        { '', 'FloatBorder' },
+        { '3', 'FloatBorder' },
         { '', 'FloatBorder' },
-        { '', 'FloatBorder' },
+        { '4', 'FloatBorder' },
         { '⏽', 'FloatBorder' },
       }
 
@@ -123,7 +131,10 @@ local M = {
 
   {
     'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    lazy = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
     config = function()
       local nls = require('null-ls')
       local blts = nls.builtins
@@ -142,9 +153,6 @@ local M = {
       })
     end,
   },
-
-  { 'folke/neodev.nvim' },
-  { 'folke/trouble.nvim' },
 }
 
 return M

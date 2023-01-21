@@ -1,23 +1,16 @@
 local M = {
   {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    lazy = true,
     dependencies = {
       { 'p00f/nvim-ts-rainbow' },
     },
-    config = function()
-      vim.api.nvim_create_autocmd(
-        { 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' },
-        {
-          group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-          callback = function()
-            vim.opt.foldmethod = 'expr'
-            vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-          end,
-        }
-      )
-
-      require('nvim-treesitter.configs').setup({
+    opts = {
         ensure_installed = {
           'typescript',
           'markdown',
@@ -48,14 +41,21 @@ local M = {
           extended_mode = true,
           max_file_line = nil,
         },
-      })
+    },
+    init = function ()
+      vim.api.nvim_create_autocmd(
+        { 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' },
+        {
+          group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+          callback = function()
+            vim.opt.foldmethod = 'expr'
+            vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+          end,
+        }
+      )
     end,
+    config = true,
   },
-
-  {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-  },
-
 }
 
 return M
