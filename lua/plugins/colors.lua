@@ -1,7 +1,10 @@
 local M = {
   {
     'norcalli/nvim-colorizer.lua',
-    config = true,
+    event = 'BufReadPost',
+    config = function ()
+      require'colorizer'.setup()
+    end,
   },
 
   {
