@@ -14,6 +14,16 @@ local M = {
   },
 
   {
+    'iamcco/markdown-preview.nvim',
+    event = 'BufReadPost',
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+    ft = { 'markdown' },
+    cmd = 'MarkdownPreview',
+  },
+
+  {
     'Massolari/forem.nvim',
     opts = {
       api_key = '5tJYZZL3bcrKsHYmYgSfabUc',
