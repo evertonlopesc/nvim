@@ -103,8 +103,10 @@ local M = {
         end,
       },
     })
-
+  end,
+  init = function()
     vim.opt.pumheight = 10
+    vim.opt.completeopt = 'menu,menuone,noselect'
   end,
 }
 
