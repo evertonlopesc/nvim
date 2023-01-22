@@ -2,7 +2,7 @@ local M = {
   {
     'phaazon/hop.nvim',
     branch = 'v2',
-    lazy = false,
+    event = 'BufReadPost',
     opts = {
       keys = 'etovxqpdygfblzhckisuran',
     },

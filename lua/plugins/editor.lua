@@ -1,11 +1,12 @@
 local M = {
   {
     'RRethy/vim-illuminate',
+    event = 'BufReadPost',
   },
 
   {
     'jiangmiao/auto-pairs',
-    lazy = false,
+    event = 'BufReadPost',
   },
 
   {

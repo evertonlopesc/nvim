@@ -1,11 +1,11 @@
 local M = {
   {
-    "neovim/nvim-lspconfig",
-    lazy = false,
+    'neovim/nvim-lspconfig',
+    event = 'BufReadPost',
     dependencies = {
       {
-        "williamboman/mason.nvim",
-        lazy = false,
+        'williamboman/mason.nvim',
+        event = 'BufReadPost',
         opts = {
           ui = {
             icons = {
@@ -22,8 +22,8 @@ local M = {
         cmd = 'Mason',
       },
       {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = false,
+        'williamboman/mason-lspconfig.nvim',
+        event = 'BufReadPost',
         opts = {
           ensure_installed = {
             "sumneko_lua", "solargraph", 'tsserver',
@@ -124,7 +124,7 @@ local M = {
 
   {
     'jose-elias-alvarez/null-ls.nvim',
-    lazy = true,
+    event = 'BufReadPost',
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
