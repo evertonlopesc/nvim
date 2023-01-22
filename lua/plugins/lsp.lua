@@ -21,7 +21,6 @@ local M = {
         },
         cmd = 'Mason',
       },
-
       {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
@@ -96,6 +95,29 @@ local M = {
           lspconfig.sumneko_lua.setup(config)
         end,
 
+        ["solargraph"] = function()
+          local config = make_config()
+
+          lspconfig.solargraph.setup(config)
+        end,
+
+        ["grammarly"] = function()
+          local config = make_config()
+
+          lspconfig.grammarly.setup(config)
+        end,
+
+        ["tsserver"] = function()
+          local config = make_config()
+
+          lspconfig.tsserver.setup(config)
+        end,
+
+        ["vue"] = function()
+          local config = make_config()
+
+          lspconfig.vue.setup(config)
+        end,
       }
     end,
   },
