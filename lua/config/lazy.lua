@@ -20,20 +20,17 @@ require('lazy').setup({
   performance = {
     cache = {
       enabled = true,
-      path = vim.fn.stdpath("cache") .. "/lazy/cache",
-      disable_events = { "UIEnter", "BufReadPre" },
     },
     rtp = {
       disabled_plugins = {
-        "gzip",
-        "matchparen",
-        "netrwPlugin",
-        "rplugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-        "gzip",
+        'gzip',
+        'matchparen',
+        'netrwPlugin',
+        'rplugin',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
       },
     },
   },

@@ -17,15 +17,15 @@ local M = {
   },
 
   {
-    "kylechui/nvim-surround",
-    version = "*",
-    lazy = false,
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'BufReadPost',
     config = true,
   },
 
   {
     'numToStr/Comment.nvim',
-    lazy = false,
+    event = 'BufReadPost',
     opts = {
       ignore = '^$',
       pre_hook = function()
@@ -36,28 +36,36 @@ local M = {
   },
 
   {
-    "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
-    event = "BufReadPre",
+    'echasnovski/mini.indentscope',
+    event = 'BufReadPost',
+    version = false,
     opts = {
       -- symbol = "▏",
-      symbol = "│",
+      symbol = '│',
       options = { try_as_border = true },
     },
     config = function(_, opts)
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = {
+          'help',
+          'alpha',
+          'dashboard',
+          'neo-tree',
+          'Trouble',
+          'lazy',
+          'mason',
+        },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
       })
-      require("mini.indentscope").setup(opts)
+      require('mini.indentscope').setup(opts)
     end,
   },
 
   {
     'lukas-reineke/indent-blankline.nvim',
-    lazy = false,
+    event = 'BufReadPost',
     dependencies = 'nvim-treesitter',
     opts = {
       char = '⋅',
@@ -65,7 +73,7 @@ local M = {
       space_char_blankline = ' ',
       show_first_indent_level = false,
       show_trailing_blankline_indent = false,
-      show_current_context = false,
+      show_current_context = true,
       use_treesitter_scope = false,
       context_patterns = {
         '^for',

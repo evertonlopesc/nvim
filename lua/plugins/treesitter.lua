@@ -11,38 +11,38 @@ local M = {
       { 'p00f/nvim-ts-rainbow' },
     },
     opts = {
-        ensure_installed = {
-          'typescript',
-          'markdown',
-          'lua',
-          'rust',
-          'ruby',
-          'javascript',
-          'vim',
-        },
+      ensure_installed = {
+        'typescript',
+        'markdown',
+        'lua',
+        'rust',
+        'ruby',
+        'javascript',
+        'vim',
+      },
 
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
 
-        sync_install = false,
+      sync_install = false,
 
-        auto_install = true,
+      auto_install = true,
 
-        highlight = {
-          enable = true,
-          disable = {},
-          additional_vim_regex_highlighting = false,
-        },
-        indent = { enable = true },
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_file_line = nil,
-        },
+      highlight = {
+        enable = true,
+        disable = {},
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+      rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_line = nil,
+      },
     },
-    init = function ()
+    init = function()
       vim.api.nvim_create_autocmd(
         { 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' },
         {
