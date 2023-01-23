@@ -17,7 +17,6 @@ local M = {
       { '<leader>gr', ':Gitsigns reset_hunk<cr>' },
       { '<leader>gp', ':Gitsigns preview_hunk<cr>' },
       { '<leader>gb', ':Gitsigns blame_line<cr>' },
-      -- { 'x, o', '<leader>gh', ':Gitsigns select_hunk<cr>' },
     },
     cmd = 'Gitsigns',
   },

@@ -192,3 +192,9 @@ keymap(
   '<Esc>',
   { desc = 'Esc insert mode', noremap = true, silent = false }
 )
+keymap(
+  'x',
+  '<leader>gh',
+  ':Gitsigns select_hunk<cr>',
+  { desc = 'Select hunk', noremap = true, silent = false }
+)
