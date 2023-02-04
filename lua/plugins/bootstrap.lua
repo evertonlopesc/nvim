@@ -10,13 +10,20 @@ local M = {
           ['o'] = 'open',
         },
       },
-
       filesystem = {
         follow_current_file = true,
         window = {
           mappings = {
             ['o'] = 'open',
           },
+        },
+      },
+      event_handlers = {
+        {
+          event = 'file_opened',
+          handler = function(file_path)
+            require('neo-tree').close_all()
+          end,
         },
       },
     },
