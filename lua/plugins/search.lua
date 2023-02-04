@@ -65,7 +65,7 @@ local M = {
     },
     keys = {
       { '<leader>t', ':Telescope <CR>' },
-      { '<leader>f', ':Telescope find_files<cr>' },
+      { '<leader>ff', ':Telescope find_files<cr>' },
       { '<leader>fg', ':Telescope live_grep<cr>' },
       { '<leader>fo', ':Telescope oldfiles<cr>' },
       { '<leader>fl', ':Telescope lsp_document_symbols<cr>' },
