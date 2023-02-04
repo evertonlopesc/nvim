@@ -113,25 +113,21 @@ local M = {
         ['sumneko_lua'] = function()
           local config = make_config()
           config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-
           lspconfig.sumneko_lua.setup(config)
         end,
 
         ['solargraph'] = function()
           local config = make_config()
-
           lspconfig.solargraph.setup(config)
         end,
 
         ['marksman'] = function()
           local config = make_config()
-
           lspconfig.marksman.setup(config)
         end,
 
         ['tsserver'] = function()
           local config = make_config()
-
           lspconfig.tsserver.setup(config)
         end,
 
@@ -166,24 +162,23 @@ local M = {
           }),
           blts.formatting.prettierd.with({
             filetypes = {
+              'css',
+              'html',
               'javascript',
               'javascriptreact',
-              'typescript',
-              'typescriptreact',
-              'vue',
-              'css',
-              'scss',
-              'less',
-              'html',
               'json',
               'jsonc',
+              'less',
+              'typescript',
+              'typescriptreact',
+              'scss',
+              'vue',
               'yaml',
             },
           }),
           blts.formatting.markdownlint.with({
             filetypes = { 'markdown' },
           }),
-
           blts.code_actions.gitsigns,
           blts.code_actions.eslint_d.with({
             filetypes = {

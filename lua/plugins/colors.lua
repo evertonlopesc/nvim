@@ -10,7 +10,7 @@ local M = {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enable = false,
+    lazy = true,
     opts = {
       dark_variant = 'moon',
       bold_vert_split = false,
@@ -47,7 +47,6 @@ local M = {
 
   {
     'projekt0n/github-nvim-theme',
-    lazy = false,
     priority = 1000,
     version = 'v0.0.7',
   },

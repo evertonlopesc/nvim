@@ -1,3 +1,4 @@
+-- Function with return the servers
 local function lsp_server_name()
   local msg = 'none'
   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -19,7 +20,6 @@ end
 local M = {
   {
     'nvim-lualine/lualine.nvim',
-    lazy = false,
     opts = {
       options = {
         theme = 'onedark',
