@@ -74,6 +74,18 @@ local M = {
     },
     config = true,
   },
+
+  {
+    'windwp/nvim-spectre',
+    event = 'BufReadPost',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+    },
+    keys = {
+      { '<leader>s', ':Spectre<cr> right' },
+      { '<leader>sw', "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
+    },
+  },
 }
 
 return M
