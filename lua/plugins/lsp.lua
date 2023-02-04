@@ -80,8 +80,8 @@ local M = {
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
-        vim.keymap.set('n', '<leader>ld', vim.lsp.buf.declaration, bufopts)
-        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', '<leader>lk', vim.lsp.buf.hover, bufopts)
         vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, bufopts)
         vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, bufopts)
@@ -135,10 +135,9 @@ local M = {
           lspconfig.tsserver.setup(config)
         end,
 
-        ['volar'] = function()
+        ['vuels'] = function()
           local config = make_config()
-
-          lspconfig.volar.setup(config)
+          lspconfig.vuels.setup(config)
         end,
       })
     end,
