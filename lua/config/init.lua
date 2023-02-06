@@ -1,6 +1,6 @@
 require('config.lazy')
 require('config.options')
-require('config.auto_command')
+require('config.autocommands')
 
 vim.opt.background = 'light'
 -- vim.cmd.colorscheme('rose-pine')
