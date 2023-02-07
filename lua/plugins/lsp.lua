@@ -109,6 +109,21 @@ local M = {
           config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
           lspconfig.sumneko_lua.setup(config)
         end,
+
+        ['solargraph'] = function()
+          local config = make_config()
+          lspconfig.solargraph.setup(config)
+        end,
+
+        ['tsserver'] = function()
+          local config = make_config()
+          lspconfig.tsserver.setup(config)
+        end,
+
+        ['vuels'] = function()
+          local config = make_config()
+          lspconfig.vuels.setup(config)
+        end,
       })
     end,
   },
