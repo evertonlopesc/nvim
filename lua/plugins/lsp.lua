@@ -31,7 +31,6 @@ local M = {
             'tsserver',
             'vuels',
             'marksman',
-            'html',
           },
         },
         config = true,
@@ -137,21 +136,6 @@ local M = {
         ['vuels'] = function()
           local config = make_config()
           lspconfig.vuels.setup(config)
-        end,
-
-        ['html'] = function()
-          local config = make_config()
-          config.settings = {
-            init_options = {
-              configurationSection = { 'html', 'css', 'vue' },
-              embeddedLanguages = {
-                css = true,
-                vue = true,
-              },
-              provideFormatter = true,
-            },
-          }
-          lspconfig.html.setup(config)
         end,
       })
     end,
