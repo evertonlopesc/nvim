@@ -29,6 +29,9 @@ local M = {
             'sumneko_lua',
             'solargraph',
             'tsserver',
+            'vuels',
+            'marksman',
+            'html',
           },
         },
         config = true,
@@ -40,7 +43,7 @@ local M = {
       local lspconfig = require('lspconfig')
 
       local signs =
-        { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+      { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
       for type, icon in pairs(signs) do
         local hl = 'DiagnosticSign' .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -134,6 +137,21 @@ local M = {
         ['vuels'] = function()
           local config = make_config()
           lspconfig.vuels.setup(config)
+        end,
+
+        ['html'] = function()
+          local config = make_config()
+          config.settings = {
+            init_options = {
+              configurationSection = { 'html', 'css', 'vue' },
+              embeddedLanguages = {
+                css = true,
+                vue = true,
+              },
+              provideFormatter = true,
+            },
+          }
+          lspconfig.html.setup(config)
         end,
       })
     end,
