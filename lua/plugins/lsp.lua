@@ -24,15 +24,7 @@ local M = {
       {
         'williamboman/mason-lspconfig.nvim',
         event = 'BufReadPost',
-        opts = {
-          ensure_installed = {
-            'sumneko_lua',
-            'solargraph',
-            'tsserver',
-            'vuels',
-            'marksman',
-          },
-        },
+        opts = { automatic_installation = true },
         config = true,
       },
     },
@@ -42,7 +34,7 @@ local M = {
       local lspconfig = require('lspconfig')
 
       local signs =
-      { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+        { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
       for type, icon in pairs(signs) do
         local hl = 'DiagnosticSign' .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -116,26 +108,6 @@ local M = {
           local config = make_config()
           config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
           lspconfig.sumneko_lua.setup(config)
-        end,
-
-        ['solargraph'] = function()
-          local config = make_config()
-          lspconfig.solargraph.setup(config)
-        end,
-
-        ['marksman'] = function()
-          local config = make_config()
-          lspconfig.marksman.setup(config)
-        end,
-
-        ['tsserver'] = function()
-          local config = make_config()
-          lspconfig.tsserver.setup(config)
-        end,
-
-        ['vuels'] = function()
-          local config = make_config()
-          lspconfig.vuels.setup(config)
         end,
       })
     end,
