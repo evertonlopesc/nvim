@@ -33,62 +33,13 @@ local M = {
       local masonlsp = require('mason-lspconfig')
       local lspconfig = require('lspconfig')
 
-      local signs =
-        { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
-      for type, icon in pairs(signs) do
-        local hl = 'DiagnosticSign' .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-      end
-
-      local border = {
-        { '╭', 'FloatBorder' },
-        { '─', 'FloatBorder' },
-        { '╮', 'FloatBorder' },
-        { '│', 'FloatBorder' },
-        { '╯', 'FloatBorder' },
-        { '─', 'FloatBorder' },
-        { '╰', 'FloatBorder' },
-        { '│', 'FloatBorder' },
-      }
-
-      local handlers = {
-        ['textDocument/hover'] = vim.lsp.with(
-          vim.lsp.handlers.hover,
-          { border = border }
-        ),
-        ['textDocument/signatureHelp'] = vim.lsp.with(
-          vim.lsp.handlers.signature_help,
-          { border = border }
-        ),
-      }
-
       vim.diagnostic.config({ virtual_text = false })
 
-      local opts = { noremap = true, silent = true }
-      vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-      vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
-      local on_attach = function(_, bufnr)
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        local bufopts = { noremap = true, silent = true, buffer = bufnr }
-        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.declaration, bufopts)
-        vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
-        vim.keymap.set('n', '<leader>lk', vim.lsp.buf.hover, bufopts)
-        vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, bufopts)
-        vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, bufopts)
-        vim.keymap.set('n', '<leader>ltd', vim.lsp.buf.type_definition, bufopts)
-        vim.keymap.set('n', '<leader>lrn', vim.lsp.buf.rename, bufopts)
-        vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
-        vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, bufopts)
-        vim.keymap.set('n', '<leader>lf', function()
-          vim.lsp.buf.format({ async = true })
-        end, bufopts)
-      end
-
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local handlers = require('plugins.lsp.handlers')
+      local on_attach = function(_, bufnr)
+        require('plugins.lsp.actions_lsp').on_attach(_, bufnr)
+      end
 
       local function make_config()
         return {
@@ -126,6 +77,12 @@ local M = {
         end,
       })
     end,
+    keys = {
+      { '<space>e', vim.diagnostic.open_float },
+      { '[d', vim.diagnostic.goto_prev },
+      { ']d', vim.diagnostic.goto_next },
+      { '<space>q', vim.diagnostic.setloclist },
+    },
   },
 
   {
