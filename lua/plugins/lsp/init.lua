@@ -38,7 +38,7 @@ local M = {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local handlers = require('plugins.lsp.handlers')
       local on_attach = function(_, bufnr)
-        require('plugins.lsp.actions_lsp').on_attach(_, bufnr)
+        require('plugins.lsp.actions').on_attach(_, bufnr)
       end
 
       local function make_config()
