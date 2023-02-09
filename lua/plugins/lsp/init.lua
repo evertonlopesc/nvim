@@ -78,10 +78,18 @@ local M = {
       })
     end,
     keys = {
-      { '<space>e', vim.diagnostic.open_float },
-      { '[d', vim.diagnostic.goto_prev },
-      { ']d', vim.diagnostic.goto_next },
-      { '<space>q', vim.diagnostic.setloclist },
+      {
+        '<space>e',
+        vim.diagnostic.open_float,
+        desc = 'Lsp diagnostic open float',
+      },
+      { '[d', vim.diagnostic.goto_prev, desc = 'Lsp diagnostic goto prev' },
+      { ']d', vim.diagnostic.goto_next, desc = 'Lsp diagnostic goto next' },
+      {
+        '<space>q',
+        vim.diagnostic.setloclist,
+        desc = 'Lsp diagnostic setloclist',
+      },
     },
   },
 
