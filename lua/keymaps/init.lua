@@ -198,3 +198,9 @@ keymap(
   ':Gitsigns select_hunk<cr>',
   { desc = 'Select hunk', noremap = true, silent = false }
 )
+keymap(
+  'i',
+  'kj',
+  '<CR>',
+  { desc = 'Enter', noremap = true, silent = false }
+)
