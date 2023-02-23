@@ -75,6 +75,11 @@ local M = {
           local config = make_config()
           lspconfig.vuels.setup(config)
         end,
+
+        ['grammarly'] = function()
+          local config = make_config()
+          lspconfig.grammarly.setup(config)
+        end,
       })
     end,
     keys = {
