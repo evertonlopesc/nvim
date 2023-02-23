@@ -50,7 +50,6 @@ local M = {
         indicator = {
           style = 'underline',
         },
-        diagnostics = 'nvim_lsp',
         color_icons = true,
       },
     },
