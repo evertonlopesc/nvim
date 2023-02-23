@@ -55,10 +55,10 @@ local M = {
           lspconfig[server_name].setup({ make_config() })
         end,
 
-        ['sumneko_lua'] = function()
+        ['lua_ls'] = function()
           local config = make_config()
           config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-          lspconfig.sumneko_lua.setup(config)
+          lspconfig.lua_ls.setup(config)
         end,
 
         ['solargraph'] = function()
