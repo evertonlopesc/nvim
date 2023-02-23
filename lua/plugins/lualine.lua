@@ -53,17 +53,6 @@ local M = {
         lualine_x = {},
       },
       extensions = { 'neo-tree', 'quickfix' },
-      winbar = {
-        lualine_a = {
-          { 'filename', path = 1, color = { gui = 'italic' } },
-          '%r%h',
-        },
-        lualine_b = { 'diagnostic' },
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
     },
     config = true,
   },
