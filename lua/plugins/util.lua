@@ -2,7 +2,7 @@ local M = {
   {
     'ellisonleao/glow.nvim',
     opts = {
-      style = 'light',
+      style = 'dark',
       width = 120,
     },
     config = true,
@@ -65,16 +65,21 @@ local M = {
   },
 
   {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup({
+      require('which-key').setup({
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       })
     end,
+  },
+
+  {
+    'eandrju/cellular-automaton.nvim',
+    cmd = 'CellularAutomaton',
   },
 }
 

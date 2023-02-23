@@ -204,3 +204,15 @@ keymap(
   '<CR>',
   { desc = 'Enter', noremap = true, silent = false }
 )
+keymap(
+  'n',
+  '<leader>cm',
+  ":CellularAutomaton make_it_rain<CR>",
+  { desc = 'Make it rain', noremap = true, silent = false }
+)
+keymap(
+  'n',
+  '<leader>cg',
+  ":CellularAutomaton game_of_life<CR>",
+  { desc = 'Game of life', noremap = true, silent = false }
+)
