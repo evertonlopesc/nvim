@@ -110,14 +110,12 @@ local M = {
 
       nls.setup({
         sources = {
-          blts.formatting.erb_lint.with({
-            filetypes = { 'erb' },
-          }),
-          blts.formatting.rubocop.with({
-            filetypes = { 'rb' },
-          }),
+          blts.code_actions.gitsigns,
           blts.formatting.stylua.with({
             filetypes = { 'lua' },
+          }),
+          blts.formatting.erb_lint.with({
+            filetypes = { 'erb' },
           }),
           blts.formatting.prettierd.with({
             filetypes = {
@@ -137,16 +135,6 @@ local M = {
           }),
           blts.formatting.markdownlint.with({
             filetypes = { 'markdown' },
-          }),
-          blts.code_actions.gitsigns,
-          blts.code_actions.eslint_d.with({
-            filetypes = {
-              'javascript',
-              'javascriptreact',
-              'typescript',
-              'typescriptreact',
-              'vue',
-            },
           }),
         },
       })
