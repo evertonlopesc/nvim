@@ -43,20 +43,6 @@ local M = {
   },
 
   {
-    'akinsho/bufferline.nvim',
-    version = 'v3.*',
-    opts = {
-      options = {
-        indicator = {
-          style = 'underline',
-        },
-        color_icons = true,
-      },
-    },
-    config = true,
-  },
-
-  {
     'rcarriga/nvim-notify',
     config = function()
       local ntf = require('notify')
