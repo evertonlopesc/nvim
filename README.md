@@ -36,7 +36,9 @@ Go to
 
 Open **nvim** and run the command to install all plugins.
 
-> :PackerInstall
+> :Lazy
+>
+> Shift + i
 
 ---
 
@@ -45,3 +47,4 @@ Open **nvim** and run the command to install all plugins.
 - Lua
 - Ruby
 - Javascript/Typescript
+- Vuejs
