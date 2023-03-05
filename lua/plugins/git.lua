@@ -26,6 +26,13 @@ local M = {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
+    opts = {
+      signs = {
+        section = { '', '' },
+        item = { '', '' },
+        hunk = { '', '' },
+      },
+    },
     keys = {
       { '<leader>g', ':Neogit<CR>', desc = 'Git' },
       { '<leader>gc', ':Neogit commit<CR>', desc = 'Commit' },
