@@ -9,8 +9,29 @@ local M = {
 
   {
     'projekt0n/github-nvim-theme',
-    priority = 1000,
+    priority = 1001,
     version = 'v0.0.7',
+    opts = {
+      comment_style = 'italic',
+      keyword_style = 'bold',
+      function_style = 'bold',
+      variable_style = 'NONE',
+    },
+    config = function(opts) end,
+  },
+
+  {
+    'EdenEast/nightfox.nvim',
+    priority = 1000,
+    opts = {
+      options = {
+        styles = {
+          comments = 'italic',
+          functions = 'bold',
+        },
+      },
+    },
+    config = true,
   },
 }
 
