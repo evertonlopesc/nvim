@@ -2,7 +2,6 @@ local M = {
   {
     'ellisonleao/glow.nvim',
     opts = {
-      style = 'light',
       width = 120,
     },
     config = true,
