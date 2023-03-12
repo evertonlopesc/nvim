@@ -24,7 +24,10 @@ local M = {
       {
         'williamboman/mason-lspconfig.nvim',
         event = 'BufReadPost',
-        opts = { automatic_installation = true },
+        opts = {
+          ensure_installed = { 'lua_ls', 'solargraph', 'grammarly', 'tsserver' },
+          automatic_installation = true,
+        },
         config = true,
       },
     },
@@ -110,7 +113,6 @@ local M = {
 
       nls.setup({
         sources = {
-          blts.code_actions.gitsigns,
           blts.formatting.stylua.with({
             filetypes = { 'lua' },
           }),
