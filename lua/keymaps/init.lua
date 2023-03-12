@@ -2,18 +2,6 @@ local keymap = vim.keymap.set
 
 keymap(
   'n',
-  '<leader>rr',
-  ':source % <CR>',
-  { desc = 'Refresh', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>S',
-  ':%s/<c-r><c-w>//g<left><left>',
-  { desc = 'Replace cursor all', noremap = true, silent = false }
-)
-keymap(
-  'n',
   'k',
   "v:count == 0 ? 'gk' : 'k'",
   { expr = true, noremap = true, silent = false }
@@ -104,21 +92,15 @@ keymap(
 )
 keymap(
   'n',
-  '<leader>ss',
-  ':HopWord<CR>',
-  { desc = 'Hop word', noremap = true, silent = false }
-)
-keymap(
-  'n',
   '<leader>nd',
   ':!rm -rf note.md<CR>',
-  { desc = 'Delete note', noremap = true, silent = false }
+  { desc = 'Note delete', noremap = true, silent = false }
 )
 keymap(
   'n',
   '<leader>no',
   ':e note.md<CR>',
-  { desc = 'Open note', noremap = true, silent = false }
+  { desc = 'Note open', noremap = true, silent = false }
 )
 keymap(
   'n',
@@ -154,7 +136,7 @@ keymap(
   'n',
   '<leader>h',
   ':vert help ',
-  { desc = 'Open help', noremap = true, silent = false }
+  { desc = 'Help open', noremap = true, silent = false }
 )
 keymap(
   'n',
@@ -193,26 +175,8 @@ keymap(
   { desc = 'Esc insert mode', noremap = true, silent = false }
 )
 keymap(
-  'x',
-  '<leader>gh',
-  ':Gitsigns select_hunk<cr>',
-  { desc = 'Select hunk', noremap = true, silent = false }
-)
-keymap(
   'i',
   'kj',
   '<CR>',
   { desc = 'Enter', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>cm',
-  ":CellularAutomaton make_it_rain<CR>",
-  { desc = 'Make it rain', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>cg',
-  ":CellularAutomaton game_of_life<CR>",
-  { desc = 'Game of life', noremap = true, silent = false }
 )

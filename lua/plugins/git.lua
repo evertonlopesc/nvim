@@ -9,16 +9,16 @@ local M = {
       current_line_blame = false,
     },
     config = true,
-    keys = {
-      { ']c', ':Gitsigns next_hunk<cr>' },
-      { '[c', ':Gitsigns prev_hunk<cr>' },
-      { '<leader>gd', ':Gitsigns diffthis<cr>' },
-      { '<leader>gs', ':Gitsigns stage_hunk<cr>' },
-      { '<leader>gr', ':Gitsigns reset_hunk<cr>' },
-      { '<leader>gp', ':Gitsigns preview_hunk<cr>' },
-      { '<leader>gb', ':Gitsigns blame_line<cr>' },
-    },
     cmd = 'Gitsigns',
+    keys = {
+      { ']c', ':Gitsigns next_hunk<CR>', desc = 'Next hunk' },
+      { '[c', ':Gitsigns prev_hunk<CR>', desc = 'Previous hunk' },
+      { '<leader>gd', ':Gitsigns diffthis<CR>', desc = 'Diff this' },
+      { '<leader>gs', ':Gitsigns stage_hunk<CR>', desc = 'Stage hunk' },
+      { '<leader>gr', ':Gitsigns reset_hunk<CR>', desc = 'Reset hunk' },
+      { '<leader>gp', ':Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
+      { '<leader>gb', ':Gitsigns blame_line<CR>', desc = 'Blame line' },
+    },
   },
 
   {
@@ -34,7 +34,7 @@ local M = {
       },
     },
     keys = {
-      { '<leader>g', ':Neogit<CR>', desc = 'Git' },
+      { '<leader>gg', ':Neogit<CR>', desc = 'Git' },
       { '<leader>gc', ':Neogit commit<CR>', desc = 'Commit' },
     },
     config = true,

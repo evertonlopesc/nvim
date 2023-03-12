@@ -56,9 +56,9 @@ local M = {
         ":Neotest run.run(vim.fn.expand('%'))<CR>",
         desc = 'Run test file',
       },
-      { '<leader>nu', ':Neotest run.run()<CR>', desc = 'Run test cursor' },
+      { '<leader>nu', ':Neotest run.run()<CR>',                desc = 'Run test cursor' },
       { '<leader>na', ':Neotest run.run(vim.fn.getcwd())<CR>', desc = 'Test' },
-      { '<leader>ns', ':Neotest summary.open()<CR>', desc = 'Test summary' },
+      { '<leader>ns', ':Neotest summary.open()<CR>',           desc = 'Test summary' },
     },
     cmd = 'Neotest',
   },
@@ -79,6 +79,18 @@ local M = {
   {
     'eandrju/cellular-automaton.nvim',
     cmd = 'CellularAutomaton',
+    keys = {
+      {
+        '<leader>cm',
+        ':CellularAutomaton make_it_rain<CR>',
+        desc = 'Make it rain',
+      },
+      {
+        '<leader>cg',
+        ':CellularAutomaton game_of_life<CR>',
+        desc = 'Game of life',
+      },
+    },
   },
 }
 

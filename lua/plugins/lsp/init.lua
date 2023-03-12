@@ -17,7 +17,7 @@ local M = {
         },
         config = true,
         keys = {
-          { '<leader>m', ':Mason<cr>', desc = 'Mason' },
+          { '<leader>m', ':Mason<CR>', desc = 'Mason' },
         },
         cmd = 'Mason',
       },
