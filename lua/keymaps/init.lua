@@ -180,3 +180,15 @@ keymap(
   '<CR>',
   { desc = 'Enter', noremap = true, silent = false }
 )
+keymap(
+  'n',
+  '<leader>cs',
+  ":lua vim.opt.statuscolumn = '%l %r'<CR>",
+  { desc = 'Show line number', noremap = true, silent = false }
+)
+keymap(
+  'n',
+  '<leader>cS',
+  ":lua vim.opt.statuscolumn = ''<CR>",
+  { desc = 'Remove line number', noremap = true, silent = false }
+)
