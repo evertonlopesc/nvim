@@ -58,6 +58,36 @@ local M = {
           lspconfig[server_name].setup({ make_config() })
         end,
 
+        ['vimls'] = function()
+          local config = make_config()
+          config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+          lspconfig.jsonls.setup(config)
+        end,
+
+        ['tailwindcss'] = function()
+          local config = make_config()
+          config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+          lspconfig.jsonls.setup(config)
+        end,
+
+        ['yamlls'] = function()
+          local config = make_config()
+          config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+          lspconfig.jsonls.setup(config)
+        end,
+
+        ['dockerls'] = function()
+          local config = make_config()
+          config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+          lspconfig.jsonls.setup(config)
+        end,
+
+        ['jsonls'] = function()
+          local config = make_config()
+          config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+          lspconfig.jsonls.setup(config)
+        end,
+
         ['lua_ls'] = function()
           local config = make_config()
           config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
@@ -74,9 +104,9 @@ local M = {
           lspconfig.tsserver.setup(config)
         end,
 
-        ['vuels'] = function()
+        ['volar'] = function()
           local config = make_config()
-          lspconfig.vuels.setup(config)
+          lspconfig.volar.setup(config)
         end,
 
         ['grammarly'] = function()
