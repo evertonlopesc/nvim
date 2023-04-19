@@ -1,8 +1,7 @@
 -- Summary Options
 
 vim.opt.breakindent = true
-vim.opt.clipboard = 'unnamed'
-vim.opt.clipboard:append({ 'unnamedplus' })
+vim.opt.clipboard = 'unnamed,unnamedplus'
 vim.opt.cmdheight = 1
 vim.opt.confirm = true
 vim.opt.colorcolumn = '80,120'
@@ -21,8 +20,8 @@ vim.opt.spell = true
 vim.opt.spelllang = { 'pt', 'en_us' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.swapfile = false
 vim.opt.startofline = true
+vim.opt.swapfile = false
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.undofile = true
