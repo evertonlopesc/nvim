@@ -1,4 +1,4 @@
-# Neovim v0.8.2
+# Neovim v0.9.0
 
 ## Installation
 
@@ -20,11 +20,9 @@ git clone https://github.com/evertonlopesc/nvim.git
 
 _I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies._
 
-- Neovim (version: 0.7.2)
+- Neovim (version: 0.9.0)
 - Lua (version: 5.4.4)
-- LuaJIT (version: 2.0.52.4.4)
 - Ripgrep (version: 13.0.0)
-- Fd (version: 8.4.0)
 - Fzf (version: 0.30.0)
 - Githubcli (version: 2.14.1)
 
