@@ -1,4 +1,4 @@
 require('config.lazy')
 require('config.options')
 require('config.autocommands')
-require('config.theme').set_color_theme('') -- Add theme manual.
+require('config.theme').set_color_theme()
