@@ -24,7 +24,7 @@ local M = {
       options = {
         theme = 'onedark',
         component_separators = '',
-        icons_enabled = false,
+        icons_enabled = true,
         section_separators = ' ',
         always_divide_middle = true,
       },
@@ -42,12 +42,20 @@ local M = {
         lualine_x = {},
         lualine_y = {
           'searchcount',
-          'filetype',
+          'selectioncount',
+          {
+            'filetype',
+            colored = false,
+            icon_only = true,
+            icon = { align = 'right' },
+          },
           'encoding',
+          'progress',
           'location',
-          '%p%%/%L',
         },
-        lualine_z = {},
+        lualine_z = {
+          '%L:L',
+        },
       },
       inactive_sections = {
         lualine_c = { '%f %y %m' },
@@ -57,8 +65,8 @@ local M = {
       winbar = {
         lualine_a = {
           {
-            'filename',
-            path = 1,
+            'buffers',
+            show_filename_only = false,
             color = { bg = '#98c379', fg = 'black', gui = 'italic' },
           },
           { '%r%h', color = { bg = 'black', fg = 'white' } },
