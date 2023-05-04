@@ -1,194 +1,83 @@
-local keymap = vim.keymap.set
+local map = require('keymaps.map')
 
-keymap(
-  'n',
-  'k',
-  "v:count == 0 ? 'gk' : 'k'",
-  { expr = true, noremap = true, silent = false }
-)
-keymap(
-  'n',
-  'j',
-  "v:count == 0 ? 'gj' : 'j'",
-  { expr = true, noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<Down>',
-  ':resize -5<CR>',
-  { desc = 'Resize -5', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<Up>',
-  ':resize +5<CR>',
-  { desc = 'Resize +5', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<Left>',
-  ':vertical resize -5<CR>',
-  { desc = 'Vertical resize -5', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<Right>',
-  ':vertical resize +5<CR>',
-  { desc = 'Vertical resize +5', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<C-k>',
-  '<cmd>bnext<CR>',
-  { desc = 'Next buffer', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<C-j>',
-  '<cmd>bprevious<CR>',
-  { desc = 'Previous buffer', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<A-h>',
-  '<C-w>h',
-  { desc = 'Move windows left', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<A-j>',
-  '<C-w>j',
-  { desc = 'Move windows down', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<A-k>',
-  '<C-w>k',
-  { desc = 'Move windows up', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<A-l>',
-  '<C-w>l',
-  { desc = 'Move windows right', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader><space>',
-  ':set hlsearch!<CR>',
-  { desc = 'Highlight', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>ca',
-  'ggVGy',
-  { desc = 'Copy all', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>d',
-  ':bdelete<CR>',
-  { desc = 'Delete buffer', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>nd',
-  ':!rm -rf note.md<CR>',
-  { desc = 'Note delete', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>no',
-  ':e note.md<CR>',
-  { desc = 'Note open', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>x',
-  ':q<CR>',
-  { desc = 'Exit', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>X',
-  ':qa<CR>',
-  { desc = 'Exit without save', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>w',
-  ':w<CR>',
-  { desc = 'Save', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>W',
-  ':wa<CR>',
-  { desc = 'Save all', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>u',
-  ':ma ',
-  { desc = 'Create mark', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>h',
-  ':vert help ',
-  { desc = 'Help open', noremap = true, silent = false }
-)
-keymap(
-  'n',
-  '<leader>n',
-  ':Lazy<CR>',
-  { desc = 'Lazy', noremap = true, silent = false }
-)
-keymap(
-  'x',
-  '<',
-  '<gv',
-  { desc = '', noremap = true, silent = false }
-)
-keymap(
-  'x',
-  '>',
-  '>gv',
-  { desc = '', noremap = true, silent = false }
-)
-keymap(
-  'x',
-  'J',
-  ":move '>+1<CR>gv-gv",
-  { desc = 'Move line down', noremap = true, silent = false }
-)
-keymap(
-  'x',
-  'K',
-  ":move '<-2<CR>gv-gv",
-  { desc = 'Move line up', noremap = true, silent = false }
-)
-keymap(
-  'i',
-  'kk',
-  '<Esc>',
-  { desc = 'Esc insert mode', noremap = true, silent = false }
-)
-keymap(
-  'i',
-  'kj',
-  '<CR>',
-  { desc = 'Enter', noremap = true, silent = false }
-)
-keymap(
-  'n',
+map.select('<', '<gv', 'Move selection to left')
+map.select('>', '>gv', 'Move selection to right')
+map.select('J', ":move '>+1<CR>gv-gv", 'Move line down')
+map.select('K', ":move '<-2<CR>gv-gv", 'Move line up')
+
+map.insert('kk', '<Esc>', 'Esc insert mode')
+map.insert('kj', '<CR>', 'Enter')
+
+map.normal('<Up>', ':resize -5<CR>')
+map.normal('<Right>', ':vertical resize +5<CR>')
+map.normal('<Left>', 'Vertical resize -5')
+map.normal('<Down>', ':resize -5<CR>')
+map.normal('k', 'v:count == 0 ? "gk" : "k"', 'N/A', true)
+map.normal('j', 'v:count == 0 ? "gj" : "j"', 'N/A', true)
+map.normal('<leader>x', ':q<CR>', 'Exit')
+map.normal('<leader>X', ':qa<CR>', 'Exit without save')
+map.normal('<leader>w', ':w<CR>', 'Save buffer')
+map.normal('<leader>W', ':wa<CR>', 'Save all')
+map.normal('<C-k>', '<cmd>bnext<CR>', 'Go to next buffer')
+map.normal('<C-j>', '<cmd>bprevious<CR>', 'Go to previous buffer')
+map.normal('<leader>d', ':bdelete<CR>', 'Delete buffer')
+map.normal('<A-h>', '<C-w>h', 'Move windows left')
+map.normal('<A-j>', '<C-w>j', 'Move windows down')
+map.normal('<A-k>', '<C-w>k', 'Move windows up')
+map.normal('<A-l>', '<C-w>l', 'Move windows right')
+map.normal('<leader><space>', ':set hlsearch!<CR>', 'Highlight search')
+map.normal('<leader>ca', 'ggVGy', 'Copy all')
+map.normal('<leader>nd', ':!rm -rf note.md<CR>', 'Note delete')
+map.normal('<leader>no', ':e note.md<CR>', 'Note open')
+map.normal('<leader>hh', ':vert help ', 'Help open')
+map.normal('<leader>n', ':Lazy<CR>', 'Lazy open')
+map.normal(
   '<leader>cs',
-  ":lua vim.opt.statuscolumn = '%l %r'<CR>",
-  { desc = 'Show line number', noremap = true, silent = false }
+  ':lua vim.opt.statuscolumn = "%l %r"<CR>',
+  'Show line number'
 )
-keymap(
-  'n',
+map.normal(
   '<leader>cS',
-  ":lua vim.opt.statuscolumn = ''<CR>",
-  { desc = 'Remove line number', noremap = true, silent = false }
+  ':lua vim.opt.statuscolumn = ""<CR>',
+  'Remove line number'
+)
+map.normal(
+  '<leader>ha',
+  ':lua require("harpoon.mark").add_file()<CR>',
+  'Harpoon add file'
+)
+map.normal(
+  '<leader>ht',
+  ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
+  'Harpoon toggle'
+)
+map.normal(
+  '<leader>hb',
+  ':lua require("harpoon.ui").nav_prev()<CR>',
+  'Harpoon nav prev'
+)
+map.normal(
+  '<leader>hn',
+  ':lua require("harpoon.ui").nav_next()<CR>',
+  'Harpoon nav next'
+)
+map.normal(
+  '<leader>1',
+  ':lua require("harpoon.ui").nav_file(1)<CR>',
+  'Harpoon file 1'
+)
+map.normal(
+  '<leader>2',
+  ':lua require("harpoon.ui").nav_file(2)<CR>',
+  'Harpoon file 2'
+)
+map.normal(
+  '<leader>3',
+  ':lua require("harpoon.ui").nav_file(3)<CR>',
+  'Harpoon file 3'
+)
+map.normal(
+  '<leader>4',
+  ':lua require("harpoon.ui").nav_file(4)<CR>',
+  'Harpoon file 4'
 )

@@ -1,65 +1,34 @@
-local M = {}
+M = {}
+
+function M.nmap(key, command, desc, buffer)
+  vim.keymap.set(
+    'n',
+    key,
+    command,
+    { desc = desc, noremap = true, silent = true, buffer = buffer }
+  )
+end
 
 function M.on_attach(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  vim.keymap.set(
-    'n',
-    '<leader>lc',
-    vim.lsp.buf.declaration,
-    { desc = 'Lsp declaration', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>ld',
-    vim.lsp.buf.definition,
-    { desc = 'Lsp definition', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>lk',
-    vim.lsp.buf.hover,
-    { desc = 'Lsp hover', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>li',
-    vim.lsp.buf.implementation,
-    { desc = 'Lsp implementation', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>ls',
-    vim.lsp.buf.signature_help,
-    { desc = 'Lsp signature help', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
+  M.nmap('<leader>lc', vim.lsp.buf.declaration, 'Lsp declaration', bufnr)
+  M.nmap('<leader>ld', vim.lsp.buf.definition, 'Lsp definition', bufnr)
+  M.nmap('<leader>lk', vim.lsp.buf.hover, 'Lsp hover', bufnr)
+  M.nmap('<leader>li', vim.lsp.buf.implementation, 'Lsp implementation', bufnr)
+  M.nmap('<leader>ls', vim.lsp.buf.signature_help, 'Lsp signature help', bufnr)
+  M.nmap('<leader>lrn', vim.lsp.buf.rename, 'Lsp rename', bufnr)
+  M.nmap('<leader>la', vim.lsp.buf.code_action, 'Lsp code action', bufnr)
+  M.nmap('<leader>lr', vim.lsp.buf.references, 'Lsp references', bufnr)
+  M.nmap(
     '<leader>ltd',
     vim.lsp.buf.type_definition,
-    { desc = 'Lsp type definition', noremap = true, silent = true, buffer = bufnr }
+    'Lsp type definition',
+    bufnr
   )
-  vim.keymap.set(
-    'n',
-    '<leader>lrn',
-    vim.lsp.buf.rename,
-    { desc = 'Lsp rename', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>la',
-    vim.lsp.buf.code_action,
-    { desc = 'Lsp code action', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set(
-    'n',
-    '<leader>lr',
-    vim.lsp.buf.references,
-    { desc = 'Lsp references', noremap = true, silent = true, buffer = bufnr }
-  )
-  vim.keymap.set('n', '<leader>lf', function()
+  M.nmap('<leader>lf', function()
     vim.lsp.buf.format({ async = true })
-  end, { desc = 'Lsp format', noremap = true, silent = true, buffer = bufnr })
+  end, 'Lsp format', bufnr)
 end
 
 return M
