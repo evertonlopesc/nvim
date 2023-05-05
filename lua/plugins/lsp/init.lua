@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     'neovim/nvim-lspconfig',
     event = 'BufReadPost',

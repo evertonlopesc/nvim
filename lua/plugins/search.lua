@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     'phaazon/hop.nvim',
     branch = 'v2',

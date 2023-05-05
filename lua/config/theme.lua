@@ -1,4 +1,4 @@
-local M = {}
+M = {}
 
 function M.get_color_theme()
   local command = 'gsettings get org.gnome.desktop.interface gtk-theme'
@@ -12,8 +12,6 @@ end
 
 function M.set_color_theme()
   local background = M.get_color_theme()
-
-  vim.print(background)
 
   if background == 'light' then
     vim.opt.background = background

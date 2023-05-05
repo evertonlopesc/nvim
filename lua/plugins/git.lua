@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPost',

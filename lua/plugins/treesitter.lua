@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     'JoosepAlviste/nvim-ts-context-commentstring',
     event = 'BufReadPost',

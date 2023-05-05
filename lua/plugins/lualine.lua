@@ -17,7 +17,7 @@ local function lsp_server_name()
   return msg
 end
 
-local M = {
+M = {
   {
     'nvim-lualine/lualine.nvim',
     opts = {

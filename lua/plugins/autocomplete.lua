@@ -1,4 +1,4 @@
-local M = {
+M = {
   event = 'BufReadPost',
   'hrsh7th/nvim-cmp',
   dependencies = {

@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     'ellisonleao/glow.nvim',
     opts = {
