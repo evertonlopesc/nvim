@@ -1,6 +1,7 @@
 M = {
   {
     'ellisonleao/glow.nvim',
+    event = 'BufReadPost',
     opts = {
       width = 120,
     },
