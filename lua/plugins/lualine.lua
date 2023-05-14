@@ -65,8 +65,8 @@ M = {
       winbar = {
         lualine_a = {
           {
-            'buffers',
-            show_filename_only = false,
+            'filename',
+            path = 1,
             color = { bg = '#98c379', fg = 'black', gui = 'italic' },
           },
           { '%r%h', color = { bg = 'black', fg = 'white' } },
