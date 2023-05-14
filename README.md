@@ -2,20 +2,6 @@
 
 ## Installation
 
-### Download to packer.nvim
-
-> Unix, Linux Installation
-
-You need install packer: [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim#quickstart)
-
-Clone this repository from
-
-> cd ~/.config/
-
-```sh
-git clone https://github.com/evertonlopesc/nvim.git
-```
-
 ### Requirements
 
 _I'm using [asdf-vm](https://asdf-vm.com/) to install dependencies._
