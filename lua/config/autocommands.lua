@@ -1,9 +1,11 @@
-vim.api.nvim_create_autocmd('BufWritePre', {
-  callback = function()
-    vim.cmd(':%s/\\s\\+$//e')
-  end,
-})
+-- Remove white space (trim_trailing_whitespace)
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   callback = function()
+--     vim.cmd(':%s/\\s\\+$//e')
+--   end,
+-- })
 
+-- Autopairs - close brackets
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
     local npairs = require('nvim-autopairs')
@@ -21,13 +23,13 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     for _, bracket in pairs(brackets) do
       npairs.add_rules({
         Rule(bracket[1] .. ' ', ' ' .. bracket[2])
-          :with_pair(function()
-            return false
-          end)
-          :with_move(function(opts)
-            return opts.prev_char:match('.%' .. bracket[2]) ~= nil
-          end)
-          :use_key(bracket[2]),
+            :with_pair(function()
+              return false
+            end)
+            :with_move(function(opts)
+              return opts.prev_char:match('.%' .. bracket[2]) ~= nil
+            end)
+            :use_key(bracket[2]),
       })
     end
   end,
