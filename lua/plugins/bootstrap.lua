@@ -33,7 +33,7 @@ M = {
       'MunifTanjim/nui.nvim',
     },
     keys = {
-      { '<C-n>', '<cmd> Neotree toggle left <CR>', desc = 'Open Neotree' },
+      { '<C-n>', ':Neotree toggle right <CR>', desc = 'Open Neotree' },
     },
     init = function()
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])

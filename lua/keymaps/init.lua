@@ -14,30 +14,27 @@ map.normal('<Left>', 'Vertical resize -5')
 map.normal('<Down>', ':resize +5<CR>')
 map.normal('k', 'v:count == 0 ? "gk" : "k"', 'N/A', true)
 map.normal('j', 'v:count == 0 ? "gj" : "j"', 'N/A', true)
-map.normal('<leader>x', ':q<CR>', 'Exit')
-map.normal('<leader>X', ':qa<CR>', 'Exit without save')
-map.normal('<leader>w', ':w<CR>', 'Save buffer')
-map.normal('<leader>W', ':wa<CR>', 'Save all')
-map.normal('<C-k>', '<cmd>bnext<CR>', 'Go to next buffer')
-map.normal('<C-j>', '<cmd>bprevious<CR>', 'Go to previous buffer')
-map.normal('<leader>d', ':bdelete<CR>', 'Delete buffer')
+map.normal('<C-k>', ':bnext<CR>', 'Go to next buffer')
+map.normal('<C-j>', ':bprevious<CR>', 'Go to previous buffer')
 map.normal('<A-h>', '<C-w>h', 'Move windows left')
 map.normal('<A-j>', '<C-w>j', 'Move windows down')
 map.normal('<A-k>', '<C-w>k', 'Move windows up')
 map.normal('<A-l>', '<C-w>l', 'Move windows right')
+
 map.normal('<leader><space>', ':set hlsearch!<CR>', 'Highlight search')
-map.normal('<leader>ca', 'ggVGy', 'Copy all')
 map.normal('<leader>nd', ':!rm -rf note.md<CR>', 'Note delete')
 map.normal('<leader>no', ':e note.md<CR>', 'Note open')
-map.normal('<leader>hh', ':vert help ', 'Help open')
-map.normal('<leader>n', ':Lazy<CR>', 'Lazy open')
+map.normal('<leader>x', ':q<CR>', 'Exit')
+map.normal('<leader>w', ':w<CR>', 'Save buffer')
+map.normal('<leader>W', ':wa<CR>', 'Save all')
+map.normal('<leader>d', ':bdelete<CR>', 'Delete buffer')
 map.normal(
-  '<leader>cs',
+  '<leader>c',
   ':lua vim.opt.statuscolumn = "%l %r"<CR>',
   'Show line number'
 )
 map.normal(
-  '<leader>cS',
+  '<leader>C',
   ':lua vim.opt.statuscolumn = ""<CR>',
   'Remove line number'
 )
@@ -50,16 +47,6 @@ map.normal(
   '<leader>ht',
   ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
   'Harpoon toggle'
-)
-map.normal(
-  '<leader>hb',
-  ':lua require("harpoon.ui").nav_prev()<CR>',
-  'Harpoon nav prev'
-)
-map.normal(
-  '<leader>hn',
-  ':lua require("harpoon.ui").nav_next()<CR>',
-  'Harpoon nav next'
 )
 map.normal(
   '<leader>1',

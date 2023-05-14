@@ -35,7 +35,6 @@ M = {
     },
     keys = {
       { '<leader>gg', ':Neogit<CR>', desc = 'Git' },
-      { '<leader>gc', ':Neogit commit<CR>', desc = 'Commit' },
     },
     config = true,
     cmd = 'Neogit',

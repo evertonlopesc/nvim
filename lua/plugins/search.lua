@@ -8,11 +8,7 @@ M = {
     },
     config = true,
     cmd = 'Hop',
-    keys = {
-      {
-        '<leader>ss', ':HopWord<CR>', desc = 'Hop word'
-      },
-    },
+    keys = { { '<leader>s', ':HopWord<CR>', desc = 'Hop word' } },
   },
 
   {
@@ -54,14 +50,17 @@ M = {
       },
     },
     keys = {
-      { '<leader>tt', ':Telescope <CR>',                      desc = 'Telescope'            },
-      { '<leader>sf', ':Telescope find_files<CR>',            desc = 'Telescope find files' },
-      { '<leader>sg', ':Telescope live_grep<CR>',             desc = 'Telescope live grep'  },
-      { '<leader>so', ':Telescope oldfiles<CR>',              desc = 'Telescope old files'  },
-      { '<leader>sl', ':Telescope lsp_document_symbols<CR>',  desc = 'Telescope functions'  },
-      { '<leader>b',  ':Telescope buffers<CR>',               desc = 'Telescope buffers'    },
-      { '<leader>sk', ':Telescope keymaps<CR>',               desc = 'Telescope keymaps'    },
-      { '<leader>sh', ':Telescope git_status<CR>',            desc = 'Telescope git status' },
+      { '<leader>t', ':Telescope <CR>', desc = 'Telescope' },
+      {
+        '<leader>f',
+        ':Telescope find_files<CR>',
+        desc = 'Telescope find files',
+      },
+      {
+        '<leader>F',
+        ':Telescope live_grep<CR>',
+        desc = 'Telescope live grep',
+      },
     },
     config = true,
   },
@@ -69,28 +68,7 @@ M = {
   {
     'windwp/nvim-spectre',
     event = 'BufReadPost',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-    },
-    keys = {
-      { '<leader>r', ':Spectre<CR> right', desc = 'Replace' },
-      {
-        '<leader>rw',
-        "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-        desc = 'Replace word',
-      },
-      {
-        '<leader>rs',
-        "<esc>:lua require('spectre').open_visual()<CR>",
-        mode = 'v',
-        desc = 'Replace select',
-      },
-      {
-        '<leader>rp',
-        "viw:lua require('spectre').open_file_search()<CR>",
-        desc = 'Replace select',
-      },
-    },
+    keys = { { '<leader>r', ':Spectre<CR> right', desc = 'Replace' } },
   },
 
   {

@@ -6,9 +6,6 @@ M = {
     },
     config = true,
     cmd = 'Glow',
-    keys = {
-      { '<leader>,', ':Glow<CR>', desc = 'Glow' },
-    },
     ft = 'markdown',
   },
 
@@ -57,7 +54,6 @@ M = {
         desc = 'Run test file',
       },
       { '<leader>nu', ':Neotest run.run()<CR>',                desc = 'Run test cursor' },
-      { '<leader>na', ':Neotest run.run(vim.fn.getcwd())<CR>', desc = 'Test' },
       { '<leader>ns', ':Neotest summary.open()<CR>',           desc = 'Test summary' },
     },
     cmd = 'Neotest',
