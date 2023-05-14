@@ -1,16 +1,9 @@
 M = {
   {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    event = 'BufReadPost',
-  },
-
-  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     lazy = true,
-    dependencies = {
-      { 'p00f/nvim-ts-rainbow' },
-    },
+    dependencies = {  'p00f/nvim-ts-rainbow' },
     opts = {
       ensure_installed = {
         'typescript',
@@ -39,19 +32,12 @@ M = {
         max_file_line = nil,
       },
     },
-    init = function()
-      vim.api.nvim_create_autocmd(
-        { 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' },
-        {
-          group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-          callback = function()
-            vim.opt.foldmethod = 'expr'
-            vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-          end,
-        }
-      )
-    end,
     config = true,
+  },
+
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    event = 'BufReadPost',
   },
 }
 
