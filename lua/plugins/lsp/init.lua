@@ -134,9 +134,7 @@ M = {
   {
     'jose-elias-alvarez/null-ls.nvim',
     event = 'BufReadPost',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local nls = require('null-ls')
       local blts = nls.builtins

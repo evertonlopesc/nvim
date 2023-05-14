@@ -74,7 +74,7 @@ M = {
   {
     'lukas-reineke/indent-blankline.nvim',
     event = 'BufReadPost',
-    dependencies = 'nvim-treesitter',
+    dependencies = { 'nvim-treesitter' },
     opts = {
       char = '⋅',
       use_treesitter = true,

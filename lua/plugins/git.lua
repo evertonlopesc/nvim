@@ -2,9 +2,7 @@ M = {
   {
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPost',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       current_line_blame = false,
     },
@@ -23,9 +21,7 @@ M = {
 
   {
     'TimUntersberger/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       signs = {
         section = { '', '' },

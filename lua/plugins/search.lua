@@ -3,9 +3,7 @@ M = {
     'phaazon/hop.nvim',
     branch = 'v2',
     event = 'BufReadPost',
-    opts = {
-      keys = 'etovxqpdygfblzhckisuran',
-    },
+    opts = { keys = 'etovxqpdygfblzhckisuran' },
     config = true,
     cmd = 'Hop',
     keys = { { '<leader>s', ':HopWord<CR>', desc = 'Hop word' } },
@@ -13,9 +11,7 @@ M = {
 
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-    },
+    dependencies = {  'nvim-lua/plenary.nvim'  },
     opts = {
       defaults = {
         prompt_prefix = ' ',
@@ -32,13 +28,14 @@ M = {
         },
       },
       pickers = {
-        find_files            = { theme = 'dropdown' },
-        oldfiles              = { theme = 'dropdown' },
-        lsp_document_symbols  = { theme = 'dropdown' },
-        buffers               = { theme = 'dropdown' },
-        keymaps               = { theme = 'dropdown' },
-        file_browser          = { theme = 'dropdown' },
-        git_status            = { theme = 'dropdown' },
+        find_files = { theme = 'dropdown' },
+        live_grep = { theme = 'dropdown' },
+        oldfiles = { theme = 'dropdown' },
+        lsp_document_symbols = { theme = 'dropdown' },
+        buffers = { theme = 'dropdown' },
+        keymaps = { theme = 'dropdown' },
+        file_browser = { theme = 'dropdown' },
+        git_status = { theme = 'dropdown' },
       },
       extensions = {
         fzf = {
@@ -67,15 +64,15 @@ M = {
 
   {
     'windwp/nvim-spectre',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     event = 'BufReadPost',
     keys = { { '<leader>r', ':Spectre<CR> right', desc = 'Replace' } },
   },
 
   {
     'ThePrimeagen/harpoon',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-    },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = 'BufReadPost',
   },
 }
 
