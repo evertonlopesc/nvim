@@ -122,6 +122,13 @@ M = {
       vim.opt.listchars:append('eol:↴')
     end,
   },
+
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    event = "BufReadPost",
+    config = true,
+  }
 }
 
 return M
