@@ -67,23 +67,6 @@ M = {
     'folke/which-key.nvim',
     config = true
   },
-
-  {
-    'eandrju/cellular-automaton.nvim',
-    cmd = 'CellularAutomaton',
-    keys = {
-      {
-        '<leader>cm',
-        ':CellularAutomaton make_it_rain<CR>',
-        desc = 'Make it rain',
-      },
-      {
-        '<leader>cg',
-        ':CellularAutomaton game_of_life<CR>',
-        desc = 'Game of life',
-      },
-    },
-  },
 }
 
 return M
