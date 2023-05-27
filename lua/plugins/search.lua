@@ -58,6 +58,11 @@ M = {
         ':Telescope live_grep<CR>',
         desc = 'Telescope live grep',
       },
+      {
+        '<leader>b',
+        ':Telescope buffers<CR>',
+        desc = 'Telescope buffers',
+      },
     },
     config = true,
   },
