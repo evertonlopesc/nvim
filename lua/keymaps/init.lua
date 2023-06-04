@@ -28,16 +28,8 @@ map.normal('<leader>x', ':q<CR>', 'Exit')
 map.normal('<leader>w', ':w<CR>', 'Save buffer')
 map.normal('<leader>W', ':wa<CR>', 'Save all')
 map.normal('<leader>d', ':bdelete<CR>', 'Delete buffer')
-map.normal(
-  '<leader>c',
-  ':lua vim.opt.statuscolumn = "%l %r"<CR>',
-  'Show line number'
-)
-map.normal(
-  '<leader>C',
-  ':lua vim.opt.statuscolumn = ""<CR>',
-  'Remove line number'
-)
+map.normal('<leader>c', ':lua vim.opt.rnu = false<CR>', 'Disable rnu')
+map.normal('<leader>C', ':lua vim.opt.rnu = true<CR>', 'Active rnu')
 map.normal(
   '<leader>ha',
   ':lua require("harpoon.mark").add_file()<CR>',
