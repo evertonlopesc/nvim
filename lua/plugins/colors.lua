@@ -33,6 +33,15 @@ M = {
     },
     config = true,
   },
+
+  {
+    'Mofiqul/dracula.nvim',
+    priority = 1002,
+    opts = {
+      italic_comment = true,
+    },
+    config = true,
+  }
 }
 
 return M

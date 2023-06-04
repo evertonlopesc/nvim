@@ -11,14 +11,15 @@ function M.get_color_theme()
 end
 
 function M.set_color_theme()
-  local background = M.get_color_theme()
+  -- local background = M.get_color_theme()
+  local background = 'dark'
 
   if background == 'light' then
     vim.opt.background = background
     require('github-theme').setup({ theme_style = background })
   else
     vim.opt.background = background
-    vim.cmd.colorscheme('nightfox')
+    vim.cmd.colorscheme('dracula')
   end
 end
 
