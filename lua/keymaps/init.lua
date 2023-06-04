@@ -48,23 +48,11 @@ map.normal(
   ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
   'Harpoon toggle'
 )
-map.normal(
-  '<leader>1',
-  ':lua require("harpoon.ui").nav_file(1)<CR>',
-  'Harpoon file 1'
-)
-map.normal(
-  '<leader>2',
-  ':lua require("harpoon.ui").nav_file(2)<CR>',
-  'Harpoon file 2'
-)
-map.normal(
-  '<leader>3',
-  ':lua require("harpoon.ui").nav_file(3)<CR>',
-  'Harpoon file 3'
-)
-map.normal(
-  '<leader>4',
-  ':lua require("harpoon.ui").nav_file(4)<CR>',
-  'Harpoon file 4'
-)
+
+for i = 1, 9, 1 do
+  map.normal(
+    '<leader>' .. i,
+    ':lua require("harpoon.ui").nav_file('.. i ..')<CR>',
+    'Harpoon file 1'
+  )
+end
