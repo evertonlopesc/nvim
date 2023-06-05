@@ -10,7 +10,7 @@ map.insert('kj', '<CR>', 'Enter')
 
 map.normal('<Up>', ':resize -5<CR>')
 map.normal('<Right>', ':vertical resize +5<CR>')
-map.normal('<Left>', 'Vertical resize -5')
+map.normal('<Left>', 'Vertical resize -5<CR>')
 map.normal('<Down>', ':resize +5<CR>')
 map.normal('k', 'v:count == 0 ? "gk" : "k"', 'N/A', true)
 map.normal('j', 'v:count == 0 ? "gj" : "j"', 'N/A', true)
