@@ -31,6 +31,12 @@ M = {
       sections = {
         lualine_a = { 'mode' },
         lualine_b = {
+          {
+            'filename',
+            path = 1,
+            -- color = { bg = '#98c379', fg = 'black', gui = 'italic' },
+          },
+          -- { '%r%h', color = { bg = 'black', fg = 'white' } },
           'branch',
           'diff',
         },
@@ -39,7 +45,6 @@ M = {
           { lsp_server_name },
           { 'diagnostic', color = { bg = 'black' } },
         },
-        lualine_x = {},
         lualine_y = {
           'searchcount',
           'selectioncount',
@@ -64,12 +69,12 @@ M = {
       extensions = { 'neo-tree', 'quickfix' },
       winbar = {
         lualine_a = {
-          {
-            'filename',
-            path = 1,
-            color = { bg = '#98c379', fg = 'black', gui = 'italic' },
-          },
-          { '%r%h', color = { bg = 'black', fg = 'white' } },
+          -- {
+          --   'filename',
+          --   path = 1,
+          --   color = { bg = '#98c379', fg = 'black', gui = 'italic' },
+          -- },
+          -- { '%r%h', color = { bg = 'black', fg = 'white' } },
         },
         lualine_b = {},
         lualine_c = {},
