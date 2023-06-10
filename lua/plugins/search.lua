@@ -47,7 +47,7 @@ M = {
       },
     },
     keys = {
-      { '<leader>t', ':Telescope <CR>', desc = 'Telescope' },
+      { '<leader>T', ':Telescope <CR>', desc = 'Telescope' },
       {
         '<leader>f',
         ':Telescope find_files<CR>',
