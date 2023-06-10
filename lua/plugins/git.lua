@@ -16,6 +16,12 @@ M = {
       { '<leader>gr', ':Gitsigns reset_hunk<CR>', desc = 'Reset hunk' },
       { '<leader>gp', ':Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
       { '<leader>gb', ':Gitsigns blame_line<CR>', desc = 'Blame line' },
+      {
+        mode = 'v',
+        '<leader>gS',
+        ':Gitsigns stage_hunk {vim.fn.line("."), vim.fn.line("v")}<CR>',
+        desc = 'Stage hunk select',
+      },
     },
   },
 
