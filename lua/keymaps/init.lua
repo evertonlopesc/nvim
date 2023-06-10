@@ -44,7 +44,7 @@ map.normal(
 for i = 1, 9, 1 do
   map.normal(
     '<leader>' .. i,
-    ':lua require("harpoon.ui").nav_file('.. i ..')<CR>',
+    ':lua require("harpoon.ui").nav_file(' .. i .. ')<CR>',
     'Harpoon file 1'
   )
 end
