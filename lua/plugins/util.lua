@@ -63,6 +63,30 @@ M = {
   {
     'folke/which-key.nvim',
     config = true
+  {
+    'potamides/pantran.nvim',
+    opts = {
+      default_engine = 'yandex',
+      engines = {
+        yandex = {
+          default_source = 'auto',
+          default_target = 'pt-br',
+        },
+      },
+    },
+    keys = {
+      {
+        '<leader>tr',
+        ':Pantran motion_translate<CR>',
+        desc = 'Motion translate',
+      },
+      {
+        mode = 'x',
+        '<leader>tr',
+        ':Pantran motion_translate<CR>',
+        desc = 'Motion translate',
+      },
+    },
   },
 }
 
