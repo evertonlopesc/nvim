@@ -62,7 +62,40 @@ M = {
 
   {
     'folke/which-key.nvim',
-    config = true
+    config = true,
+  },
+
+  {
+    'mfussenegger/nvim-dap',
+    keys = {
+      {
+        '<leader>Dt',
+        ":lua require'dap '.toggle_breakpoint()<CR>",
+        desc = 'Dap toggle_breakpoint',
+      },
+      {
+        '<leader>Dc',
+        ":lua require'dap'.continue()<CR>",
+        desc = 'Dap continue',
+      },
+      {
+        '<leader>Ds',
+        ":lua require'dap'.step_over()",
+        desc = 'Dap step over',
+      },
+      {
+        '<leader>Di',
+        ":lua require'dap'.step_into()",
+        desc = 'Dap step into',
+      },
+      {
+        '<leader>Dr',
+        ":lua require'dap'.repl.open()",
+        desc = 'Dap repl open',
+      },
+    },
+  },
+
   {
     'potamides/pantran.nvim',
     opts = {
