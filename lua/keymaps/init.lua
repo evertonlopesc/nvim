@@ -30,6 +30,7 @@ map.normal('<leader>W', ':wa<CR>', 'Save all')
 map.normal('<leader>d', ':bdelete<CR>', 'Delete buffer')
 map.normal('<leader>c', ':lua vim.opt.rnu = false<CR>', 'Disable rnu')
 map.normal('<leader>C', ':lua vim.opt.rnu = true<CR>', 'Active rnu')
+map.normal('<leader>L', ':Lazy<CR>', 'Lazy open')
 map.normal(
   '<leader>ha',
   ':lua require("harpoon.mark").add_file()<CR>',
