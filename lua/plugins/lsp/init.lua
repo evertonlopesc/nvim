@@ -6,6 +6,7 @@ M = {
       {
         'williamboman/mason.nvim',
         event = 'BufReadPost',
+        build = ':MasonUpdate',
         opts = {
           ui = {
             icons = {
