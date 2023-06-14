@@ -44,7 +44,7 @@ opt.breakindent = true      -- bool: Use to preserving horizontal blocks of text
 opt.smartindent = true      -- bool: Autoindenting when starting a new line
 
 -- [[ Windows ]]
-opt.clipboard = 'unnamed'           -- str: Register "*" for all yank, delete, change and put operations
+opt.clipboard = 'unnamed,unnamedplus'           -- str: Register "*" for all yank, delete, change and put operations
 opt.cmdheight = 1                   -- num: Number of screen lines to use for the command-line
 opt.confirm = true                  -- bool: Use when close buffer without save changes
 opt.cursorline = true               -- bool: Show current line the cursor.
