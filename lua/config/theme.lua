@@ -11,8 +11,7 @@ function M.get_color_theme()
 end
 
 function M.set_color_theme()
-  -- local background = M.get_color_theme()
-  local background = 'dark'
+  local background = M.get_color_theme()
 
   if background == 'light' then
     vim.opt.background = background
