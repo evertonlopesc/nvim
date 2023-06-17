@@ -22,45 +22,19 @@ M = {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        theme = 'onedark',
+        theme = 'auto',
         component_separators = '',
         icons_enabled = true,
         section_separators = ' ',
         always_divide_middle = true,
       },
       sections = {
-        lualine_a = { 'mode' },
-        lualine_b = {
-          {
-            'filename',
-            path = 1,
-            -- color = { bg = '#98c379', fg = 'black', gui = 'italic' },
-          },
-          -- { '%r%h', color = { bg = 'black', fg = 'white' } },
-          'branch',
-          'diff',
-        },
-        lualine_c = {
-          '%=',
-          { lsp_server_name },
-          { 'diagnostic', color = { bg = 'black' } },
-        },
-        lualine_y = {
-          'searchcount',
-          'selectioncount',
-          {
-            'filetype',
-            colored = false,
-            icon_only = true,
-            icon = { align = 'right' },
-          },
-          'encoding',
-          'progress',
-          'location',
-        },
-        lualine_z = {
-          '%L:L',
-        },
+        lualine_a = { 'mode', 'branch' },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = { 'encoding', 'progress', 'location', '%L:L' },
+        lualine_z = { { lsp_server_name } },
       },
       inactive_sections = {
         lualine_c = { '%f %y %m' },
@@ -69,12 +43,8 @@ M = {
       extensions = { 'neo-tree', 'quickfix' },
       winbar = {
         lualine_a = {
-          -- {
-          --   'filename',
-          --   path = 1,
-          --   color = { bg = '#98c379', fg = 'black', gui = 'italic' },
-          -- },
-          -- { '%r%h', color = { bg = 'black', fg = 'white' } },
+          { 'filename', path = 1 },
+          { 'diff', color = { bg = 'black' } },
         },
         lualine_b = {},
         lualine_c = {},
