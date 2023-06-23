@@ -1,17 +1,41 @@
 M = {
   {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    event = 'BufReadPost',
-    opts = { keys = 'etovxqpdygfblzhckisuran' },
-    config = true,
-    cmd = 'Hop',
-    keys = { { '<leader>s', ':HopWord<CR>', desc = 'Hop word' } },
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      {
+        "<leader>s",
+        mode = { "n", "x", "o" },
+        function()
+          -- default options: exact mode, multi window, all directions, with a backdrop
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "<leader>S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "<leader>sr",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+    },
   },
 
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = {  'nvim-lua/plenary.nvim'  },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       defaults = {
         prompt_prefix = ' ',
