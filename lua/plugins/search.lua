@@ -22,14 +22,14 @@ M = {
         end,
         desc = "Flash Treesitter",
       },
-      {
-        "<leader>sr",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
+      -- {
+      --   "<leader>sr",
+      --   mode = "o",
+      --   function()
+      --     require("flash").remote()
+      --   end,
+      --   desc = "Remote Flash",
+      -- },
     },
   },
 
