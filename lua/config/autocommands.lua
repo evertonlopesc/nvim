@@ -1,9 +1,9 @@
 -- Remove white space (trim_trailing_whitespace)
--- vim.api.nvim_create_autocmd('BufWritePre', {
---   callback = function()
---     vim.cmd(':%s/\\s\\+$//e')
---   end,
--- })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  callback = function()
+    vim.cmd(':%s/\\s\\+$//e')
+  end,
+})
 
 -- Autopairs - close brackets
 vim.api.nvim_create_autocmd('BufReadPost', {
