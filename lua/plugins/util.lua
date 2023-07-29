@@ -97,6 +97,10 @@ M = {
   },
 
   {
+    'suketa/nvim-dap-ruby',
+  },
+
+  {
     'potamides/pantran.nvim',
     opts = {
       default_engine = 'yandex',
