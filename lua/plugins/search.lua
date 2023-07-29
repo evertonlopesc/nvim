@@ -14,22 +14,6 @@ M = {
         end,
         desc = "Flash",
       },
-      {
-        "<leader>S",
-        mode = { "n", "o", "x" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      -- {
-      --   "<leader>sr",
-      --   mode = "o",
-      --   function()
-      --     require("flash").remote()
-      --   end,
-      --   desc = "Remote Flash",
-      -- },
     },
   },
 
