@@ -26,8 +26,8 @@ M = {
   },
 
   {
-    'TimUntersberger/neogit',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "NeogitOrg/neogit",
+    dependencies = "nvim-lua/plenary.nvim",
     opts = {
       signs = {
         section = { '', '' },
