@@ -41,7 +41,7 @@ M = {
       italic_comment = true,
     },
     config = true,
-  }
+  },
 }
 
 return M

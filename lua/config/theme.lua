@@ -18,7 +18,8 @@ function M.set_color_theme()
     require('github-theme').setup({ theme_style = background })
   else
     vim.opt.background = background
-    vim.cmd.colorscheme('dracula')
+    require('github-theme').setup({ theme_style = background })
+    -- vim.cmd.colorscheme('carbonfox')
   end
 end
 
