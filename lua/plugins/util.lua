@@ -67,6 +67,11 @@ M = {
 
   {
     'mfussenegger/nvim-dap',
+    dependencies = {
+       'suketa/nvim-dap-ruby',
+
+    },
+    ft = { 'rb', 'erb' },
     keys = {
       {
         '<leader>Dt',
@@ -94,10 +99,6 @@ M = {
         desc = 'Dap repl open',
       },
     },
-  },
-
-  {
-    'suketa/nvim-dap-ruby',
   },
 
   {
