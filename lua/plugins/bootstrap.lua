@@ -8,6 +8,7 @@ M = {
         position = 'left',
         mappings = {
           ['o'] = 'open',
+          ['<space>'] = 'none',
         },
       },
       filesystem = {
@@ -33,7 +34,7 @@ M = {
       'MunifTanjim/nui.nvim',
     },
     keys = {
-      { '<C-n>', ':Neotree toggle right <CR>', desc = 'Open Neotree' },
+      { '<leader>fe', ':Neotree toggle right <CR>', desc = 'Open Neotree' },
     },
     init = function()
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
