@@ -22,6 +22,10 @@ M = {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       defaults = {
+        layout_strategy = "horizontal",
+        layout_config = { prompt_position = "top" },
+        sorting_strategy = "ascending",
+        winblend = 0,
         prompt_prefix = ' ',
         selection_caret = ' ',
         vimgrep_arguments = {
@@ -36,8 +40,6 @@ M = {
         },
       },
       pickers = {
-        find_files = { theme = 'dropdown' },
-        live_grep = { theme = 'dropdown' },
         oldfiles = { theme = 'dropdown' },
         lsp_document_symbols = { theme = 'dropdown' },
         buffers = { theme = 'dropdown' },
@@ -57,12 +59,12 @@ M = {
     keys = {
       { '<leader>T', ':Telescope <CR>', desc = 'Telescope' },
       {
-        '<leader>f',
+        '<leader>ff',
         ':Telescope find_files<CR>',
         desc = 'Telescope find files',
       },
       {
-        '<leader>F',
+        '<leader>fg',
         ':Telescope live_grep<CR>',
         desc = 'Telescope live grep',
       },
