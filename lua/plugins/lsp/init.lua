@@ -26,7 +26,7 @@ M = {
         'williamboman/mason-lspconfig.nvim',
         event = 'BufReadPost',
         opts = {
-          ensure_installed = { 'lua_ls', 'ruby_ls', 'grammarly', 'tsserver' },
+          ensure_installed = { 'lua_ls', 'solargraph', 'grammarly', 'tsserver' },
           automatic_installation = true,
         },
         config = true,
@@ -95,9 +95,9 @@ M = {
           lspconfig.lua_ls.setup(config)
         end,
 
-        ['ruby_ls'] = function()
+        ['solargraph'] = function()
           local config = make_config()
-          lspconfig.ruby_ls.setup(config)
+          lspconfig.solargraph.setup(config)
         end,
 
         ['tsserver'] = function()
