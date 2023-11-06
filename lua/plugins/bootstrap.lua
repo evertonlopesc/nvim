@@ -1,18 +1,19 @@
 M = {
   {
     'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     opts = {
       close_if_last_window = false,
       window = {
-        position = 'left',
+        -- position = 'right',
+        width = 80,
         mappings = {
           ['o'] = 'open',
           ['<space>'] = 'none',
         },
       },
       filesystem = {
-        follow_current_file = true,
+        follow_current_file = enable,
         window = {
           mappings = {
             ['o'] = 'open',
