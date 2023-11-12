@@ -2,6 +2,11 @@ M = {
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    },
     opts = {
       close_if_last_window = false,
       window = {
@@ -13,7 +18,7 @@ M = {
         },
       },
       filesystem = {
-        follow_current_file = enable,
+        follow_current_file = { enabled = true},
         window = {
           mappings = {
             ['o'] = 'open',
@@ -28,11 +33,6 @@ M = {
           end,
         },
       },
-    },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
     },
     keys = {
       { '<leader>fe', ':Neotree toggle right <CR>', desc = 'Open Neotree' },
