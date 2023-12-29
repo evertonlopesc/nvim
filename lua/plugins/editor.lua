@@ -45,6 +45,12 @@ M = {
   },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
+  },
+
+  {
     'echasnovski/mini.indentscope',
     event = 'BufReadPost',
     version = false,
