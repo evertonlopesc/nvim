@@ -38,6 +38,8 @@ opt.splitbelow = true       -- bool: Place new window below the current one
 o.foldcolumn = '1'          -- str: To display a fixed number of columns
 o.foldlevel = 99            -- num: Use to folds with a higher level will be open
 o.foldlevelstart = 99       -- num: Use to folds open when starting to edit a windows
+o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+o.foldcolumn = '1'
 
 -- [[ Indent ]]
 opt.breakindent = true      -- bool: Use to preserving horizontal blocks of text
