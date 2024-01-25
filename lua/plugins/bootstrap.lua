@@ -1,5 +1,14 @@
 M = {
   {
+    'echasnovski/mini.files',
+    version = '*',
+    config = true,
+    keys = {
+      { '<leader>fm', ':lua MiniFiles.open() <CR>', desc = 'Open MiniFiles' },
+    },
+  },
+
+  {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
     dependencies = {
