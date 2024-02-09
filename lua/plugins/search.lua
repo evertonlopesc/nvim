@@ -60,7 +60,7 @@ M = {
       { '<leader>T', ':Telescope <CR>', desc = 'Telescope' },
       {
         '<leader>ff',
-        ':Telescope find_files<CR>',
+        ':Telescope find_files hidden=true, layout_config={prompt_position="top"}<CR>',
         desc = 'Telescope find files',
       },
       {
