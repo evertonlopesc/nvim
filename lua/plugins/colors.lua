@@ -22,6 +22,7 @@ M = {
 
   {
     'EdenEast/nightfox.nvim',
+    disable = true,
     priority = 1000,
     opts = {
       options = {
@@ -30,15 +31,6 @@ M = {
           functions = 'bold',
         },
       },
-    },
-    config = true,
-  },
-
-  {
-    'Mofiqul/dracula.nvim',
-    priority = 1002,
-    opts = {
-      italic_comment = true,
     },
     config = true,
   },
