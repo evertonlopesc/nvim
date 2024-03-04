@@ -15,11 +15,12 @@ function M.set_color_theme()
 
   if background == 'light' then
     vim.opt.background = background
-    require('github-theme').setup({ theme_style = background })
+    -- require('github-theme').setup({ theme_style = background })
+    vim.cmd.colorscheme('everforest')
   else
     vim.opt.background = background
-    require('github-theme').setup({ theme_style = background })
-    -- vim.cmd.colorscheme('carbonfox')
+    -- require('github-theme').setup({ theme_style = background })
+    vim.cmd.colorscheme('everforest')
   end
 end
 
