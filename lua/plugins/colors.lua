@@ -8,7 +8,29 @@ M = {
   },
 
   {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
+    config = function()
+      local everforest = require("everforest")
+      everforest.setup({
+        background = "soft",
+        transparentbackground_level = 0,
+        italics = true,
+        disable_italic_comments = false,
+        on_highlights = function(hl, _)
+          hl["@symbol"] = { link = "@field" }
+        end,
+      })
+      everforest.load()
+    end,
+  },
+
+  {
     'projekt0n/github-nvim-theme',
+    disable = true,
     priority = 1001,
     version = 'v0.0.7',
     opts = {
