@@ -21,7 +21,10 @@ map.normal('<A-j>', '<C-w>j', 'Move windows down')
 map.normal('<A-k>', '<C-w>k', 'Move windows up')
 map.normal('<A-l>', '<C-w>l', 'Move windows right')
 
-map.normal('<leader><space>', ':set hlsearch!<CR>', 'Highlight search')
+map.normal('<leader>ud', ':set background=dark<CR>', 'Set theme dark')
+map.normal('<leader>ul', ':set background=light<CR>', 'Set theme light')
+map.normal('<leader>uh', ':set hlsearch!<CR>', 'Highlight search')
+
 map.normal('<leader>nd', ':!rm -rf note.md<CR>', 'Note delete')
 map.normal('<leader>no', ':e note.md<CR>', 'Note open')
 map.normal('<leader>x', ':q<CR>', 'Exit')
