@@ -3,7 +3,7 @@ local opt = vim.opt
 local o = vim.o
 
 -- [[ Context ]]
-opt.colorcolumn = '100,120,140' -- str: Show col for max line length
+opt.colorcolumn = '80,120,140' -- str: Show col for max line length
 opt.number = true           -- bool: Show line numbers
 opt.relativenumber = true   -- bool: Show relative line numbers
 opt.scrolloff = 4           -- int: Min num lines of context
